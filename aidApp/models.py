@@ -25,72 +25,49 @@ class Health_Practitioner (models.Model):
     AssistanceTimeReady = models.DateTimeField(auto_now=True)
     
     def __str__(self) -> str:
-        return self.FirstName
+        return self.Patient
 
+class Appointment(models.Model):
 
-class ManageProfile(models.Model):
-    #LoggedIn = models.ForeignKey(Patient, on_delete = models.CASCADE)
-    LoggedIn = models.CharField(max_length=100)
-    LoggedResponse = models.CharField(max_length=100)
-    Dashboard = models.CharField(max_length=100)
-    LogIn = models.CharField(max_length=100)
-    MyProfile = models.ForeignKey(Patient, on_delete= models.CASCADE)
-    TalkToDoctor = models.ForeignKey(Health_Practitioner, on_delete=models.CASCADE)
-    SignUp = models.CharField(max_length=100)
-    ProfilePage = models.CharField(max_length=100)
-    Finish = models.CharField(max_length=100)
+    health_practitioner = models.ForeignKey(Health_Practitioner, on_delete=models.CASCADE)
+    patient_name = models.CharField(max_length=100)
+    date = models.DateField()
+    time = models.CharField(max_length=100)
 
-class ViewClinicsPharmInLocation(models.Model):
-    #LoggedIn = models.ForeignKey(Patient, on_delete = models.CASCADE)
-    LoggedIn = models.CharField(max_length=100)
-    LoggedResponse = models.CharField(max_length=100)
-    Dashboard = models.CharField(max_length=100)
-    LogIn = models.CharField(max_length=100)
-    SelectPharmaciesClinics = models.CharField(max_length=100)
-    SearchPage = models.CharField(max_length=100)
-    SignUp = models.ForeignKey(ManageProfile, on_delete = models.CASCADE)
-    GrantLocationPermission = models.CharField(max_length=100)
-    SelectPharmacyClinicFromPage = models.CharField(max_length=100)
-    DefaultResults = models.CharField(max_length=100)
-    SearchByKeyWord = models.CharField(max_length=100)
-    SearchedResults = models.CharField(max_length=100)
-    ClickOnPharmacyClinic = models.CharField(max_length=100)
-    InformationPage = models.CharField(max_length=100)
-    Finish = models.CharField(max_length=100)
+    def __str__(self):
+        return '{} {} {}. Patient: {}'.format(self.date, self.time, self.health_practitioner, self.patient_name)
+        
+class FAQ (models.Model):
+    Yes =  models.CharField(max_length=100)
+    No =  models.CharField(max_length=100)
 
+    def __str__(self) -> str:
+        return self.Yes
 
-class ViewHealthPractitioners(models.Model):
-     LoggedIn = models.ForeignKey(Patient, on_delete = models.CASCADE)
-     LoggedResponse = models.CharField(max_length=100)
-     Dashboard = models.CharField(max_length=100)
-     LogIn = models.CharField(max_length=100)
-     #TalkToDoctor = models.ForeignKey(Health_Practitioner, on_delete=models.CASCADE)
-     TalkToDoctor = models.CharField(max_length=100)
-     SignUp = models.ForeignKey(ManageProfile, on_delete = models.CASCADE)
-     SearchPageDefaultDoctors = models.CharField(max_length=100)
-     SearchByKeyWord = models.CharField(max_length=100)
-     SearchedResults = models.CharField(max_length=100)
-     #ClickOnDoctorsName = models.ForeignKey(Health_Practitioner, on_delete=models.CASCADE)
-     ClickOnDoctorsName = models.CharField(max_length=100)
-     InformationPage = models.CharField(max_length=100)
-     ClickOnScheduleAppointment = models.CharField(max_length=100)
-     AvailableTimeModal = models.CharField(max_length=100)
-     SelectPreferredTimeAddExtraContinue = models.CharField(max_length=100)
-     ConfirmationPage = models.CharField(max_length=100)
-     Finish = models.CharField(max_length=100)
-     
+class Clinics (models.Model):
+    ManageProfile = models.ForeignKey(Health_Practitioner, on_delete = models.CASCADE)
+    ViewConsultations =  models.CharField(max_length=100)
+    ViewPatients = models.CharField(max_length=100)
+    SeeScheduledConsultations = models.CharField(max_length=100)
 
-class GiveFeedbackCompliants(models.Model):
-    LoggedIn = models.ForeignKey(Patient, on_delete = models.CASCADE)
-    LoggedResponse = models.CharField(max_length=100)
-    Dashboard = models.CharField(max_length=100)
-    LogIn = models.CharField(max_length=100)
-    SignUp = models.CharField(max_length=100)
-    ClickOnContactSupport = models.CharField(max_length=100)
-    ContactSupportPage = models.CharField(max_length=100)
-    EnterNameEmailChooseCategorySend = models.CharField(max_length=100)
-    SuccessfulPage = models.CharField(max_length=100)
-    Finish = models.CharField(max_length=100)
+    def __str__(self) -> str:
+        return self.ManageProfile
+
+class Pharmacies (models.Model):
+    ManageProfile = models.ForeignKey(Health_Practitioner, on_delete = models.CASCADE)
+    ViewConsultations =  models.CharField(max_length=100)
+    ViewPatients = models.CharField(max_length=100)
+    SeeScheduledConsultations = models.CharField(max_length=100)
+    
+    def __str__(self) -> str:
+        return self.ManageProfile
+
+class Feedback (models.Model):
+    ViewFeedback = models.ForeignKey(Health_Practitioner, on_delete = models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.ViewFeedback
+
 
 
 
