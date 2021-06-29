@@ -1,12 +1,14 @@
 from django.contrib import admin
-from .models import Patient, Health_Practitioner, Appointment, FAQ, Clinics, Pharmacies, Feedback
+#from .models import Doctors, Clinics, Pharmacies, Patients,Appointment, Consultations, Feedback, FAQ
+from .models import Doctors, Clinics, Pharmacies, Patients,Consultations, Feedback, FAQ
 
 
 # Register your models here.
-admin.site.register(Patient)
-admin.site.register(Health_Practitioner)
-admin.site.register(FAQ)
+admin.site.register(Doctors)
 admin.site.register(Clinics)
 admin.site.register(Pharmacies)
+admin.site.register(Patients)
+#admin.site.register(Appointment)
+admin.site.register(Consultations)
 admin.site.register(Feedback)
-admin.site.register(Appointment)
+admin.site.register(FAQ)
