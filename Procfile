@@ -1,0 +1,1 @@
+web: gunicorn medicalAid1.wsgi
