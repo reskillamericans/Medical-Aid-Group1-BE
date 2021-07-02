@@ -1,5 +1,6 @@
 from django.urls import path
+from . import views
 
-urlpatterns = [
+urlpatterns = [path('feedback/', views.Feedback, name='feedback'),
     
 ]
