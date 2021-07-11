@@ -10,8 +10,8 @@
       "hours": "24 Hours",
       "appointment_url": "https://www.acmh.org/patient-portal",
       "telephone": "724-543-8500",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -24,8 +24,8 @@
       "hours": "24 Hours",
       "appointment_url": "www.anaheimregionalmc.com/Patients-Visitors-Contractors/For-Patients/Admissions-Discharge.aspx",
       "telephone": "714-774-1450",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -38,8 +38,8 @@
       "hours": "24 Hours",
       "appointment_url": "https://hillcrestsouth.com/content/patients-visitors",
       "telephone": "(918) 294-4000",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -52,8 +52,8 @@
       "hours": "24 Hours",
       "appointment_url": "www.amitahealth.org/patient-portals/",
       "telephone": "630-312-6527",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -66,8 +66,8 @@
       "hours": "24 Hours",
       "appointment_url": "https://www.acmh.org/patient-portal",
       "telephone": "337-898-6514",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -80,8 +80,8 @@
       "hours": "24 Hours",
       "appointment_url": "www.allinahealth.org/abbott-northwestern-hospital",
       "telephone": "612-863-4000",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -94,8 +94,8 @@
       "hours": "24 Hours",
       "appointment_url": "https://www.hendrickhealth.org/",
       "telephone": "325-670-2000",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -108,8 +108,8 @@
       "hours": "24 Hours",
       "appointment_url": "https://www.abingtonhealth.org",
       "telephone": "215-481-2000",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -122,8 +122,8 @@
       "hours": "24 Hours",
       "appointment_url": "https://www.abrazohealth.com",
       "telephone": "877-934-9355",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   },
   {
     "model": "aidApp.clinic",
@@ -136,7 +136,7 @@
       "hours": "24 Hours",
       "appointment_url": "https://www.ochsner.org",
       "telephone": "337-783-3222",
-      "question_answer":"faq",
-      }
+      "question_answer":"faq"
+    }
   } 
 ]
