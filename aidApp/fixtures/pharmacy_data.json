@@ -11,7 +11,7 @@
       "telephone": "800-746-7287",
       "website": "www.cvs.com",
       "directions":"https://www.google.com/maps"
-      }
+    }
   },
   {
     "model": "aidApp.Pharmacy",
