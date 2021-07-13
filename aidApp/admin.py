@@ -1,8 +1,7 @@
-from aidApp.models import Appointment, Feedback, Contact, FAQ, Health_Practitioner, Patient, Pharmacy ,Clinic
+from aidApp.models import Health_Practitioner, Appointment, Feedback, Contact, FAQ, Patient, Pharmacy ,Clinic  
 from django.contrib import admin
 from .models import FAQ
 
-# Register your models here.
 admin.site.register(FAQ)
 admin.site.register(Contact)
 admin.site.register(Feedback)
