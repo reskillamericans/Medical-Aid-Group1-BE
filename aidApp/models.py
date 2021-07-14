@@ -16,9 +16,9 @@ class FAQ(models.Model):
 
 class Contact(models.Model):
 
-    your_name = models.CharField(max_length=100, blank=True)
+    your_name = models.CharField(max_length=100, null=True)
     your_email = models.EmailField(max_length=60)
-    subject = models.CharField(max_length=50, blank=True)
+    subject = models.CharField(max_length=50, null=True)
     your_message = models.TextField(max_length=400)
 
     def __str__(self):
@@ -41,7 +41,7 @@ class Health_Practitioner(models.Model):
 
     health_practitioner = models.OneToOneField(User, on_delete=models.CASCADE)
     professional_title = models.CharField(default= "Dr. ", max_length=50)
-    image = models.ImageField(null=True) 
+    image = models.ImageField(blank=True) 
     telephone = models.CharField(max_length=20)
     specialty = models.TextField(max_length=254)
     consultation_times = models.TextField(default="Monday - 10:00am to 11:00am", max_length=400)
