@@ -41,7 +41,7 @@ class Health_Practitioner(models.Model):
 
     health_practitioner = models.OneToOneField(User, on_delete=models.CASCADE)
     professional_title = models.CharField(default= "Dr. ", max_length=50)
-    image = models.ImageField(blank=True) 
+    image = models.ImageField(default='image.jpg', upload_to='profile_pics') 
     telephone = models.CharField(max_length=20)
     specialty = models.TextField(max_length=254)
     consultation_times = models.TextField(default="Monday - 10:00am to 11:00am", max_length=400)
@@ -98,6 +98,7 @@ class Appointment(models.Model):
 
     class Meta:
         unique_together = ('health_practitioner','app_date', 'app_time') 
+        permissions = (('can_edit_appointment', 'Can update appointment'),)
        
     health_practitioner = models.ForeignKey(Health_Practitioner, null=True, on_delete=models.CASCADE) 
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
