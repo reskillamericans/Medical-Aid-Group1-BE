@@ -1,0 +1,142 @@
+[
+  {
+    "model": "aidApp.clinic",
+    "pk": 1,
+    "fields": {
+      "name": "ACMH Hospital",
+      "website": "www.acmh.org",
+      "located_in":"PA",
+      "address":"ONE NOLTE DRIVE KITTANNING, PA 16201",
+      "hours": "24 Hours",
+      "appointments_url": "https://www.acmh.org/patient-portal",
+      "telephone": "724-543-8500",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 2,
+    "fields": {
+      "name": "AHMC Medical Center",
+      "website": "www.anaheimregionalmc.com",
+      "located_in":"CA",
+      "address":"1111 W. La Palma Ave., Anaheim, CA 92801",
+      "hours": "24 Hours",
+      "appointments_url": "www.anaheimregionalmc.com",
+      "telephone": "714-774-1450",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 3,
+    "fields": {
+      "name": "AHS Southcrest Hospital",
+      "website": "https://hillcrestsouth.com/",
+      "located_in":"OK",
+      "address":"8801 S. 101st E. Ave. Tulsa, OK 74133",
+      "hours": "24 Hours",
+      "appointments_url": "https://hillcrestsouth.com",
+      "telephone": "(918) 294-4000",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 4,
+    "fields": {
+      "name": "Amita Adventist Medical Center",
+      "website": "www.amitahealth.org",
+      "located_in":"IL",
+      "address":"500 Remington Blvd. Bolingbrook, Illinois 60440",
+      "hours": "24 Hours",
+      "appointments_url": "www.amitahealth.org/patient-portals/",
+      "telephone": "630-312-6527",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 5,
+    "fields": {
+      "name": "Abbeville General Hospital",
+      "website": "/www.abbevillegeneral.com",
+      "located_in":"CA",
+      "address":"118 North Hospital Drive, Abbeville LA 70510",
+      "hours": "24 Hours",
+      "appointments_url": "https://www.acmh.org/patient-portal",
+      "telephone": "337-898-6514",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 6,
+    "fields": {
+      "name": "Abbott Northwestern Hospital",
+      "website": "www.allinahealth.org",
+      "located_in":"MN",
+      "address":"800 E 28th St, Minneapolis, MN 55407",
+      "hours": "24 Hours",
+      "appointments_url": "www.allinahealth.org",
+      "telephone": "612-863-4000",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 7,
+    "fields": {
+      "name": "Abilene Regional Medical Center",
+      "website": "www.hendrickhealth.org",
+      "located_in":"TX",
+      "address":"1900 Pine St Abilene, TX 79601",
+      "hours": "24 Hours",
+      "appointments_url": "https://www.hendrickhealth.org/",
+      "telephone": "325-670-2000",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 8,
+    "fields": {
+      "name": "Abington Health Hospital",
+      "website": "https://www.abingtonhealth.org",
+      "located_in":"PA",
+      "address":"1200 Old York Road, Abington, PA 19001",
+      "hours": "24 Hours",
+      "appointments_url": "https://www.abingtonhealth.org",
+      "telephone": "215-481-2000",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 9,
+    "fields": {
+      "name": "Abrazo Arrowhead Campus",
+      "website": "https://www.abrazohealth.com",
+      "located_in":"AZ",
+      "address":"1930 E. Thomas Rd. Phoenix, AZ 85016",
+      "hours": "24 Hours",
+      "appointments_url": "https://www.abrazohealth.com",
+      "telephone": "877-934-9355",
+      "question_answer":"faq"
+    }
+  },
+  {
+    "model": "aidApp.clinic",
+    "pk": 10,
+    "fields": {
+      "name": "Acadia General Hospital",
+      "website": "https://www.ochsner.org",
+      "located_in":"CA",
+      "address":"1305 Crowley Rayne Hwy,Crowley, LA 70526",
+      "hours": "24 Hours",
+      "appointments_url": "https://www.ochsner.org",
+      "telephone": "337-783-3222",
+      "question_answer":"faq"
+    }
+  } 
+]

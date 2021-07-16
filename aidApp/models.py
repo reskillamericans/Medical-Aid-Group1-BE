@@ -65,13 +65,13 @@ class Feedback(models.Model):
 
 class Pharmacy(models.Model):
 
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=100)
     service_options = models.CharField(max_length=50)
     located_in = models.TextField(max_length=254)
     address = models.TextField(max_length=254)
     hours = models.TextField(max_length=254)
     telephone = models.CharField(max_length=20)
-    website = models.URLField(max_length=60)
+    website = models.URLField(max_length=100)
     directions = models.TextField(max_length=254)
     
 
