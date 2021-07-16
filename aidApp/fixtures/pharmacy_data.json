@@ -1,0 +1,143 @@
+[
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 1,
+    "fields": {
+      "name": "CVS",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Rhode Island",
+      "address":"Woonsocket, Rhode Island 02895",
+      "hours": "24 Hours",
+      "telephone": "800-746-7287",
+      "website": "www.cvs.com",
+      "directions":"https://www.google.com/maps"
+    }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 2,
+    "fields": {
+      "name": "Walgreens",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Illinois",
+      "address":"200 Wilmot Rd, Deerfield, IL 60015",
+      "hours": "24 Hours",
+      "telephone": "847-315-2500",
+      "website": "www.walgreens.com",
+      "directions":"https://www.google.com/maps"
+      }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 3,
+    "fields": {
+      "name": "Rite Aid",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Pennsylvania",
+      "address":"30 Hunter Lane Camp Hill, PA 17011",
+      "hours": "24 Hours",
+      "telephone": "717-761-2633",
+      "website": "www.riteaid.com",
+      "directions":"https://www.google.com/maps"
+      }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 4,
+    "fields": {
+      "name": "Walmart Pharmacy",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Arkansas",
+      "address":"702 S.W. 8th St. Bentonville, AK 72716",
+      "hours": "24 Hours",
+      "telephone": "479-273-4000",
+      "website": "www.walmart.com",
+      "directions":"https://www.google.com/maps"
+      }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 5,
+    "fields": {
+      "name": "Publix",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Florida",
+      "address":"3300 Publix Corporate Pkwy , Lakeland, FL 33811",
+      "hours": "24 Hours",
+      "telephone": "863-688-11880",
+      "website": "www.publix.com",
+      "directions":"https://www.google.com/maps"
+      }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 6,
+    "fields": {
+      "name": "Costco",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Washington",
+      "address":"999 Lake Drive Issaquah, WA 98027",
+      "hours": "8AM - 5PM",
+      "telephone": "425-313-8100",
+      "website": "www.costco.com",
+      "directions":"https://www.google.com/maps"
+      }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 7,
+    "fields": {
+      "name": "Giant Pharmacy",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Pennsylvania",
+      "address":"101 Kappa Dr, Pittsburgh, PA 15238",
+      "hours": "24 Hours",
+      "telephone": "(412) 963-6200",
+      "website": "www.gianteagle.com",
+      "directions":"https://www.google.com/maps"
+      }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 8,
+    "fields": {
+      "name": "Kroger",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Ohio",
+      "address":"1014 Vine Street, Cincinnati, Ohio 45202",
+      "hours": "24 Hours",
+      "telephone": "(800) 576-4377",
+      "website": "www.cvs.com",
+      "directions":"https://www.google.com/maps"
+      }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 9,
+    "fields": {
+      "name": "Target",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"Minnesota",
+      "address":"1000 Nicollet Mall TPS-3165 Minneapolis, MN 55403",
+      "hours": "24 Hours",
+      "telephone": "612-696-6098",
+      "website": "www.target.com",
+      "directions":"https://www.google.com/maps"
+      }
+  },
+  {
+    "model": "aidApp.Pharmacy",
+    "pk": 10,
+    "fields": {
+      "name": "Safeway",
+      "service_options": "Prescription Pickup and Over the counter meds",
+      "located_in":"California",
+      "address":"5918 Stoneridge Mall Rd, Pleasanton, CA 94588",
+      "hours": "24 Hours",
+      "telephone": "(925) 226-5000",
+      "website": "www.safeway.com",
+      "directions":"https://www.google.com/maps"
+      }
+  }
+   
+]
