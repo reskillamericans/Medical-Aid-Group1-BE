@@ -16,7 +16,8 @@ class FAQ(models.Model):
 
 class Contact(models.Model):
 
-    your_name = models.CharField(max_length=100, null=True)
+    first_name = models.CharField(max_length=50, null=True)
+    last_name = models.CharField(max_length=50, null=True)
     your_email = models.EmailField(max_length=60)
     subject = models.CharField(max_length=50, null=True)
     your_message = models.TextField(max_length=400)
