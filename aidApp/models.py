@@ -3,6 +3,7 @@ from datetime import date, time
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE, SET, SET_NULL
 from django.db.models.fields.related import ForeignKey, OneToOneField
+from django.forms import widgets
 
 
 class FAQ(models.Model):
@@ -19,6 +20,9 @@ class Contact(models.Model):
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50, null=True)
     your_email = models.EmailField(max_length=60)
+    nature_of_enquiry = models.TextField(default='Feedback', choices=(('Feedback', 'Feedback'),
+                                                                       ('Careers', 'Careers'),
+                                                                       ('Support', 'Support')))
     subject = models.CharField(max_length=50, null=True)
     your_message = models.TextField(max_length=400)
 
@@ -33,6 +37,7 @@ class Patient(models.Model):
     telephone = models.CharField(max_length=20)
     D_O_B = models.DateField(default=date.today())
     registration_date = models.DateTimeField(auto_now_add=True) 
+    medical_history = models.TextField(blank=True, null=True)
                 
     def __str__(self):
         return self.patient.get_full_name() 
@@ -51,12 +56,13 @@ class Health_Practitioner(models.Model):
     appointments_approved = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.professional_title+" "+self.health_practitioner.get_full_name()
+        return self.health_practitioner.get_full_name()
     
 
 class Feedback(models.Model):
 
     patient = models.ForeignKey(Patient, null=True, on_delete=SET_NULL)
+    response_type = models.TextField(default='complaint',choices=(('complaint', 'complaint'), ('other', 'other')))
     subject = models.CharField(max_length=100)
     message = models.TextField(max_length=400)
 
