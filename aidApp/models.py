@@ -6,6 +6,9 @@ from django.db.models.fields.related import ForeignKey, OneToOneField
 from django.forms import widgets
 
 
+CHOICES = [('feedback', 'feedback'),('career', 'career'),('support', 'support'),]
+CHOICES2 = [('Complaint', 'Complaint'), ('Other', 'Other'),]
+
 class FAQ(models.Model):
 
     question = models.TextField()
@@ -20,9 +23,7 @@ class Contact(models.Model):
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50, null=True)
     your_email = models.EmailField(max_length=60)
-    nature_of_enquiry = models.TextField(default='Feedback', choices=(('Feedback', 'Feedback'),
-                                                                       ('Careers', 'Careers'),
-                                                                       ('Support', 'Support')))
+    nature_of_enquiry = models.CharField(max_length=8, choices=CHOICES)
     subject = models.CharField(max_length=50, null=True)
     your_message = models.TextField(max_length=400)
 
@@ -62,8 +63,8 @@ class Health_Practitioner(models.Model):
 class Feedback(models.Model):
 
     patient = models.ForeignKey(Patient, null=True, on_delete=SET_NULL)
-    response_type = models.TextField(default='complaint',choices=(('complaint', 'complaint'), ('other', 'other')))
-    subject = models.CharField(max_length=100)
+    response_type = models.CharField(max_length=9,choices=CHOICES2)
+    #subject = models.CharField(max_length=100)
     message = models.TextField(max_length=400)
 
     def __str__(self):
