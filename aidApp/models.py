@@ -6,8 +6,9 @@ from django.db.models.fields.related import ForeignKey, OneToOneField
 from django.forms import widgets
 
 
-CHOICES = [('feedback', 'feedback'),('career', 'career'),('support', 'support'),]
+#CHOICES = [('feedback', 'feedback'),('career', 'career'),('support', 'support'),]
 CHOICES2 = [('Complaint', 'Complaint'), ('Other', 'Other'),]
+
 
 class FAQ(models.Model):
 
@@ -23,7 +24,7 @@ class Contact(models.Model):
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50, null=True)
     your_email = models.EmailField(max_length=60)
-    nature_of_enquiry = models.CharField(max_length=8, choices=CHOICES)
+    nature_of_enquiry = models.CharField(max_length=8) # choices=CHOICES,)
     subject = models.CharField(max_length=50, null=True)
     your_message = models.TextField(max_length=400)
 
