@@ -1,0 +1,585 @@
+:root {
+    --main-color: #180126;
+    --grey: #eeeeee;
+    --yellow: #f3ea12;
+    font-size: 16px;
+  }
+  body,
+  ul,
+  h1 {
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    margin: 0;
+  }
+  .container {
+    width: 100%;
+  }
+  
+  .topnav {
+    visibility: hidden;
+    height: 0;
+  }
+  nav {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+  .nav-cross {
+    width: 2.5rem;
+    height: 0.5%;
+    margin-top: 1.3%;
+    margin-left: 2%;
+  }
+  .nav-header {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    width: 20rem;
+  }
+  .nav-ul {
+    display: inline-flex;
+    color: rgb(69 122 255);
+    list-style: none;
+    flex-grow: 1;
+    font-size: 17px;
+    margin-left: 10%;
+    margin-right: auto;
+    margin-top: 2%;
+    max-width: 100%;
+    width: 90rem;
+  }
+  
+  .nav-ul li:hover {
+    color: hsla(229, 93%, 41%, 1);
+  }
+  
+  .home-btn {
+    margin-left: 1%;
+    margin-top: 1%;
+    text-align: left;
+    width: 15%;
+  }
+  .nav-header:hover {
+    color: hsla(229, 93%, 41%, 1);
+  }
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 8%;
+    color: black;
+  }
+  .nav-ul > li {
+    padding-left: 2%;
+    font-weight: bold;
+  }
+  .nav-ul > li:hover {
+    cursor: pointer;
+  }
+  
+  .faq-li {
+    color: rgb(69 122 255);
+  }
+  
+  .search-bar-div {
+    width: 100%;
+    height: 209px;
+    background-color: var(--grey);
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .greeting-h1 {
+    font-size: 36px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 2%;
+  }
+  .input {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 0;
+    height: 40px;
+    justify-content: center;
+  }
+  
+  #search-box {
+    font-size: 13px;
+    height: 40px;
+    width: 458px;
+    padding-right: 0;
+    margin-right: 0;
+    margin-top: 2.5%;
+    border: none;
+  }
+  .search-btn {
+    width: 197px;
+    height: 41px;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 2.5%;
+    background-color: rgb(69 122 255);
+    border: none;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  
+  .search-btn:hover {
+    cursor: pointer;
+    background-color: hsla(229, 93%, 41%, 1);
+  }
+  
+  .questions-h1 {
+    text-align: center;
+    margin-top: 10%;
+  }
+  
+  .accordion-div {
+    width: 80%;
+    height: 100px;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+  }
+  
+  .accordion {
+    background-color: #eeeeee;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+    width: 75%;
+    height: 60px;
+    text-align: left;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--main-color);
+    transition: 0.4s;
+  }
+  
+  .answer {
+    background-color: hsla(0, 0%, 93%, 1);
+    font-size: 1.2rem;
+    text-align: left;
+    margin-right: 25%;
+    display: block;
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  .active,
+  .accordion:hover {
+    background-color: rgb(69 122 255);
+  }
+  
+  .accordion:after {
+    content: "\02795";
+    font-size: 16px;
+    color: #777;
+    height: 25px;
+    width: 20px;
+    float: right;
+    margin-right: 4%;
+    padding-left: 8px;
+    padding-top: 2px;
+  }
+  
+  .active:after {
+    content: "\2796";
+    font-size: 16px;
+    color: black;
+    padding-left: 5px;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-top: 15%;
+    font-size: 20px;
+    padding-top: 1%;
+  }
+  footer {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20%;
+    position: relative;
+  }
+  
+  .fa-phone-alt {
+    margin-left: 2%;
+  }
+  
+  .fa-phone-alt:hover {
+    cursor: pointer;
+  }
+  
+  .fa-envelope {
+    margin-left: 3%;
+    color: black;
+  }
+  
+  .fa-envelope:hover {
+    color: rgb(69 122 255);
+  }
+  
+  .contact-info {
+    display: flex;
+    width: 100%;
+    margin-left: 0%;
+  }
+  
+  .call-us {
+    width: 50%;
+    margin-right: 0%;
+  }
+  .call-us:hover {
+    cursor: pointer;
+    color: rgb(69 122 255);
+  }
+  .email-us {
+    width: 50%;
+  }
+  
+  .email {
+    padding-left: 13%;
+  }
+  
+  .email-a-tag {
+    color: black;
+  }
+  
+  .email-a-tag:hover {
+    color: rgb(69 122 255);
+  }
+  .call-paragraph {
+    margin-top: 2%;
+    padding-right: 5%;
+    margin-left: 51%;
+    margin-right: 0;
+    width: 100%;
+    font-size: 16px;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .email-paragraph {
+    margin-left: 0%;
+    margin-right: 40%;
+    font-size: 16px;
+    width: 55%;
+    text-align: center;
+  }
+  
+  /*Media query for tablets in landscape*/
+  @media (max-width: 1280px) and (orientation: landscape) {
+    body {
+      font-family: "Open Sans", sans-serif;
+      width: 100%;
+    }
+  
+    .nav-ul {
+      display: inline-flex;
+      color: var(--main-color);
+      list-style: none;
+      flex-grow: 1;
+      margin-left: 15%;
+      margin-top: 2%;
+    }
+  
+    .questions-h1 {
+      text-align: center;
+      margin-top: 3%;
+    }
+  
+    footer {
+      margin-top: 20%;
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+  
+  /*Media query for mobile devices*/
+  @media screen and (max-width: 800px) {
+    html {
+      overflow: scroll;
+    }
+    body {
+      font-family: "Open Sans", sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: fixed;
+      max-height: 100%;
+    }
+  
+    /* Style the navigation menu */
+    .topnav {
+      visibility: visible;
+      height: 1%;
+      overflow: hidden;
+      background-color: #eeeeee;
+      position: relative;
+    }
+    .topnav-logo {
+      display: inline-flex;
+      align-items: center;
+      width: 90%;
+    }
+    #logo-header {
+      width: 60%;
+      padding-left: 3%;
+      padding-top: 2%;
+      font-size: 1.5rem;
+    }
+  
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    .topnav #myLinks {
+      display: none;
+      text-align: center;
+    }
+  
+    /* Style navigation menu links */
+    .topnav a {
+      color: black;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+  
+    /* Style the hamburger menu */
+    .topnav a.icon {
+      background: #eeeeee;
+      color: black;
+      display: block;
+      width: 5%;
+      position: absolute;
+      margin-top: 1.3%;
+      height: 35px;
+      right: 0;
+      top: 0;
+    }
+  
+    /* Add a grey background color on mouse-over */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  
+    /* Style the active link (or home/logo) */
+    .active2 {
+      background-color: #eeeeee;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding-left: 0 !important;
+      width: 10%;
+      padding-right: 0;
+    }
+    #cross {
+      padding-right: 0;
+      margin-left: 21%;
+    }
+  
+    nav {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .nav-cross {
+      text-align: center;
+      height: 35px;
+      margin: 0;
+    }
+  
+    .home-btn {
+      text-align: center;
+      align-items: center;
+      width: 100%;
+      margin: auto;
+    }
+    .nav-header {
+      text-align: center;
+      align-items: center;
+      color: black;
+    }
+    .nav-ul {
+      display: inline-flex;
+      flex-direction: column;
+      width: 100%;
+      line-height: 2rem;
+      list-style: none;
+      margin-left: 0 !important;
+      margin-right: 0;
+      padding-left: 0;
+      margin-top: 2%;
+      background-color: #eeeeee;
+    }
+    a {
+      margin-left: 0;
+    }
+    .search-bar-div {
+      width: 100%;
+      height: 209px;
+      background-color: var(--grey);
+      text-align: center;
+    }
+    .greeting-h1 {
+      font-size: 25px;
+      padding-top: 10%;
+      margin-top: 5%;
+    }
+    .input {
+      display: inline-flex;
+      width: 80%;
+      padding-top: 5%;
+      height: 40px;
+      justify-content: center;
+    }
+  
+    #search-box {
+      font-size: 13px;
+      height: 40px;
+      width: 458px;
+      padding-right: 0;
+      margin-right: 0;
+      margin-top: 2.5%;
+      border: none;
+    }
+    .search-btn {
+      width: 197px;
+      height: 41px;
+      padding-left: 0;
+      margin-left: 0;
+      margin-top: 2.5%;
+      background-color: rgb(96, 118, 216);
+      border: none;
+      font-weight: 700;
+      font-size: 13px;
+    }
+  
+    .questions-h1 {
+      margin-bottom: 5%;
+      padding-bottom: 5%;
+    }
+    .accordion-div {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 5%;
+    }
+  
+    .accordion {
+      background-color: #eeeeee;
+      font-size: 1.1rem;
+      color: black;
+      cursor: pointer;
+      width: 100%;
+      height: 60px;
+      text-align: left;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid var(--main-color);
+      transition: 0.4s;
+      margin-left: -19.5%;
+    }
+  
+    .answer {
+      background-color: hsla(0, 0%, 93%, 1);
+      text-align: left;
+      display: block;
+      overflow: hidden;
+      max-height: 0px;
+      width: 100%;
+      margin-left: -19.5%;
+      transition: max-height 0.2s ease-out;
+    }
+  
+    .accordion:after {
+      content: "\02795";
+      font-size: 1.2rem;
+      color: #777;
+      height: 25px;
+      width: 20px;
+      float: right;
+      margin-right: 4%;
+      padding-left: 8px;
+      padding-top: 2px;
+    }
+  
+    .active:after {
+      content: "\2796";
+      font-size: 1.2rem;
+      color: black;
+      padding-left: 5px;
+    }
+  
+    .contact-info {
+      display: block;
+      height: 90px;
+    }
+    .call-us {
+      margin: 0;
+      width: 100%;
+      height: 40px;
+      padding-top: 30px;
+      text-align: center;
+      align-items: center;
+    }
+    .call-paragraph {
+      text-align: center;
+      margin-left: 0;
+      font-size: 16px;
+      width: 100%;
+    }
+  
+    .email-paragraph {
+      font-size: 16px;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      align-items: center;
+      padding-bottom: 10%;
+    }
+  
+    .email-us {
+      width: 100%;
+      text-align: center;
+      height: 60px;
+    }
+    .fa-phone-alt {
+      margin-left: 2%;
+    }
+    .fa-envelope {
+      padding-left: 20%;
+    }
+  
+    footer {
+      margin-top: 80%;
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 1090px) and (min-width: 900px) {
+    .nav-ul {
+      display: inline-flex;
+      color: var(--main-color);
+      list-style: none;
+      flex-grow: 1;
+      margin-left: 15%;
+      margin-right: 5%;
+      margin-top: 2%;
+    }
+    .footer {
+      padding-top: 10%;
+      margin-top: 90%;
+    }
+  }
