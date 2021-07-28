@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient - Century Health</title>
+    <link rel="shortcut icon" href="/images/admin-dash/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="patient-support.css">
+    <script src="patient-profile.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="#"><img src="../images/patient-images/logo.svg" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="../images/admin-dash/fi_menu.svg"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="patient-dash.html">
+                        <img src="../images/patient-profile-img/dashboard-white.svg" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="patient-profile.html">
+                        <img src="../images/patient-images/profile-icon.svg" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="patient-doctor.html">
+                        <img src="../images/patient-images/doctor-icon.svg" alt="doctor icon">
+                        Talk to a Doctor</a>
+                </li>
+                <li>
+                    <a href="patient-clinic.html">
+                        <img src="../images/patient-images/clinic-icon.svg" alt="clinics icon">
+                        Pharmacies and Clinics</a>
+                </li>
+
+                <li>
+                    <a href="patient-support.html" class="active-link">
+                        <img src="../images/patient-support-img/contact-icon-yellow.svg" alt="contact icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <img src="../images/patient-images/logout.svg" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <a class="back" href="patient-dash.html">< Back</a>
+            <h1 class="main-heading">Contact Support</h1>
+            <form>
+                <div>
+                <label for="fullname">Full Name </label><br>
+                <input id="fullname" type="text" name="fullname">
+                </div>
+                <div><label for="email">Email</label><br>
+                <input id="email" type="email" name="email">
+                </div>
+                <div><select id="complaint" name="Complaint">
+                    <option value="Asian">Complaint</option>
+                    <option value="Other">Other</option>
+                </select>
+                </div>
+                <div>
+                    <label for="message">Message (Max 200 characters)</label><br>
+                    <textarea id="message" name="message" rows="12" maxlength="200"></textarea>
+                </div>
+                    <button class="submit-btn">Submit</button>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Century Health</title>
+    <link rel="shortcut icon" href="{% static 'aidApp/images/admin-dash/favicon.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'aidApp/css/doctor-dash.css' %}">
+    <script src="{% static 'aidApp/js/doctor-dash.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="{% url 'homepage' %}"><img src="{% static 'aidApp/images/admin-dash/logo_header.svg' %}" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="{% static 'aidApp/images/admin-dash/fi_menu.svg' %}"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="{% url 'doctor-dash' %}" class="activeLink">
+                        <img src="{% static 'aidApp/images/admin-dash/dashboard_icon.svg' %}" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'aidApp/images/doctor-dash/profile-icon.svg' %}" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="{% url 'doctor-search' %}">
+                        <img src="{% static 'aidApp/images/doctor-dash/patients-icon.svg' %}" alt="patients icon">
+                        Patients</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'aidApp/images/doctor-dash/consultations-icon.svg' %}" alt="consultation icon">
+                        Consultations</a>
+                </li>
+                <li>
+                    <a href="#">                    
+                        <img src="{% static 'aidApp/images/doctor-dash/schedule-icon.svg' %}" alt="calendar icon">
+                        My Schedule</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'aidApp/images/doctor-dash/contact-icon.svg' %}" alt="phone icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="{% url 'homepage' %}">
+                        <img src="{% static 'aidApp/images/admin-dash/logout_icon.svg' %}" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <!--Welcome Content Block-->
+        <section class="welcome bubble-style">
+            <div class="welcomeAlerts">
+                <h1>Welcome to your dashboard, Dr. Crusher</h1>
+                <p>Your next appointment is on <b>6/28/21</b> at <b>8:00am</b> with <b>Mr. William Riker</b></p>
+                <p>You have <b>4 test results</b> awaiting review</p>
+                <p>
+                    <button class="appt-schedule">Appointment Schedule</button>
+            </div>
+            <img src="{% static 'aidApp/images/doctor-dash/crusher.svg' %}" alt="image of current user" class="userPic" />
+        </section>
+        <!--Test Results Content Block-->
+        <section class="tests">
+            <div class="heading">
+                <h2>Test Results</h2>
+                <div class="buttonViews">
+                    <button class="view">
+                        <img src="{% static 'aidApp/images/doctor-dash/list_view_icon.svg' %}" alt="list view icon" />
+                    </button>
+                    <button class="view">
+                        <img src="{% static 'aidApp/images/doctor-dash/grid_view_icon.svg' %}" alt="grid view icon" />
+                    </button>
+                </div>
+            </div>
+            <div class="tests-bubble bubble-style">
+                <h3 class="patient-name">Mr. Michael Bostick</h3>
+                <p class="test-type">Blood Test</p>
+                <a href="#" class="results">Get Results</a>
+            </div>
+            <div class="tests-bubble bubble-style">
+                <h3 class="patient-name">Mr. Michael Bostick</h3>
+                <p class="test-type">Blood Test</p>
+                <a href="#" class="results">Get Results</a>
+            </div>
+            <div class="tests-bubble bubble-style">
+                <h3 class="patient-name">Mr. Geordi La Forge</h3>
+                <p class="test-type">MRI Scan</p>
+                <a href="#" class="results">Get Results</a>
+            </div>
+            <div class="tests-bubble bubble-style">
+                <h3 class="patient-name">Mrs. Katherine Janeway</h3>
+                <p class="test-type">CT Scan, MRI, Glucose test</p>
+                <a href="#" class="results">Get Results</a>
+            </div>
+        </section>
+        <!--Rating Section-->
+        <section class="rating">
+            <div class="heading">
+                <h2>Overall Rating</h2>
+            </div>
+            <div class=green-bubble>
+                <div class="big-rating">
+                    <p class="large-rating">4.6</p>
+                    <img src="{% static 'aidApp/images/doctor-dash/stars.svg' %}" alt="star rating">
+                    <p>34 Reviews</p>
+                </div>
+                <img src="{% static 'aidApp/images/doctor-dash/ratings-chart.svg' %}" class="star-chart"
+                    alt="chart of various review ratings received">
+            </div>
+        </section>
+        <!--Recent Visits Content Block-->
+        <section class="visits">
+            <div class="heading">
+                <h2>Recent Visits</h2>
+            </div>
+            <div class="bubble-heading">
+                <p><b>Patient</b></p>
+                <p><b>Location</b></p>
+                <p><b>Date</b></p>
+                <p><b>Results</b></p>
+            </div>
+            <div class="visit-bubble bubble-style">
+                <div class="patient">
+                    <img src="{% static 'aidApp/images/doctor-dash/bostick.svg' %}" alt="image of recent patient">
+                    <p><b>Mr. Michael Bostick</b></p>
+                </div>
+                <p class="location">San Jose General Hospital</p>
+                <div class="date">
+                    <p>6/29/2021</p>
+                </div>
+                <div class="pdf-btns">
+                    <button class="download">Download pdf</button>
+                </div>
+            </div>
+            <div class="visit-bubble bubble-style">
+                <div class="patient">
+                    <img src="{% static 'aidApp/images/doctor-dash/laforge.svg' %}" alt="image of recent patient">
+                    <p><b>Mr. Geordi La Forge</b></p>
+                </div>
+                <p class="location">Haight Street Clinic</p>
+                <div class="date">
+                    <p>6/19/2021</p>
+                </div>
+                <div class="pdf-btns">
+                    <button class="download">Download pdf</button>
+                </div>
+            </div>
+            <div class="visit-bubble bubble-style">
+                <div class="patient">
+                    <img src="{% static 'aidApp/images/doctor-dash/janeway.svg' %}" alt="image of recent patient">
+                    <p><b>Mrs. Katherine Janeway</b></p>
+                </div>
+                <p class="location">Haight Street Clinic</p>
+                <div class="date">
+                    <p>6/19/2021</p>
+                </div>
+                <div class="pdf-btns">
+                    <button class="download">Download pdf</button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>

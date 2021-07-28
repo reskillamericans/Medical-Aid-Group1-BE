@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Search - Century Health</title>
+    <link rel="shortcut icon" href="{% static 'aidApp/images/admin-dash/favicon.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'aidApp/css/doctor-search.css' %}">
+    <script src="{% static 'aidApp/js/doctor-dash.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="{% url 'homepage' %}"><img src="{% static 'aidApp/images/admin-dash/logo_header.svg' %}" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="{% static 'aidApp/images/admin-dash/fi_menu.svg' %}"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="{% url 'doctor-dash' %}">
+                        <img src="{% static 'aidApp/images/doctor-dash/icon-inactive-dashboard.svg' %}" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'aidApp/images/doctor-dash/profile-icon.svg' %}" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="doctor-search.html" class="active-link">
+                        <img src="{% static 'aidApp/images/doctor-dash/icon-active-patients.svg' %}" alt="patients icon">
+                        Patients</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'aidApp/images/doctor-dash/consultations-icon.svg' %}" alt="consultation icon">
+                        Consultations</a>
+                </li>
+                <li>
+                    <a href="doctor-schedule.html">
+                        <img src="{% static 'aidApp/images/doctor-dash/schedule-icon.svg' %}" alt="calendar icon">
+                        My Schedule</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'aidApp/images/doctor-dash/contact-icon.svg' %}" alt="phone icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <img src="{% static 'aidApp/images/admin-dash/logout_icon.svg' %}" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content-wrapper">
+            <!--Page Title-->
+            <div class="page-title">
+                <div class="back">
+                    <a href="/Doctor/doctor-dash.html"><img src="{% static 'aidApp/images/doctor-dash/icon-back-arrow.svg' %}">Back</a>
+                </div>
+                <h1>Patient Search</h1>
+            </div>
+            <!-- Patient Search Form -->
+            <div class="search">
+                <h2>Patient Name</h2>
+                <div class="search-box">
+                    <input id="search" type="text" name="search" placeholder="">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+            <!-- Results -->
+            <section class="search-results">
+                <div class="row row-heading">
+                    <div class="col1">Name</div>
+                    <div class="col2"></div>
+                    <div class="col3">Sex</div>
+                    <div class="col4">Age</div>
+                    <div class="col5">Status</div>
+                    <div class="col6">Phone</div>
+                </div>
+                <a class="row row-results bubble-style" href="doctor-patient.html">
+                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-riker.svg' %}" alt="Image of patient"></p>
+                    <div class="col2"><b>William Riker</b></div>
+                    <div class="col3">Male</div>
+                    <div class="col4">33yrs</div>
+                    <div class="col5">Married</div>
+                    <div class="col6">(455)888-3884</div>
+                </a>
+                <a class="row row-results bubble-style" href="doctor-patient.html">
+                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-nereys.svg' %}" alt="Image of patient"></p>
+                    <div class="col2"><b>Kira Nereys</b></div>
+                    <div class="col3">Female</div>
+                    <div class="col4">21yrs</div>
+                    <div class="col5">Single</div>
+                    <div class="col6">(455)888-3884</div>
+                </a>
+                <a class="row row-results bubble-style" href="doctor-patient.html">
+                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-bostick.svg' %}" alt="Image of patient"></p>
+                    <div class="col2"><b>Michael Bostick</b></div>
+                    <div class="col3">Male</div>
+                    <div class="col4">35yrs</div>
+                    <div class="col5">Single</div>
+                    <div class="col6">(455)888-3884</div>
+                </a>
+                <a class="row row-results bubble-style" href="doctor-patient.html">
+                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-nereys.svg' %}" alt="Image of patient"></p>
+                    <div class="col2"><b>Kira Nereys</b></div>
+                    <div class="col3">Female</div>
+                    <div class="col4">21yrs</div>
+                    <div class="col5">Single</div>
+                    <div class="col6">(455)888-3884</div>
+                </a>
+                <a class="row row-results bubble-style" href="doctor-patient.html">
+                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-nereys.svg' %}" alt="Image of patient"></p>
+                    <div class="col2"><b>Kira Nereys</b></div>
+                    <div class="col3">Female</div>
+                    <div class="col4">21yrs</div>
+                    <div class="col5">Single</div>
+                    <div class="col6">(455)888-3884</div>
+                </a>
+                <a class="row row-results bubble-style" href="doctor-patient.html">
+                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-nereys.svg' %}" alt="Image of patient"></p>
+                    <div class="col2"><b>Kira Nereys</b></div>
+                    <div class="col3">Female</div>
+                    <div class="col4">21yrs</div>
+                    <div class="col5">Single</div>
+                    <div class="col6">(455)888-3884</div>
+                </a>
+            </section>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
