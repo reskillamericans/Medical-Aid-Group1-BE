@@ -23,6 +23,7 @@ from aidApp import views as aid_app_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', aid_app_views.index, name = "homepage"),
+    path('about-us.html/', aid_app_views.about_us, name = "about-us"),
     path('aid/', include('aidApp.urls')),
     #path('faq/', include('faq.urls')),
 ]

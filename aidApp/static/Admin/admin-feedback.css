@@ -1,0 +1,295 @@
+/* Body Styling */
+:root {
+    --background: #f9f9f9;
+    --primaryText: #180126;
+    --secondaryText: #7e7a8f;
+    --tertiaryText: #c3c7d2;
+    --primaryColor: #3a5df8;
+    --secondaryColor: #f3ea12;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+      margin: 0;
+      padding:0;
+      color: var(--primaryText);
+      font-family: "Open Sans", sans-serif;
+  }
+  button {
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+  }
+  /* ˅ This is so all the content sections have the same border, color and are vertically centered */
+  .bubble-style{
+    border-radius: 20px;
+      background-color: var(--background);
+      border: 1px solid var(--tertiaryText);
+      align-items: center;
+      padding: 1rem;
+      margin: 1rem 0;
+  }
+  .bubble-style:hover {
+      background-color: #DAE4FF;
+  }
+  /* This controls the layout of the page and stacks everything for mobile view (mobile first)  */
+  .wrapper {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "sidebar"
+        "content";
+  }
+button.review-bubble {
+    width: 100%;
+}
+  /************************************ Section Styling ************************************/
+
+/********** Header and Nav Mobile View**********/
+header {
+    grid-area: header;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+  }
+  nav {
+    grid-area: sidebar;
+  }
+  .logo {
+    width: 60%;
+    margin: 0;
+  }
+  .hamburger {
+    display: block;
+    float: right;
+  }
+  button.hamburger {
+   padding: 0;
+   margin: 0;
+   background-color: transparent;
+   border: none;
+  }
+  nav a.activeLink{
+      color: var(--secondaryColor);
+  }
+  .nav-ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 70vh;
+    background-color: var(--primaryColor);
+    justify-content: center;
+    z-index: 10;
+  } 
+  .nav-ul a {
+    color: white;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  .nav-ul li {
+    padding: 20px;
+    list-style-type: none;
+  }
+  .nav-ul img {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .nav-ul.show {
+     display: flex;
+  }
+  .content-wrapper {
+      grid-area: content;
+      margin: 0 2rem;
+  }
+  .back img{
+      vertical-align: middle;
+  }
+  .back {
+      margin: 1rem 1rem 2rem;
+  }
+  .back a {
+      text-decoration: none;
+      color: #575368;
+  }
+  .back a:hover {
+      color: var(--primaryColor);
+  }
+  .reviews a {
+      text-decoration: none;
+  }
+/*****Feedback and Complaints*****/
+.reviews {
+    grid-area: reviews;
+    margin: 1rem 1rem 1rem 1rem;
+}
+.reviews .heading{
+  margin-bottom: 5px;
+}
+.review-bubble {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  margin: 10px 0;
+}
+.reviewer img {
+  vertical-align: middle;
+}
+.reviewer p{
+    margin-top: 1rem;
+}
+
+.review-bubble img {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.review-bubble .reviewer {
+  display: flex;
+  margin: 10px 0 5px 0;
+  align-items: stretch;
+  justify-content: center;
+}
+.quote {
+  padding: 5px 0;
+  margin: 0 10px;
+}
+img.stars {
+  align-self: center  ;
+  padding: 5px 0;
+}
+.action-btns {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.bubble-heading {
+  display: none;
+
+}
+
+
+  /************************Styling for Laptops and Small Screens 769px and up*****************************/
+@media only screen and (min-width: 769px) {
+ 
+    /* This creates a two column view and makes the sidebar navigation visible  */
+    .wrapper {
+      grid-template-columns: 275px  1fr;
+      grid-template-areas: 
+          "header  header"
+          "sidebar content";
+      margin-right: 2rem;
+    }
+    /***** Need this to make nav visible *****/
+    /***** Nav *****/
+    .logo {
+      width: 250px;
+    }
+   .nav-ul {
+     display: flex;
+     background-color: var(--primaryColor);
+     border-radius: 0 20px 0 0;
+     color: var(--background);
+     height: 100vh;
+     padding-top: 0;
+     position: sticky;
+     top: 0px;
+   }
+   
+   a.activeLink , nav a:hover {
+      color: var(--secondaryColor);
+    }
+  
+    .nav-ul li {
+      line-height: 50px;
+    }
+    .nav-ul img {
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+    
+    /* hides hamburger button */
+    .hamburger {
+      display: none;
+    }
+    /***** styling for content headings *****/
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+/************************Styling for Screens 770px and up*****************************/
+  @media only screen and (min-width: 770px) {
+    h1 {
+        font-size: 24px;
+        margin-bottom: 3rem;
+        margin-top: -2rem;
+    }
+
+  }
+
+  /************************Styling for Screens 1140px and up*****************************/
+  @media only screen and (min-width: 1140px) {
+      .reviews {
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+      }
+      .review-bubble {
+        display: grid;
+        grid-template-areas: 
+          "reviewer quote stars type";
+        grid-template-columns: 250px .75fr .5fr 150px;
+        text-align: left;
+        padding: .25rem 1rem;
+        justify-content: space-between;
+      }
+      .review-bubble .reviewer {
+        display: flex;
+        justify-content: start;
+      }
+     
+      .quote {
+        grid-area: quote;
+      }
+      .stars   {
+        grid-area: stars;
+      }
+      .type{
+        grid-area: type;
+      }
+      .action-btns {
+        margin-right: 0;
+        display: flex;
+        justify-content: end;
+      }
+      .bubble-heading {
+        display: grid;
+        grid-template-columns: 250px .75fr .5fr 150px ;
+        padding: 0;
+        margin-left: 30px;
+      }
+    
+  }
