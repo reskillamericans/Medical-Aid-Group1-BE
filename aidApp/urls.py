@@ -7,7 +7,9 @@ from .views import (
     doctor_search_view, 
     doctor_appointment_view, 
     support_view,
-    support_success_view
+    support_success_view,
+    doctor_schedule_view,
+    doctor_schedule_week_view,
 )
 
 urlpatterns = [
@@ -15,8 +17,11 @@ urlpatterns = [
     path('doctor-patient/', doctor_patient_view, name = "doctor-patient"),
     path('doctor-search/', doctor_search_view, name = "doctor-search"),
     path('doctor-appointment/', doctor_appointment_view, name = "doctor-appointment"),
-    path('support/', support_view, name = "support-view"),
+    path('doctor-schedule/', doctor_schedule_view, name = 'doctor-schedule'),
+    path('doctor-schedule-week/', doctor_schedule_week_view, name = "schedule-week"),
+    path('support/', support_view, name = "support"),
     path('support-success/', support_success_view, name = "support-success"),
-       
+    
+    
 ]
 

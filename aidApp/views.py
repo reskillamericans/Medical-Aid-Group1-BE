@@ -25,6 +25,14 @@ def doctor_search_view(request):
 def doctor_appointment_view(request):
     return render(request, 'aidApp/doctor/doctor-appointment.html')
 
+def doctor_schedule_view(request):
+    return render(request, 'aidApp/doctor/doctor-schedule.html')
+    
+def doctor_schedule_week_view(request):
+    return render(request, 'aidApp/doctor/doctor-schedule-week.html')
+
+
+
 @login_required
 def support_view(request):
     user = request.user.username

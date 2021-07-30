@@ -35,7 +35,7 @@
                         Profile</a>
                 </li>
                 <li>
-                    <a href="doctor-search.html" class="active-link">
+                    <a href="{% url 'doctor-search' %}" class="active-link">
                         <img src="{% static 'aidApp/images/doctor-dash/icon-active-patients.svg' %}" alt="patients icon">
                         Patients</a>
                 </li>
@@ -45,17 +45,17 @@
                         Consultations</a>
                 </li>
                 <li>
-                    <a href="doctor-schedule.html">
+                    <a href="{% url 'doctor-schedule' %}">
                         <img src="{% static 'aidApp/images/doctor-dash/schedule-icon.svg' %}" alt="calendar icon">
                         My Schedule</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'support' %}">
                         <img src="{% static 'aidApp/images/doctor-dash/contact-icon.svg' %}" alt="phone icon">
                         Contact Us / Support</a>
                 </li>
                 <li>
-                    <a href="../index.html">
+                    <a href="{% url 'homepage' %}">
                         <img src="{% static 'aidApp/images/admin-dash/logout_icon.svg' %}" alt="logout icon" />
                         Logout</a>
                 </li>
@@ -65,7 +65,7 @@
             <!--Page Title-->
             <div class="page-title">
                 <div class="back">
-                    <a href="/Doctor/doctor-dash.html"><img src="{% static 'aidApp/images/doctor-dash/icon-back-arrow.svg' %}">Back</a>
+                    <a href="{% url 'doctor-dash' %}"><img src="{% static 'aidApp/images/doctor-dash/icon-back-arrow.svg' %}">Back</a>
                 </div>
                 <h1>Patient Search</h1>
             </div>

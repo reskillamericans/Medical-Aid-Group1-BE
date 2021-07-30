@@ -46,12 +46,12 @@
                         Consultations</a>
                 </li>
                 <li>
-                    <a href="doctor-schedule.html" class="active-link">
+                    <a href="{% url 'doctor-schedule' %}" class="active-link">
                         <img src="{% static 'aidApp/images/doctor-dash/icon-active-schedule.svg' %}" alt="calendar icon">
                         My Schedule</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'support' %}">
                         <img src="{% static 'aidApp/images/doctor-dash/contact-icon.svg' %}" alt="phone icon">
                         Contact Us / Support</a>
                 </li>
@@ -65,7 +65,7 @@
         <!--Patient Appointment History-->
         <div class="page-title">
             <div class="back">
-                <a href="/Doctor/doctor-schedule.html">
+                <a href="{% url 'doctor-schedule'%}">
                     < Back</a>
             </div>
             <h1>Appointment Details</h1>
