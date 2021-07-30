@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from .models import Feedback, Patient, Health_Practitioner
 
 # Create your views here.
 def index(request):
@@ -22,7 +25,19 @@ def doctor_search_view(request):
 def doctor_appointment_view(request):
     return render(request, 'aidApp/doctor/doctor-appointment.html')
 
-def patient_support_view(request):
+@login_required
+def support_view(request):
+    user = request.user.username
+    currentuser = User.objects.get(username=user)
+    fullname = f"{currentuser.first_name} {currentuser.last_name}" 
+    email = currentuser.email
+
+
+    context = {
+        'fullname': fullname,
+        'email': email,
+    }
+    
     if request.method == "POST":
         if request.POST.get('fullname') and request.POST.get('message'):
             support = Feedback()
@@ -31,6 +46,14 @@ def patient_support_view(request):
             support.complaint = request.POST.get('complaint')
             support.message = request.POST.get('message')
             support.save()
-            return render(request, 'aidApp/patient/patient-support.html')            
+            return redirect('support-success')
+        else: 
+            messages.error(request, 'Message section can not be empty.  Submit unsuccessful.')
+            return render(request, 'aidApp/patient/patient-support.html', context) 
+
+
     else:
-        return render(request, 'aidApp/patient/patient-support.html')
+        return render(request, 'aidApp/patient/patient-support.html', context)
+
+def support_success_view(request):
+    return render(request, 'aidApp/patient/patient-support-feedback.html')

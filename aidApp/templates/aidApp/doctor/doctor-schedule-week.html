@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Schedule - Century Health</title>
+    <link rel="shortcut icon" href="/images/admin-dash/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Doctor/doctor-schedule-week.css">
+    <script src="/Doctor/doctor-dash.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="#"><img src="/images/admin-dash/logo_header.svg" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="/images/admin-dash/fi_menu.svg"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="doctor-dash.html">
+                        <img src="../images/doctor-dash/icon-inactive-dashboard.svg" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/doctor-dash/profile-icon.svg" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="doctor-search.html">
+                        <img src="../images/doctor-dash/patients-icon.svg" alt="patients icon">
+                        Patients</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/doctor-dash/consultations-icon.svg" alt="consultation icon">
+                        Consultations</a>
+                </li>
+                <li>
+                    <a href="doctor-schedule.html" class="active-link">
+                        <img src="../images/doctor-dash/icon-active-schedule.svg" alt="calendar icon">
+                        My Schedule</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/doctor-dash/contact-icon.svg" alt="phone icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <img src="../images/admin-dash/logout_icon.svg" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <!--Patient Appointment History-->
+        <div class="page-title">
+            <div class="back">
+                <a href="/Doctor/doctor-schedule.html">
+                    < Back</a>
+            </div>
+            <h1>Your Schedule</h1>
+        </div>
+        <section class="content">
+            <div class="cal-btns">
+                <div class="cal-1stbtns">
+                    <button class="cal-pink"><a href="#today">Today</a></button>
+                    <div class="dropdown">
+                        <button>May <img src="/images/doctor-dash/icon-down-arrow.svg" alt="down arrow"></button>
+                        <div class="dropdown-content">
+                            <ul class="months">
+                                <li><a href="#">April</a></li>
+                                <li><a href="#">March</a></li>
+                                <li><a href="#">February</a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#">January</a></li>
+                                <li><a href="#">December</a></li>
+                                <li><a href="#">November</a></li>
+                                <li><a href="#">October</a></li>
+                                <li><a href="#">September</a></li>
+                                <li><a href="#">August</a></li>
+                                <li><a href="#">July</a></li>
+                                <li><a href="#">June</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button>2021 <img src="/images/doctor-dash/icon-down-arrow.svg" alt="down arrow"></button>
+                        <div class="dropdown-content">
+                            <ul class="months">
+                                <li><a href="#">2020</a></li>
+                                <li><a href="#">2019</a></li>
+                                <li><a href="#">2018</a></li>
+                                <li><a href="#">2017</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="month-week">
+                    <form action="/Doctor/doctor-schedule-week.html">
+                        <input type="submit" value="Week" class="cal-view selected" />
+                    </form>
+                    <form action="/Doctor/doctor-schedule.html">
+                        <input type="submit" value="Month" class="cal-view" />
+                    </form>
+                </div>
+                <div class="space"></div>
+            </div>
+            <div class="calendar">
+                <div class="days-of-week">
+                    <p class=time-left>&nbsp;<br></p>
+                    <p class="sun">SUN <br><b>21</b></p>
+                    <p class="mon">MON <br><b>22</b></p>
+                    <p class="tue">TUE <br><b>23</b></p>
+                    <p class="wed">WED <br><b>24</b></p>
+                    <p class="thu">THU <br><b>25</b></p>
+                    <p class="fri">FRI <br><b>26</b></p>
+                    <p class="sat">SAT <br><b>27</b></p>
+                    <p class="time-right">&nbsp;<br></p>
+                </div>
+                <!-- 7am -->
+                <div class="hours-of-week">
+                    <p>7 AM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>7 AM<br></p>
+                </div>
+                <!-- 8am -->
+                <div class="hours-of-week">
+                    <p>8 AM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>8 AM<br></p>
+                </div>
+                <!-- 9am -->
+                <div class="hours-of-week">
+                    <p>9 AM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu current">9:00 AM <br>Michael Bostick</p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>9 AM<br></p>
+                </div>
+                <!-- 10am -->
+                <div class="hours-of-week">
+                    <p>10 AM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu current">10:00 AM <img src="/images/doctor-dash/icon-video.svg" alt=""> <br>Katherine
+                        Janeway <br>Virtual Visit</p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>10 AM<br></p>
+                </div>
+                <!-- 11am -->
+                <div class="hours-of-week">
+                    <p>11 AM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>11 AM<br></p>
+                </div>
+                <!-- 12pm -->
+                <div class="hours-of-week">
+                    <p>12 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu red"> 12:00 PM <br>Lunch</p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>12 PM<br></p>
+                </div>
+                <!-- 1pm -->
+                <div class="hours-of-week">
+                    <p>1 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu current">1:00 PM <br>Julian Bashir <br>Physical</p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>1 PM<br></p>
+                </div>
+                <!-- 2pm -->
+                <div class="hours-of-week">
+                    <p>2 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>2 PM<br></p>
+                </div>
+                <!-- 3pm -->
+                <div class="hours-of-week">
+                    <p>3 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>3 PM<br></p>
+                </div>
+                <!-- 4pm -->
+                <div class="hours-of-week">
+                    <p>4 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>4 PM<br></p>
+                </div>
+                <!-- 5pm -->
+                <div class="hours-of-week">
+                    <p>5 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>5 PM<br></p>
+                </div>
+                <!-- 6pm -->
+                <div class="hours-of-week">
+                    <p>6 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>6 PM<br></p>
+                </div>
+                <!-- 7pm -->
+                <div class="hours-of-week">
+                    <p>7 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>7 PM<br></p>
+                </div>
+                <!-- 8pm -->
+                <div class="hours-of-week">
+                    <p>12 PM<br></p>
+                    <p class="sun"> <br></p>
+                    <p class="mon"> <br></p>
+                    <p class="tue"> <br></p>
+                    <p class="wed"> <br></p>
+                    <p class="thu"> <br></p>
+                    <p class="fri"> <br></p>
+                    <p class="sat"> <br></p>
+                    <p>8 PM<br></p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
