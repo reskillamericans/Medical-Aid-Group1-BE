@@ -7,3 +7,4 @@
 	<li> <p>Run your server using the command "python manage.py runserver"</p> </li>
 </ol>
 # Medical-Aid-Group1-BE
+# Medical-Aid-Group1-BE
