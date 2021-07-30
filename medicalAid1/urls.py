@@ -21,5 +21,5 @@ from aidApp import views as aid_app_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', aid_app_views.index, name = "homepage"),
-    path('aid/', include('aidApp.urls'))
+    path('aid/', include('aidApp.urls')),
 ]
