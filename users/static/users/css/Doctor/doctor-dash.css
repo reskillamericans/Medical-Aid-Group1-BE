@@ -1,0 +1,451 @@
+/* Body Styling */
+:root {
+    --background: #f9f9f9;
+    --primaryText: #180126;
+    --secondaryText: #7e7a8f;
+    --tertiaryText: #c3c7d2;
+    --primaryColor: #3a5df8;
+    --secondaryColor: #f3ea12;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+      margin: 0;
+      padding:0;
+      color: var(--primaryText);
+      font-family: "Open Sans", sans-serif;
+  }
+  button {
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  /* ˅ This is so all the content sections have the same border, color and are vertically centered */
+  .bubble-style{
+    border-radius: 20px;
+      background-color: var(--background);
+      border: 1px solid var(--tertiaryText);
+      align-items: center;
+      margin: 1rem 0;
+  }
+  /* This controls the layout of the page and stacks everything for mobile view (mobile first)  */
+  .wrapper {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "sidebar"
+        "welcome"
+        "tests"
+        "rating"
+        "visits";
+  }
+  
+  /************************************ Section Styling ************************************/
+  
+  /********** Nav Mobile View**********/
+  header {
+    grid-area: header;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+  }
+  nav {
+    grid-area: sidebar;
+  }
+  .logo {
+    width: 60%;
+    margin: 0;
+  }
+  .hamburger {
+    display: block;
+    float: right;
+  }
+  button.hamburger {
+   padding: 0;
+   margin: 0;
+   background-color: transparent;
+   border: none;
+  }
+  
+  .nav-ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 70vh;
+    background-color: var(--primaryColor);
+    justify-content: center;
+    z-index: 10;
+  } 
+  .nav-ul a {
+    color: white;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  .nav-ul li {
+    padding: 20px;
+    list-style-type: none;
+  }
+  .nav-ul img {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .nav-ul.show {
+     display: flex;
+  }
+/***** Welcome Alerts *****/
+.welcome {
+    grid-area: welcome;
+    justify-content: space-between;
+    margin: 0 1rem 0rem 1rem;
+    padding: 2rem;
+}
+.welcome p,
+  .welcome h1 {
+    line-height: normal;
+  }
+  .welcomeAlerts span {
+    font-weight: 700;
+  }
+.userPic {
+  display: none;
+}
+button.appt-schedule, button.download {
+    border: none;
+    background-color: var(--secondaryColor);
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 4px;
+}
+button.appt-schedule {
+    width: 247px;
+    height: 40px;
+    margin-top: 20px;  
+}
+button.appt-schedule:hover, button.download:hover{
+    background-color: #EAEAEA;
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+}
+button.download {
+    width: 138px;
+    height: 40px;
+}
+/***** Tests *****/ 
+.tests{
+    grid-area: tests;
+    margin: 1rem;
+}
+.tests-bubble {
+  display: grid;
+  justify-content: left;
+  text-align: left;
+  grid-template-areas: 
+    "patient"
+    "test"
+    "results";
+  grid-template-columns: 1fr;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.patient-name {
+  grid-area: patient;
+}
+h3.patient-name {
+  margin: 0;
+}
+.test-type {
+  grid-area: test;
+  line-height: 1.5;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.test-bubble h3 {
+  text-align: left;
+}
+a.test-bubble {
+    color: var(--primaryColor);
+}
+/* styling for list and grid view buttons*/
+.view img {
+    width: 30px;
+  }
+
+  button.view {
+    width: 50px;
+    height: 34px;
+    border-radius: 40px;
+    border: 1px solid var(--tertiaryText);
+    background-color: var(--background);
+    margin-left: 5px;
+  }
+  /***** Ratings *****/ 
+  .rating {
+      grid-area: rating;
+      margin: 1rem;
+  }
+  .green-bubble {
+      background-color: #EAFAE5;
+      border-radius: 20px;
+      border: 1px solid var(--tertiaryText);
+      text-align: center;
+      padding: 1rem 0;
+  }
+.big-rating {
+    text-align: center;
+}
+p.large-rating {
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+.star-chart {
+    width: 80%;
+}
+/***** Visits *****/
+.visits {
+    grid-area: visits;
+    margin: 1rem 1rem 1rem 1rem;
+}
+.visits .heading{
+  margin-bottom: 5px;
+}
+.visit-bubble {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  margin: 10px 0;
+  padding: 1rem;
+}
+.visit-bubble p, .visit-bubble img {
+  vertical-align: middle;
+}
+.visit-bubble img {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.visit-bubble .patient {
+  display: flex;
+  margin: 10px 0 5px 0;
+  align-items: stretch;
+  justify-content: center;
+}
+.location {
+  padding: 5px 0;
+  margin: 0 10px;
+}
+/* hides visits heading in mobile view since blocks are stacked */
+.bubble-heading {
+  display: none;
+}
+  /* Styling for Headings */
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tests .heading {
+      margin-bottom: -20px;
+  }
+  .heading h2 {
+    width: 60%;
+  }
+  /* Styling for all buttons */
+  button.edit {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .view img {
+    width: 30px;
+  }
+  button.view {
+    width: 50px;
+    height: 34px;
+    border-radius: 40px;
+    border: 1px solid var(--tertiaryText);
+    background-color: var(--background);
+    margin-left: 5px;
+  }
+
+
+  /************************Styling for Laptops and Small Screens 769px and up*****************************/
+@media only screen and (min-width: 769px) {
+ 
+    /* This creates a two column view and makes the sidebar navigation visible  */
+    .wrapper {
+      grid-template-columns: 275px  1fr;
+      grid-template-areas: 
+          "header  header"
+          "sidebar welcome"
+          "sidebar tests"
+          "sidebar rating"
+          "sidebar visits";
+      margin-right: 2rem;
+    }
+    /***** Need this to make nav visible *****/
+    /***** Nav *****/
+    .logo {
+      width: 250px;
+    }
+   .nav-ul {
+     display: flex;
+     background-color: var(--primaryColor);
+     border-radius: 0 20px 0 0;
+     color: var(--background);
+     height: 100vh;
+     padding-top: 0;
+     position: sticky;
+     top: 0px;
+   }
+   
+    nav a:hover,
+    .activeLink {
+      color: var(--secondaryColor);
+    }
+    nav .activeLink {
+        color: var(--secondaryColor);
+    }
+  
+    .nav-ul li {
+      line-height: 50px;
+    }
+    .nav-ul img {
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+    
+    /* hides hamburger button */
+    .hamburger {
+      display: none;
+    }
+    /***** styling for content headings *****/
+    h2 {
+      font-size: 22px;
+    }
+  }
+  /************************Styling for Desktops and Large Screens 1083px Up*****************************/
+@media (min-width: 1083px) {
+    /* This creates a 3 column view  */
+      .wrapper {
+          grid-template-columns: 275px 1.5fr 1fr;
+          grid-template-areas: 
+              "header  header header"
+              "sidebar welcome welcome"
+              "sidebar tests rating"
+              "sidebar visits visits";
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      /***** Welcome *****/
+    .welcome {
+        display: flex;
+      }
+      .welcome h1 {
+        padding: 0;
+        margin: 0;
+      }
+      .userPic {
+        display: block;
+      }
+      #contactsPic {
+        width: 75px;
+      }
+      .welcome, .reviews {
+        margin: 0rem 2rem;
+      }
+      /**** Tests Styling Desktop View *****/
+    .tests {
+        margin: 1rem 2rem;
+      }
+      .tests-bubble {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 1fr;
+        grid-template-areas: 
+          "patient test results";
+        justify-content: space-evenly;
+      }
+    /* Rating Styling Desktop View*/
+    .rating {
+        margin: 1rem 2rem 1rem 1rem;
+      }
+    /***** Visits Styling Desktop View n*****/
+    .visits {
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+      }
+      .visit-bubble {
+        display: grid;
+        grid-template-areas: 
+          "patient location date buttons";
+        grid-template-columns: 300px 2.5fr 2fr 150px;
+        text-align: left;
+        padding: .25rem 1rem;
+        justify-content: center;
+      }
+      .visit-bubble .patient {
+        display: flex;
+        justify-content: start;
+      }
+     .patient {
+         grid-area: patient;
+     }
+      .location {
+        grid-area: location;
+      }
+      .date   {
+        grid-area: date;
+      }
+      .pdf-btns{
+        grid-area: buttons;
+        display: flex;
+        justify-content: end;
+      }
+    
+      .bubble-heading {
+        display: grid;
+        grid-template-columns: 300px 2.5fr 2fr 150px;
+        padding: 0;
+        justify-content: space-between;
+        margin-bottom: -20px;
+        margin-left: 25px;
+      }
+      .bubble-heading:first-child {
+          display: flex;
+          justify-content: start;
+      }
+      .bubble-heading:last-child {
+          display: flex;
+          justify-content: end;
+      }
+      .visits .heading {
+          margin-bottom: -1rem;
+      }
+    }
