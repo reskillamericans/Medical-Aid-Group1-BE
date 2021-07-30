@@ -6,3 +6,4 @@
 	<li><p>After Activating your virtual environment, run the command "pip install -r requirements.txt" to install all dependencies you need for the project</p> </li>
 	<li> <p>Run your server using the command "python manage.py runserver"</p> </li>
 </ol>
+# Medical-Aid-Group1-BE
