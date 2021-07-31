@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'aidApp/css/patient-support.css' %}">
+    <link rel="stylesheet" href="{% static 'aidApp/css/patient-support-feedback.css' %}">
     <script src="{% static 'aidApp/js/patient-profile.js' %}" defer></script>
 </head>
 
@@ -19,7 +19,7 @@
     <div class="wrapper">
         <!--Header-->
         <header><a href="{% url 'homepage' %}"><img src="{% static 'aidApp/images/patient-images/logo.svg' %}" class="logo"></a>
-            <button class="hamburger" id="hamburger"><img src="{% static 'aidApp/images/admin-dash/fi_menu.svg' %}"></button>
+            <button class="hamburger" id="hamburger"><img src="{% static 'doctor/images/admin-dash/fi_menu.svg' %}"></button>
         </header>
         <!--Navigation-->
         <nav>
@@ -59,34 +59,18 @@
         </nav>
         <main>
             <a class="back" href="patient-dash.html">< Back</a>
-            <h1 class="main-heading">Contact Support</h1>
-            {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            <form action="" method="POST">
-                {% csrf_token %}
-                <div>
-                <label for="fullname">Full Name </label><br>
-                <input id="fullname" type="text" name="fullname" value="{{fullname}}">
+            <section class="support">
+                <h1 class="main-heading">Contact Support</h1>
+                <p>Your message has been submitted and you will receive an email confirmation shortly.
+                    Feedback is reviewed within 48 hours.</p>
+                <div class="feedback">
+                    <img src="{% static 'aidApp/images/patient-support-feedback-img/support-feedback.svg' %}" alt="doctor holding phone">
+                    <div class="feedback-thanks">
+                        <h3>Thank you for your feedback!</h3>
+                        <p>Your feedback helps us improve the way we provide you with the medical resources you want the most.</p>
+                    </div>
                 </div>
-                <div><label for="email">Email</label><br>
-                <input id="email" type="email" name="email" value={{email}} >
-                </div>
-                <div><select id="complaint" name="complaint">
-                    <option value="Complaint">Complaint</option>
-                    <option value="Other">Other</option>
-                </select>
-                </div>
-                <div>
-                    <label for="message">Message (Max 200 characters)</label><br>
-                    <textarea id="message" name="message" rows="12" maxlength="200"></textarea>
-                </div>
-                    <button class="submit-btn">Submit</button>
-            </form>
+            </section>
         </main>
     </div>
 </body>

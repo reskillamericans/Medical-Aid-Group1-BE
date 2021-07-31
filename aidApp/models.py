@@ -37,7 +37,7 @@ class Patient(models.Model):
     telephone = models.CharField(max_length=20)
     D_O_B = models.DateField(default=date.today())
     registration_date = models.DateTimeField(auto_now_add=True) 
-    medical_history = models.TextField(blank=True, null=True)
+    # medical_history = models.TextField(blank=True, null=True)
                 
     def __str__(self):
         return self.patient.get_full_name() 
@@ -61,13 +61,16 @@ class Health_Practitioner(models.Model):
 
 class Feedback(models.Model):
 
-    patient = models.ForeignKey(Patient, null=True, on_delete=SET_NULL)
-    response_type = models.TextField(default='complaint',choices=(('complaint', 'complaint'), ('other', 'other')))
-    subject = models.CharField(max_length=100)
+    # patient = models.ForeignKey(Patient, null=True, on_delete=SET_NULL)
+    fullname = models.CharField(max_length=200)
+    email = models.EmailField(max_length=60)
+    response_type = models.CharField(max_length=50)
+    # response_type = models.TextField(default='complaint',choices=(('complaint', 'complaint'), ('other', 'other')))
+    # subject = models.CharField(max_length=100)
     message = models.TextField(max_length=400)
 
     def __str__(self):
-        return self.subject
+        return self.fullname
 
 
 class Pharmacy(models.Model):
