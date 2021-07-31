@@ -10,6 +10,8 @@ from .views import (
     support_success_view,
     doctor_schedule_view,
     doctor_schedule_week_view,
+    doctor_support_view,
+    doctor_support_success_view,
 )
 
 urlpatterns = [
@@ -19,6 +21,8 @@ urlpatterns = [
     path('doctor-appointment/', doctor_appointment_view, name = "doctor-appointment"),
     path('doctor-schedule/', doctor_schedule_view, name = 'doctor-schedule'),
     path('doctor-schedule-week/', doctor_schedule_week_view, name = "schedule-week"),
+    path('doctor-support/', doctor_support_view, name = "doctor-support"),
+    path('doctor-support-success/', doctor_support_success_view, name = "doctor-support-success"),
     path('support/', support_view, name = "support"),
     path('support-success/', support_success_view, name = "support-success"),
     
