@@ -33,10 +33,3 @@ class Pharmacy_Admin(admin.ModelAdmin):
     list_display = ('name', 'service_options', 'located_in', 'address', 'telephone', 'website')
 
 admin.site.register(Pharmacy, Pharmacy_Admin)
-
-# USERS ADMIN
-# UserAdmin.list_display = ('first_name', 'last_name', 'email', 'date_joined')#, 'is_active', 'date_joined', 'is_staff') 'groups'
-
-# admin.site.unregister(User)
-# admin.site.register(User, UserAdmin)
-# admin.site.unregister(Group)
