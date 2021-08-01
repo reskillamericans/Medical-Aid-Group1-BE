@@ -13,15 +13,14 @@ def index(request):
 def CreateContact(request):
     
     context = {}
-    submitted = False
-    
+        
     if request.method == 'POST':
          form = CreateContactForm(request.POST)
          if form.is_valid():
              
              subject = form.cleaned_data['subject']
-             message = form.cleaned_data['your_message']
-             sender = form.cleaned_data['your_email']
+             message = form.cleaned_data['comment']
+             sender = form.cleaned_data['email']
              
              administrators = []
              for admin in User.objects.filter(is_superuser=True):
@@ -35,11 +34,11 @@ def CreateContact(request):
                       connection=con            
              )
              form.save()
-             return HttpResponseRedirect('?submitted=True')
-         
+             messages.success(request, "Your message was submitted successfully! Thank you.")
+                     
          else:
              
-             return render(request,'aidApp/contact/contact.html',{'form': form, 'submitted': submitted})
+             return render(request,'aidApp/contact/contact.html',{'form': form})
  
     context = {'form': CreateContactForm()}
     return render(request, 'aidApp/contact/contact.html', context) 
