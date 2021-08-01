@@ -1,4 +1,4 @@
-from aidApp.models import Health_Practitioner, Appointment, Feedback, Contact, FAQ, Patient, Pharmacy ,Clinic  
+from aidApp.models import Health_Practitioner, Appointment, Feedback, Contact, FAQ, Patient, Pharmacy ,Clinic, Medical_History  
 from django.contrib import admin
 from .models import FAQ
 
@@ -10,3 +10,4 @@ admin.site.register(Health_Practitioner)
 admin.site.register(Clinic)
 admin.site.register(Pharmacy)
 admin.site.register(Appointment)
+admin.site.register(Medical_History)
