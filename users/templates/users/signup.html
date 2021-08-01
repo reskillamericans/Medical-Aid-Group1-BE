@@ -1,0 +1,124 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href= {% static 'users/css/signup.css' %} />
+    <title>Sign Up</title>
+    <link rel="icon" href= {% static 'users/images/logo/logoicon.svg' %} type="image/svg">
+  </head>
+  </head>
+  <body>
+      <header>
+      <!-- NAV BAR -->
+      <nav class ="navbar">
+      <div class="logo-div">
+        <img src= {% static 'users/images/logo/logoicon.svg' %} class="nav-logo" alt="logo image"/>
+            <span class="nav-logo-text">Century Health</span> 
+      </div>
+      <div class="nav-tabs">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="./Doctor/doctor-dash.html">Find a Doctor</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="login">
+        <ul>
+            <li ><a class ="login-nav" href="login.html">Log In</a></li>
+            <li><a class ="signup-nav">Sign Up</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="topnav">
+    <a href="index.html" class="active"><img src= {% static 'users/images/logo/logoicon.svg' %} /> <span class="nav-logo-text">Century Health</span></a>
+   
+    <!-- Navigation links (hidden by default) -->
+    <div id="myLinks">
+      <a href="index.html">Home</a>
+          <a href="about-us.html">About</a>
+          <a href="faq.html">FAQ</a>
+          <a href="./Doctor/doctor-dash.html">Find a Doctor</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="login.html">Log In</a>
+    </div>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</header>
+<!-- IMAGE CONTENT -->
+    <div class="content-div">
+        <div class="content-logo">
+            <div class="inner">
+            <img src= {% static 'users/images/logo/logoicon.svg' %} class="logo-img" alt="logo image"/>
+            <span class="content-span">Century Health</span>
+            <h2>Let's Get You Started</h2>
+            <img src= {% static 'users/images/login-img/login-img.png' %} class="content-img" alt="sign up image"/>
+        </div>
+    
+</div>
+    
+<!-- FORM -->
+          <div class="form">
+            <div class="info">
+            <form method = "POST">
+              {% csrf_token %}
+                <h1>Hello!</h1>
+                <h3>Let's Help You Create An Account</h3>
+              </div>
+            <label for="fullname"></label>
+            <input
+              type="fullname"
+              id="fullname"
+              name="fullname"
+              placeholder=" Full Name"
+            /><br />
+            <label for="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+            /><br />
+            <label for="password"></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+            /><br />
+            <label for="password"></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Confirm Password"
+            /><br />
+            <label class="checkbox">
+                <input type="checkbox" name="remember_me"> I agree to Century Health <a href="#">Terms of Service</a> and <br> <a href="#">Privacy Policy</a>
+              </label>
+                  </form>
+                  <br>
+          <button type="submit" class="signup-btn">Sign Up</button>
+          <h6>OR</h6>
+          <div class="social-div">
+              <button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/facebook(1).png' %} />Sign up with Facebook</button>
+              <button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/search.png' %} />Sign up with Google</button>
+          </div>
+        <p>Already a member? <a href={% url 'users:login' %}>Log In!</a></p>
+        </div>
+      </div>
+      <script src= {% static 'users/js/signup.js' %} /></script>
+  </body>
+</html>
+ {% endblock %}
