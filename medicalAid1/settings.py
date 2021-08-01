@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aidApp',
+    'users',
     'django.contrib.sites'
 ]
 SITE_ID = 1
