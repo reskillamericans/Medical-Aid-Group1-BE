@@ -55,8 +55,8 @@ def doctor_support_view(request):
             support.save()
             send_mail(
                 'Contact Support',
-                'Your message has been received.  If needed, someone will follow up with you shortly.  Thank you!',
-                'admin@example.com',
+                'Your message has been received.  If needed, someone will follow up with you shortly.  Thank you!',               
+                'admin@example.com'
                 [email],
                 fail_silently=False,
                 )
