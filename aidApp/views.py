@@ -56,7 +56,7 @@ def doctor_support_view(request):
             send_mail(
                 'Contact Support',
                 'Your message has been received.  If needed, someone will follow up with you shortly.  Thank you!',               
-                'admin@example.com'
+                'devops4zuri@gmail.com',
                 [email],
                 fail_silently=False,
                 )
@@ -96,7 +96,7 @@ def support_view(request):
             send_mail(
                 'Contact Support',
                 'Your message has been received.  If needed, someone will follow up with you shortly.  Thank you!',
-                'admin@example.com',
+                'devops4zuri@gmail.com',
                 [email],
                 fail_silently=False,
                 )
