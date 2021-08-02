@@ -33,8 +33,8 @@
     </div>
     <div class="login">
         <ul>
-            <li ><a class ="login-nav" href="login.html">Log In</a></li>
-            <li><a class ="signup-nav">Sign Up</a></li>
+            <li><a class ="login-nav" href= {% url 'users:login' %} >Log In</a></li>
+            <li><a class ={% url 'users:signup' %}>Sign Up</a></li>
         </ul>
     </div>
   </nav>
@@ -48,7 +48,7 @@
           <a href="faq.html">FAQ</a>
           <a href="./Doctor/doctor-dash.html">Find a Doctor</a>
           <a href="contact.html">Contact Us</a>
-          <a href="login.html">Log In</a>
+          <a href={% url 'users:login' %}>Log In</a>
     </div>
     <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -71,7 +71,7 @@
 <!-- FORM -->
           <div class="form">
             <div class="info">
-            <form method = "POST">
+            <form action = "signup" method = "POST">
               {% csrf_token %}
                 <h1>Hello!</h1>
                 <h3>Let's Help You Create An Account</h3>
@@ -81,7 +81,14 @@
               type="fullname"
               id="fullname"
               name="fullname"
-              placeholder=" Full Name"
+              placeholder="Full Name"
+            /><br />
+            <label for="username"></label>
+            <input
+              type="fullname"
+              id="username"
+              name="username"
+              placeholder="Username"
             /><br />
             <label for="email"></label>
             <input
@@ -93,27 +100,33 @@
             <label for="password"></label>
             <input
               type="password"
-              id="password"
-              name="password"
+              id="password1"
+              name="password1"
               placeholder="Password"
             /><br />
             <label for="password"></label>
             <input
               type="password"
-              id="password"
-              name="password"
+              id="password2"
+              name="password2"
               placeholder="Confirm Password"
             /><br />
             <label class="checkbox">
                 <input type="checkbox" name="remember_me"> I agree to Century Health <a href="#">Terms of Service</a> and <br> <a href="#">Privacy Policy</a>
-              </label>
-                  </form>
-                  <br>
+            </label>
+            <br />
           <button type="submit" class="signup-btn">Sign Up</button>
+            <br />
+        </form>
           <h6>OR</h6>
           <div class="social-div">
               <button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/facebook(1).png' %} />Sign up with Facebook</button>
               <button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/search.png' %} />Sign up with Google</button>
+          </div>
+          <div>
+          {% for message in messages %}
+          <h4> {{message}} </h4>
+          {% endfor %}
           </div>
         <p>Already a member? <a href={% url 'users:login' %}>Log In!</a></p>
         </div>
