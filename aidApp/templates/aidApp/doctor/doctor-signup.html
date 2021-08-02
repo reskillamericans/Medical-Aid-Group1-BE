@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="doctor-signup.css" />
+    <link rel="stylesheet" href="{% static 'aidApp/css/doctor-signup.css' %}" />
     <title>Doctor Sign Up</title>
-    <link rel="icon" href="../images/logo/logoicon.svg" type="image/svg">
+    <link rel="icon" href="{% static 'aidApp//images/logo/logoicon.svg' %}" type="image/svg">
   </head>
   </head>
   <body>
@@ -15,15 +17,15 @@
       <!-- NAV BAR -->
       <nav class ="navbar">
       <div class="logo-div">
-        <img src="../images/logo/logoicon.svg" class="nav-logo" alt="logo image"/>
+        <img src="{% static 'aidApp//images/logo/logoicon.svg' %}" class="nav-logo" alt="logo image"/>
             <span class="nav-logo-text">Century Health</span> 
       </div>
       <div class="nav-tabs">
         <ul>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
             <li><a href="../about-us.html">About</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="doctor-dash.html">Find a Doctor</a></li>
+            <li><a href="{% url 'doctor-dash' %}">Find a Doctor</a></li>
             <li><a href="../contact.html">Contact Us</a></li>
         </ul>
     </div>
@@ -35,14 +37,14 @@
     </div>
   </nav>
   <div class="topnav">
-    <a href="../index.html" class="active"><img src="../images/logo/logoicon.svg"> <span class="nav-logo-text">Century Health</span></a>
+    <a href="{% url 'homepage' %}" class="active"><img src="{% static 'aidApp//images/logo/logoicon.svg' %}"> <span class="nav-logo-text">Century Health</span></a>
    
     <!-- Navigation links (hidden by default) -->
     <div id="myLinks">
-      <a href="../index.html">Home</a>
+      <a href="{% url 'homepage' %}">Home</a>
           <a href="../about-us.html">About</a>
           <a href="../faq.html">FAQ</a>
-          <a href="doctor-dash.html">Find a Doctor</a>
+          <a href="{% url 'doctor-dash' %}">Find a Doctor</a>
           <a href="../contact.html">Contact Us</a>
           <a href="../login.html">Log In</a>
     </div>
@@ -55,7 +57,7 @@
 <div class="tab-switch">
     <div class="tab-wrapper">
     <ul>
-        <li class ="patient-tab"><a href="../signup.html">Patient</a></li>
+        <li class ="patient-tab"><a href="../login.html">Patient</a></li>
         <li class ="doc-tab"><a>Doctor</a></li>
     </ul>
 </div>
@@ -66,10 +68,10 @@
     <div class="content-div">
         <div class="content-logo">
             <div class="inner">
-            <img src="../images/logo/logoicon.svg" class="logo-img" alt="logo image"/>
+            <img src="{% static 'aidApp//images/logo/logoicon.svg' %}" class="logo-img" alt="logo image"/>
             <span class="content-span">Century Health</span>
             <h2>Let's Get You Started</h2>
-            <img src="../images/login img/login-img.png" class="content-img"alt="sign up image"/>
+            <img src="{% static 'aidApp/images/login img/login-img.png' %}" class="content-img"alt="sign up image"/>
         </div>
     
 </div>
@@ -77,6 +79,8 @@
 <!-- FORM -->
           <div class="form">
             <div class="info">
+            <form method = "POST">
+              {% csrf_token %}
                 <h1>Hello!</h1>
                 <h3>Let's Help You Create An Account</h3>
               </div>
@@ -124,12 +128,12 @@
           <button type="submit" class="signup-btn">Sign Up</button>
           <h6>OR</h6>
           <div class="social-div">
-              <a href="www.facebook.com"><button class="social-btn"> <img class="icon" src="../images/logo/facebookicon.svg">Sign up with Facebook</button></a>
-              <a href="www.google.com"></a><button class="social-btn"> <img class="icon" src="../images/logo/searchicon.svg">Sign up with Google</button>
+              <a href="www.facebook.com"><button class="social-btn"> <img class="icon" src="{% static 'aidApp/images/logo/facebookicon.svg' %}">Sign up with Facebook</button></a>
+              <a href="www.google.com"></a><button class="social-btn"> <img class="icon" src="{% static 'aidApp/images/logo/searchicon.svg' %}">Sign up with Google</button>
           </div>
         <p>Already a member? <a class="login-link" href="../login.html">Log In!</a></p>
         </div>
       </div>
-      <script src="./doctor-signup.js"></script>
+      <script src="{% static 'aidApp/js/doctor-signup.js' %}"></script>
   </body>
 </html>

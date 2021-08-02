@@ -70,6 +70,9 @@ def doctor_support_view(request):
 def doctor_support_success_view(request):
     return render(request, 'aidApp/doctor/doctor-support-feedback.html')
 
+def doctor_signup_view(request):
+    return render(request, 'aidApp/doctor/doctor-signup.html')
+
 
 
 @login_required
