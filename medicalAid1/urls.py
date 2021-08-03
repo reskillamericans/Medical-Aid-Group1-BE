@@ -27,7 +27,7 @@ from users import views as users_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
-    path('', aid_app_views.index, name = "homepage"),
+    path('', aid_app_views.index, name = "index"),
     path('aid/', include('aidApp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
