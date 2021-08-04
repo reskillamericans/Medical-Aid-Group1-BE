@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.mail import BadHeaderError, send_mail
 from .models import Feedback, Patient, Health_Practitioner
+import datetime
 
 # Create your views here.
 def index(request):
@@ -21,7 +22,14 @@ def doctor_patient_view(request):
     return render(request, 'aidApp/doctor/doctor-patient.html')
 
 def doctor_search_view(request):
-    return render(request, 'aidApp/doctor/doctor-search.html')
+    # input and then filter
+    patients = Patient.objects.all()
+
+    context = {
+        'patients': patients,
+        
+    }
+    return render(request, 'aidApp/doctor/doctor-search.html', context)
 
 def doctor_appointment_view(request):
     return render(request, 'aidApp/doctor/doctor-appointment.html')

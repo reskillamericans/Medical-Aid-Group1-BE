@@ -85,9 +85,19 @@
                     <div class="col3">Sex</div>
                     <div class="col4">Age</div>
                     <div class="col5">Status</div>
-                    <div class="col6">Phone</div>
+                    <div class="col6">Phone</div>              
                 </div>
-                <a class="row row-results bubble-style" href="doctor-patient.html">
+                {% for patient in patients %}
+                    <a class="row row-results bubble-style" href="doctor-patient.html">
+                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-riker.svg' %}" alt="Image of patient"></p>
+                    <div class="col2"><b>{{patient.patient.first_name}} {{patient.patient.last_name}}</b></div>
+                    <div class="col3">{{patient.sex}}</div>
+                    <div class="col4">{{patient.age}}</div>
+                    <div class="col5">{{patient.marital_status}}</div>
+                    <div class="col6">{{patient.telephone}}</div>
+                    </a>
+                {% endfor %}
+                <!-- <a class="row row-results bubble-style" href="doctor-patient.html">
                     <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-riker.svg' %}" alt="Image of patient"></p>
                     <div class="col2"><b>William Riker</b></div>
                     <div class="col3">Male</div>
@@ -134,7 +144,7 @@
                     <div class="col4">21yrs</div>
                     <div class="col5">Single</div>
                     <div class="col6">(455)888-3884</div>
-                </a>
+                </a> -->
             </section>
         </div>
 
