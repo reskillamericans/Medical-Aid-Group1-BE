@@ -238,38 +238,33 @@ h6{
   display: none;
 }
 
+
 .tab-switch {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: center;
 }
 
 .tab-wrapper ul {
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding-left: 0px;
-    margin-right: 103px;
-    border: 1.5px solid #c3c7d2;
-    border-radius: 7px;
-}
+  margin-bottom: 0px;
+  padding-left: 0px;
+  }
 
-.tab-wrapper li {
-display: flex;
-}
+/* .patient-tab, .doc-tab {
+  border: 1.5px solid #c3c7d2;
+  border-radius: 7px;
+} */
 
-.patient-tab {
+
+/* .patient-tab {
     border-bottom: 1.5px solid #c3c7d2;
-}
+} */
 
-.doc-tab {
+/* .doc-tab {
     background-color: #c3c7d2;
-}
+} */
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
-    .tab-wrapper ul {
-        margin-right: 36px;
-    }
-
-    .logo-img {
+     .logo-img {
       padding-left: 0;
     }
 }
@@ -281,10 +276,6 @@ display: flex;
         position: relative;
       }
     
-      /* h6 {
-        padding: 0;
-      }  */
-
       #deleted-br {
         display: none;
       }
@@ -333,17 +324,6 @@ display: flex;
       div.content-logo {
         display: none;
       }
-
-    .tab-wrapper ul {
-        margin-right: 0;
-        border: 1.5px solid #c3c7d2;
-        border-radius: 7px;
-        padding-right: 0;
-    }
-    .tab-wrapper li {
-    border-bottom: 1.5px solid #c3c7d2;
-    display: flex;
-    }
   }
 
 
@@ -410,7 +390,7 @@ align-items: center;
   .form {
     text-align: center;  }
 
-    input[type="fullname"],
+input[type="fullname"],
 input[type="email"],
 input[type="license"],
 input[type="password"] {
@@ -464,15 +444,5 @@ h2 {
 p {
   text-align: center;
  }
-
- .tab-wrapper ul {
-    margin-right: 0;
-    border: 1.5px solid #c3c7d2;
-    border-radius: 7px;
-}
-.tab-wrapper li {
-border-bottom: 1.5px solid #c3c7d2;
-display: flex;
-}
 
 }

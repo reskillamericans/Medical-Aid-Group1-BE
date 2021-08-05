@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor-Profile</title>
+    <link rel="shortcut icon" href="/images/admin-dash/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="\Doctor\doctor-profile.css">
+    <script src="/Doctor/doctor-dash.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="#"><img src="/images/admin-dash/logo_header.svg" class="logo"></a>                    
+            <button class="hamburger" id="hamburger"><img src="/images/admin-dash/fi_menu.svg"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="doctor-dash.html" class="activeLink">
+                        <img src="/images/admin-dash/dashboard_icon.svg" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/doctor-dash/profile-icon.svg" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/doctor-dash/patients-icon.svg" alt="patients icon">
+                        Patients</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/doctor-dash/consultations-icon.svg" alt="consultation icon">
+                        Consultations</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/doctor-dash/schedule-icon.svg" alt="calendar icon">
+                        My Schedule</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/doctor-dash/contact-icon.svg" alt="phone icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <img src="/images/admin-dash/logout_icon.svg" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Profile
+        <section class="profile">
+            <div class="heading">
+                 <h1>Profile</h1>   
+            </div>
+            <div class="profile-container bubble-style">
+                <img src="/images/doctor-dash/crusher.svg" alt="image of current user" class="userPic" />
+                <div class="dr">
+                    <h2>Dr. Beverly Crusher, MD</h2>
+                    <h3>Internal Medicine</h3>
+                    <h3>Pediatrics</h3>
+                </div>                             
+                <div class="hospital">
+                    <h2>Cleveland General Hospital</h2>
+                    <h3>Pat#4658265894</h3>
+                </div>
+                <div class="approval">
+                    <img src="\images\doctor-profile\approval.svg" alt="image of approval" class="ratingPic" />
+                    <p>Approval Rating</p>
+                </div> 
+            </div>
+        </section>
+        <section class="details">
+            <div class="info">
+                <div class="heading">
+                    <h1>Details</h1>
+                </div>
+                <div class="specialty">
+                    <h3>Specialty</h3>
+                    <p>Internal Medicine and Pediatrics</p>
+                </div>
+                <div class="languages">
+                    <h3>Languages</h3>
+                    <p>English and Spanish</p>
+                </div> <div class="location">
+                    <h3>Location</h3>
+                    <p>Cleveland General Hospital</p>
+                </div> <div class="new-patients">
+                    <h3>Accepting New Patients</h3>
+                    <p>Yes</p>
+                </div> <div class="insurance">
+                    <h3>Insurance Accepted</h3>
+                    <p>Blue Cross, Cigna, and Shield</p>
+                </div>
+        </section> -->
+        <section class="profile bubble-style">
+            <div class="profile">
+                <img src="/images/doctor-dash/crusher.svg" alt="image of current user" class="userPic" />
+                <div class="current-user">
+                    <h1>Dr. Crusher, MD</h1>
+                </div>
+                <div class="info">
+                    <div class="specialty">
+                        <h3>Specialty</h3>
+                        <p>Internal Medicine and Pediatrics</p>
+                    </div>
+                    <div class="languages">
+                        <h3>Languages</h3>
+                        <p>English and Spanish</p>
+                    </div> <div class="location">
+                        <h3>Location</h3>
+                        <p>Cleveland General Hospital</p>
+                    </div> <div class="new-patients">
+                        <h3>Accepting New Patients</h3>
+                        <p>Yes</p>
+                    </div> <div class="insurance">
+                        <h3>Insurance Accepted</h3>
+                        <p>Blue Cross, Cigna, and Shield</p>
+                    </div>
+                    <div class="big-rating">
+                        <h1>4.6</h1>
+                        <img src="/images/doctor-dash/stars.svg" alt="star rating">
+                        <p><b>34 </b>Reviews</p>
+                        <p><b>30 </b>Patients Comments</p>
+                    </div>
+                </div>                    
+            </div>         
+        </section>
+
+        <!-- Contact and Locations  -->
+        <section class="contact">
+            <div class="heading">
+                <h2>Contact and Locations</h2>              
+            </div>
+            <div class="locations bubble-style">
+                <h3>Monday,Wednesday,Friday</h3>
+                <p>Cleveland General Hospital</p>
+                <p>4517 Washington Ave.</p>
+                <p>Manchester,Kentucky 39495</p>
+                <p>(745)356-3456</p>
+                <h3>Tuesday, Thursday</h3>
+                <p>Corner Health Center</p>
+                <p>4517 Washington Ave.</p>
+                <p>Manchester,Kentucky 39495</p>
+                <p>(455)888-3884</p>
+            </div>                
+        </section>
+        <!-- Map -->
+        <section class="map">
+            <img src="\images\doctor-profile\map.svg">
+        </section>
+        <!-- Update -->
+        <section class="update">
+            <button class="update bubble-style">Update Profile</button>
+        </section>
+</body>
+</html>
