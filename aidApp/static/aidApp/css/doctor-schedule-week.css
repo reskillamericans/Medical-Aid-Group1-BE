@@ -1,0 +1,499 @@
+/* Body Styling */
+:root {
+    --background: #f9f9f9;
+    --primaryText: #180126;
+    --secondaryText: #7e7a8f;
+    --tertiaryText: #c3c7d2;
+    --primaryColor: #3a5df8;
+    --secondaryColor: #f3ea12;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+      margin: 0;
+      padding:0;
+      color: var(--primaryText);
+      font-family: "Open Sans", sans-serif;
+  }
+  
+  .download-btn,
+  .schedule-btn {
+      background: var(--secondaryColor);
+      color: var(--primaryText);
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 50px;
+      width: 243px;
+  }
+  
+  .download-btn:hover,
+  .schedule-btn:hover {
+      background-color: var(--background);
+      border: 1px solid var(--primaryColor);
+      color: var(--primaryColor);
+  }
+  button {
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  /* ˅ This is so all the content sections have the same border, color and are vertically centered */
+  .bubble-style{
+    border-radius: 20px;
+      background-color: var(--background);
+      border: 1px solid var(--tertiaryText);
+      align-items: center;
+  }
+  /* This controls the layout of the page and stacks everything for mobile view (mobile first)  */
+  .wrapper {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "sidebar"
+        "title"
+        "content";
+  }
+
+  /************************************ Section Styling ************************************/
+  
+  /********** Nav Mobile View**********/
+  header {
+    grid-area: header;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+  }
+  nav {
+    grid-area: sidebar;
+  }
+  .logo {
+    width: 60%;
+    margin: 0;
+  }
+  .hamburger {
+    display: block;
+    float: right;
+  }
+  button.hamburger {
+   padding: 0;
+   margin: 0;
+   background-color: transparent;
+   border: none;
+  }
+  
+  .nav-ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 70vh;
+    background-color: var(--primaryColor);
+    justify-content: center;
+    z-index: 10;
+  } 
+  .nav-ul a {
+    color: white;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  .nav-ul li {
+    padding: 20px;
+    list-style-type: none;
+  }
+  .nav-ul img {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .nav-ul.show {
+     display: flex;
+  }
+  .active-link {
+      color: var(--secondaryColor) !important;
+  }
+  /***** Title of Page and Back Button *****/
+  .page-title {
+    grid-area: title;
+    margin-left: 1rem;
+    margin-bottom: 0;
+  }
+  .page-title h1 {
+    text-align: center;
+  }
+  .page-title a, .appointments a {
+    color: var(--primaryColor);
+    text-decoration: none;
+  }
+  .page-title a:hover, .appointments a:hover{
+    color: var(--secondaryColor);
+  }
+  .page-title img {
+    vertical-align: middle;
+  }
+  
+  /* Styling for Headings */
+  .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -20px;
+  }
+  .heading h2 {
+    width: 60%;
+  }
+  .content {
+      grid-area: content;
+      margin: 1rem;
+      text-align: center;
+  }
+  .content img {
+      max-width: 100%;
+      height: auto;
+      padding: 0;
+  }
+  /************************Styling for Laptops and Small Screens 769px and up*****************************/
+  @media only screen and (min-width: 769px) {
+   
+    /* This creates a two column view and makes the sidebar navigation visible  */
+    .wrapper {
+      grid-template-columns: 275px  1fr;
+      grid-template-areas: 
+          "header  header"
+          "sidebar title"
+          "sidebar content";
+      margin-right: 2rem;
+    }
+  
+    /***** Need this to make nav visible *****/
+    /***** Nav *****/
+    .logo {
+      width: 250px;
+    }
+   .nav-ul {
+     display: flex;
+     background-color: var(--primaryColor);
+     border-radius: 0 20px 0 0;
+     color: var(--background);
+     height: 100vh;
+     padding-top: 0;
+     position: sticky;
+     top: 0px;
+   }
+   
+    nav a:hover,
+    .activeLink {
+      color: var(--secondaryColor);
+    }
+  
+    .nav-ul li {
+      line-height: 50px;
+    }
+    .nav-ul img {
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+    
+    /* hides hamburger button */
+    .hamburger {
+      display: none;
+    }
+    /***** styling for content headings *****/
+    h2 {
+      font-size: 22px;
+    }
+      .med-info-detail{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+      }
+    
+ 
+  }
+
+  
+  /************************Styling for Desktops and Large Screens 1200px Up*****************************/
+  @media (min-width: 1200px) {
+    /* This creates a 3 column view  */
+      .wrapper {
+          grid-template-columns: 275px 1fr 1fr;
+          grid-template-areas: 
+              "header  header header"
+              "sidebar title title"
+              "sidebar content content";
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 20px;
+          padding-bottom: 20px;
+      }
+      .heading h2 {
+        width: auto;
+      }
+   
+  }
+
+  /* Calendar Styling */  
+.content {
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    color: var(--secondaryText);
+    border: 1px solid #C3C7D2; 
+    padding: 20px 20px 20px 0px;
+}
+
+h2 {
+    text-align: left;
+    padding-left: 40px;
+}
+.month-week {
+  display: flex;
+  justify-content: center;
+}
+input.cal-view  {
+  margin-right: 5px;
+}
+.cal-btns {
+  display: flex;
+  justify-content: left;
+  margin-left: 40px;
+}
+.cal-pink {
+  background-color: rgba(253, 234, 236, 1);
+  border: none;
+  border-radius: 8px;
+  width: 60px;
+  height: 28px;
+  color: var(--secondaryText);
+}
+.cal-pink a{
+  text-decoration: none;
+  font-size: 14px;
+  color: #71717A;
+}
+.cal-pink:hover{
+  background-color: #DC2626;
+}
+.cal-pink:hover > *{
+  color: white;
+}
+.cal-btns {
+  display: flex;
+  justify-content: space-between;
+}
+.space {
+  width: 300px;
+}
+
+.cal-view {
+  background-color: #EFEFF0;
+  border: none;
+  border-radius: 8px;
+  width: 76px;
+  height: 28px;
+}
+.selected {
+  color: white;
+  background-color: #DC2626;
+}
+.cal-view:hover {
+  background-color: #DC2626;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+.dropdown img {
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+}
+.dropdown button{
+  width: 86px;
+  height: 28px;
+  background-color: rgba(239, 239, 240, 1);
+  border: none;
+  border-radius: 8px;
+  color: #71717A;
+}
+.months {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.months li {
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+.months li a {
+  text-decoration: none;
+  color: #71717A;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.months li a:hover {
+  color: #DC2626;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 86px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.highlight {
+  background-color: rgba(255, 228, 230, 0.7);
+}
+.highlight a, .highlight2 a {
+  text-decoration: none;
+  color: var(--secondaryText);
+  cursor: pointer;
+  font-size: 12px;
+}
+.highlight2 {
+  background-color: rgba(239, 246, 255, 1);
+}
+
+/* Calendar Week Styling */
+.calendar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.days-of-week, .hours-of-week {
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 50px;
+  text-align: left;
+}
+.days-of-week p {
+  font-size: 9px;
+  font-weight: 700;
+  border-right: 1px solid #c3c7d2;
+  border-bottom: 1px solid #c3c7d2;
+  margin-bottom: 0;
+  padding-left: 7px;
+  padding-bottom: 10px;
+}
+.days-of-week p:last-child, .days-of-week p:first-child{
+  border: none;
+}
+.days-of-week p:nth-child(8) {
+  border-right: none;
+}
+.days-of-week b {
+  font-size: 16px;
+}
+.hours-of-week p {
+  font-size: 10px;
+  margin:0;
+}
+.hours-of-week {
+  margin-top: 0px;
+}
+.hours-of-week p{
+  border-right: 1px solid #C3C7D2;
+  border-bottom: 1px solid #C3C7D2;
+  height: 60px;
+}
+.hours-of-week p:first-child, .hours-of-week p:last-child {
+  border: none;
+}
+.hours-of-week p:last-child {
+  margin-left: 20px;
+}
+.hours-of-week p:nth-child(8) {
+  border-right: none;
+}
+.hours-of-week p:nth-child(6), .days-of-week p:nth-child(6) {
+  background-color: #EFF6FF;
+}
+p.thu {
+  padding-left: 7px;
+  padding-top: 5px;
+}
+.hours-of-week p.current{
+  background-color: rgba(14, 165, 233, 0.1);
+  color: #0369A1;
+  border-left: 5px solid #0369A1;
+}
+.hours-of-week p.current:hover, .hours-of-week p.red:hover{
+  background-color: rgba(14, 165, 233, 0.35);
+}
+.hours-of-week p.red{
+  color: #DC2626;
+  border-left: 5px solid #DC2626;
+}
+p.current img {
+  vertical-align: top;
+}
+/* Calendar Responsive Styling */
+@media (max-width: 1200px) {
+  .sun, .mon, .tue, .sat {
+    display: none;
+  }
+  .days-of-week, .hours-of-week {
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 1fr 50px;
+    text-align: left;
+  }
+  .space {
+    display: none;
+  }
+  .cal-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  p.fri {
+    border-right: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .space {
+    display: none;
+  }
+  .cal-btns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  p.fri {
+    border-right: none;
+  }
+}
