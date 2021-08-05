@@ -18,6 +18,9 @@ def doctor_dash_view(request):
     }
     return render(request, 'aidApp/doctor/doctor-dash.html', context)
 
+def doctor_profile_view(request):
+    return render(request, 'aidApp/doctor/doctor-profile.html')
+
 def doctor_patient_view(request):
     return render(request, 'aidApp/doctor/doctor-patient.html')
 
