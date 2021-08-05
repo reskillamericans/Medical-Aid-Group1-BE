@@ -26,7 +26,6 @@ def doctor_search_view(request):
     if request.method == "POST":
         search = request.POST.get('search')
         patients =Patient.objects.filter(patient__first_name__icontains=search)
-        print(patients)
     else:
         patients = Patient.objects.all()
 
