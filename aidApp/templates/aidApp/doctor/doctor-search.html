@@ -30,7 +30,7 @@
                         Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'doctor-profile' %}">
                         <img src="{% static 'aidApp/images/doctor-dash/profile-icon.svg' %}" alt="profile icon">
                         Profile</a>
                 </li>
@@ -100,54 +100,7 @@
                     <div class="col6">{{patient.telephone}}</div>
                     </a>
                 {% endfor %}
-                <!-- <a class="row row-results bubble-style" href="doctor-patient.html">
-                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-riker.svg' %}" alt="Image of patient"></p>
-                    <div class="col2"><b>William Riker</b></div>
-                    <div class="col3">Male</div>
-                    <div class="col4">33yrs</div>
-                    <div class="col5">Married</div>
-                    <div class="col6">(455)888-3884</div>
-                </a>
-                <a class="row row-results bubble-style" href="doctor-patient.html">
-                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-nereys.svg' %}" alt="Image of patient"></p>
-                    <div class="col2"><b>Kira Nereys</b></div>
-                    <div class="col3">Female</div>
-                    <div class="col4">21yrs</div>
-                    <div class="col5">Single</div>
-                    <div class="col6">(455)888-3884</div>
-                </a>
-                <a class="row row-results bubble-style" href="doctor-patient.html">
-                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-bostick.svg' %}" alt="Image of patient"></p>
-                    <div class="col2"><b>Michael Bostick</b></div>
-                    <div class="col3">Male</div>
-                    <div class="col4">35yrs</div>
-                    <div class="col5">Single</div>
-                    <div class="col6">(455)888-3884</div>
-                </a>
-                <a class="row row-results bubble-style" href="doctor-patient.html">
-                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-nereys.svg' %}" alt="Image of patient"></p>
-                    <div class="col2"><b>Kira Nereys</b></div>
-                    <div class="col3">Female</div>
-                    <div class="col4">21yrs</div>
-                    <div class="col5">Single</div>
-                    <div class="col6">(455)888-3884</div>
-                </a>
-                <a class="row row-results bubble-style" href="doctor-patient.html">
-                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-nereys.svg' %}" alt="Image of patient"></p>
-                    <div class="col2"><b>Kira Nereys</b></div>
-                    <div class="col3">Female</div>
-                    <div class="col4">21yrs</div>
-                    <div class="col5">Single</div>
-                    <div class="col6">(455)888-3884</div>
-                </a>
-                <a class="row row-results bubble-style" href="doctor-patient.html">
-                    <p><img class="col1" src="{% static 'aidApp/images/doctor-dash/patient-nereys.svg' %}" alt="Image of patient"></p>
-                    <div class="col2"><b>Kira Nereys</b></div>
-                    <div class="col3">Female</div>
-                    <div class="col4">21yrs</div>
-                    <div class="col5">Single</div>
-                    <div class="col6">(455)888-3884</div>
-                </a> -->
+                
             </section>
         </div>
 
