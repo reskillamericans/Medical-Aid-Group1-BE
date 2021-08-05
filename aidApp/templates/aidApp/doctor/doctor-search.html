@@ -18,7 +18,7 @@
 <body>
     <div class="wrapper">
         <!--Header-->
-        <header><a href="{% url 'homepage' %}"><img src="{% static 'aidApp/images/admin-dash/logo_header.svg' %}" class="logo"></a>
+        <header><a href="{% url 'index' %}"><img src="{% static 'aidApp/images/admin-dash/logo_header.svg' %}" class="logo"></a>
             <button class="hamburger" id="hamburger"><img src="{% static 'aidApp/images/admin-dash/fi_menu.svg' %}"></button>
         </header>
         <!--Navigation-->
@@ -55,7 +55,7 @@
                         Contact Us / Support</a>
                 </li>
                 <li>
-                    <a href="{% url 'homepage' %}">
+                    <a href="{% url 'index' %}">
                         <img src="{% static 'aidApp/images/admin-dash/logout_icon.svg' %}" alt="logout icon" />
                         Logout</a>
                 </li>
@@ -70,13 +70,16 @@
                 <h1>Patient Search</h1>
             </div>
             <!-- Patient Search Form -->
-            <div class="search">
+            <form action="" method="POST">
+            {% csrf_token %}
+              <div class="search">
                 <h2>Patient Name</h2>
                 <div class="search-box">
                     <input id="search" type="text" name="search" placeholder="">
                     <button class="search-btn">Search</button>
                 </div>
-            </div>
+              </div>
+            </form>
             <!-- Results -->
             <section class="search-results">
                 <div class="row row-heading">

@@ -23,7 +23,12 @@ def doctor_patient_view(request):
 
 def doctor_search_view(request):
     # input and then filter
-    patients = Patient.objects.all()
+    if request.method == "POST":
+        search = request.POST.get('search')
+        patients =Patient.objects.filter(patient__first_name__icontains=search)
+        print(patients)
+    else:
+        patients = Patient.objects.all()
 
     context = {
         'patients': patients,
