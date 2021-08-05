@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aidApp',
     'users',
-    'django.contrib.sites'
+    'django.contrib.sites',
+    'phone_field',
 ]
 SITE_ID = 1
 

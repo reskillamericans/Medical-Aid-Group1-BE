@@ -1,10 +1,12 @@
 from django.db import models
 from datetime import date, time
+from django.utils import timezone
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE, SET, SET_NULL
 from django.db.models.fields.related import ForeignKey, OneToOneField
 from django.forms import widgets
 import datetime
+from phone_field import PhoneField
 
 class FAQ(models.Model):
 
@@ -34,15 +36,17 @@ class Contact(models.Model):
 class Patient(models.Model):
     
     patient = models.OneToOneField(User, on_delete=models.CASCADE)
-    telephone = models.CharField(max_length=20)
-    D_O_B = models.DateField(default=date.today())
-    age = models.CharField(max_length=5)
+    telephone = PhoneField(blank=True, help_text='Patient phone number')
+    D_O_B = models.DateField(default=timezone.now())
+    # age = models.CharField(max_length=5)
     registration_date = models.DateTimeField(auto_now_add=True)
     sex = models.CharField(max_length=20)
     marital_status = models.CharField(max_length=50) 
     # medical_history = models.TextField(blank=True, null=True)
+    @property
+    def age(self):
+        return timezone.now().year - self.D_O_B.year
     
-                
     def __str__(self):
         return self.patient.get_full_name() 
 
@@ -116,7 +120,7 @@ class Appointment(models.Model):
        
     health_practitioner = models.ForeignKey(Health_Practitioner, null=True, on_delete=models.CASCADE) 
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    app_date = models.DateField(default=date.today())
+    app_date = models.DateField(default=timezone.now())
     app_time = models.TimeField(default=time(hour=9, minute=00))
     app_status = models.CharField(blank=True, max_length=10)
     
