@@ -6,13 +6,13 @@ from .views import (
     doctor_patient_view, 
     doctor_search_view, 
     doctor_appointment_view, 
-    support_view,
-    support_success_view,
     doctor_schedule_view,
     doctor_schedule_week_view,
     doctor_support_view,
     doctor_support_success_view,
     doctor_signup_view,
+    support_view,
+    support_success_view,
 )
 
 urlpatterns = [
