@@ -13,333 +13,189 @@
 }
 
 body {
-    background: var(-white);
-    box-sizing: content-box;
-    overflow-x: hidden;
+    background-color: var(--white);
     font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: var(--black);
     margin: 0;
+    padding: 0;
+  }
+header {
+    margin: 0;
+    padding: 0;
 }
-
-/* NAVBAR */
-.logo-div img {
-    width: 9em;
-  }
-  
-  .navbar-brand img {
-      vertical-align: top;
-      width: 16%;
-  }
-
-  .nav-logo-text {
-      color: var(--lightblue);
-      font-weight: bold;
-      display: inline;
-  }
-  
-  .navbar {
+/* NAVBAR Desktop View */
+.navbar {
     display: flex;
     justify-content: space-around;
-    padding: 0em .4em 0em;
+    padding: 0em .4em 5px;
     align-items: center;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--white);
-    
-  }
-  
+    font-size: 15px;
+   }
   .navbar a {
-    text-decoration: none;
-     font-weight: 600;
-     color: #180126;
-    
-  }
-  
-  .navbar li:hover {
-   
-   border-radius: 4px;
-   background-color: var(--yellow);
-    
-  }
-  
-  .navbar li:visited {
+      text-decoration: none;
+      font-weight: 600;
+      color: #180126;
+    }
+  .navbar a:visited {
     color: #180126;
   }
-  
-  .active:hover{
-    background-color: #f9f9f9;
+  .active img {
+    vertical-align: bottom;
   }
-  
-  
+  .navbar li {
+      display: inline-block;
+      padding: 8px 12px; 
+  }
+  .navbar li:hover, .active-link {
+      background-color: #f3ea12;
+      border-radius: 4px;    
+  }
+  a.active-hamburger {
+      color:#457aff !important;
+  }
+  .nav-logo {
+    vertical-align: middle;
+      width: 16%;
+  }
+  .nav-logo-text {
+  color: rgb(69 122 255);
+    font-weight: bold;
+     display: inline;
+     font-size: larger;
+  }
   ul.nav-tabs,
   ul.login {
     list-style-type: none;
   }
-  
-  .home-icon {
-    background-color: var(--yellow);
-    padding: 8px 12px;
-    border-radius: 5px;
-  }
-  
-  .navbar li {
-    display: inline-block;
-    padding: 8px 12px;
-  }
-  
-  .content-div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5px 7px 0 32px;
-      
-  }
-  
-  .middle-wrapper {
-      display: flex;
-      justify-content: space-between;
-  }
-  .middle-right-left {
-    width: 30%;
-  }  
-  .middle-right-right {
-      width: 30%;
-  }
-  div.content-logo {
-    background-color: #eef0f6;
-      height: auto;
-    width: 50%;
-    border-radius: 20px;
-    
-  }
-  
   .logo-img {
-    width: 50%;
-    padding: 0em 0em 0em 6.5em;
+    vertical-align: middle;
+    padding-top: 4px;
+    padding-left: 35px;
+    width: 13%;
   }
-  
-  div.inner {
-    padding: 2em 2em 2em;
+   .topnav {
+    display: none;
   }
-  
-  .content-img {
-    width: 73%;
-    padding: 1em 0 0 6.5em;
-    
+  /* End of Navbar  */
+  /* Hero Section Mobile View */
+  .hero {
+    background-image: url(/images/landing-page/hero-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0 1rem;
+    padding: 2rem;
   }
-  
-  .middle-header h2 {
+  .hero-wrapper {
     text-align: center;
-      font-weight: 400;
-    line-height: 0px;
+  }
+  .hero h1 {
     font-size: 18px;
-    
+    font-weight: 700;
   }
-  
-  
-  .login-btn {
-    background: #f3ea12;
-    text-align: center;
-    border-radius: 2.5px;
-    border-style: none;
-    font-weight: bold;
-    width: 320px;
-     margin-top: 15px;
-    height: 40px;
+  .hero p {
+    font-size: 14px;
+    color: var(--darkgray);
   }
-  
-  .login-btn:hover, button:hover{
-    background: #eef0f6;
+  .hero-p {
+    display: none;
   }
-  
-  .checkbox {
-    padding-right: 5.7em;
-     
-  }
-  
-  .password a {
-    font-size: smaller;
-    font-size: 13px;
-  }
-
-/******Top Section******/
-.top-container {
-    background-color: var(--white);
-    display: flex;
-    flex-direction: row;
-    
-
-}
- .top-left {
-    max-width: 35%;
-    padding: 55px 80px 40px 80px;
-    position: relative;
- }
-
- .top-container::before {
-     content: '';
-     position: absolute;
-     width: 30%;
-     height: 90vh;
-     opacity: .07;
-     background-image: url(images/landing-page/Ellipse\ 2.png);
-     background-repeat: no-repeat;
-     background-position: left;
-     background-size: cover;
-     margin-top: 10em;
- }
-
-  .top-header {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 31px;
-      color: var(--black);
-      text-align: left;
-  }
-
-  .top-subheading {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 18px;
-      color: var(--darkgray);
-      font-weight: 400;
-  }
-
-  .appointment-btn {
-      font-weight: 700;
-      background-color: var(--yellow);
-      color: var(--black);
-      border-radius: 6px;
-      border: none;
-      width: 200px;
-      height: 40px;
-      cursor: pointer;
-  }
-  .appointment-btn:hover {
-      background-color: var(--white);
-      color: var(--blue);
-      border: 2px solid var(--blue);
-
-  }
-
-.top-right img {
-  float: right; 
-  width: 200%;
-  margin-right: -350px;
-  background-image: url(images/landing-page/Ellipse\ 1.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  
-}
-
-.container-box {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: var(--verylightgray);
+  .hero-btn {
+    background-color: var(--yellow);
     border: none;
-    padding: 10px;
     border-radius: 4px;
-    text-align: left;
-    width: 25%;
-    height: 40%; 
-    margin-top: -5px;
-    margin-left: 650px;
-}
-
-.numbers {
-    font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-}
-
-.words {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-}
-
-/******Middle Section*******/
-.middle-container-1 {
-    margin: 5em;
-}
-
-.middle-header {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 31px;
-   
-}
-
-.middle-subhead {
-    font-size: 20px;
-    color: var(--darkgray);
-    width: 100%;
-}
-
-.middle-right-right {
-    margin-top: 100px;
-}
-
-
-.number-1-icon {
-   text-align: left; 
-   font-family: 'Open Sans', sans-serif;
-   font-size: 16px;
-   color: var(--darkgray);
-}
-
-.description-1 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: -30px;
-    margin-left: 2em;
-    
-}
-
-.number-2-icon {
-    text-align: left; 
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    color: var(--darkgray);
- }
+    height: 40px;
+    width: 197px;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  .hero-btn:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+  }
+  .how-img {
+    width: 80%;
+  }
+  /* Stats Box */
+  .stats-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .stats {
+    background-color: var(--verylightgray);
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    padding: 10px 15px;
+    margin-top: -10px;
+  }
+  .numbers {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  .words {
+    font-size: 10px;
+    color: #7E7A8F;
+    padding: 0;
+    margin: 5px 0 0 0;
+  }
+  /* End Stats Box */
  
- .description-2 {
-     font-family: 'Open Sans', sans-serif;
-     font-size: 18px;
-     font-weight: 400;
-     margin-top: -30px;
-     margin-left: 2em;  
- }
-
- .number-3-icon {
-    text-align: left; 
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    color: var(--darkgray);
- }
+/* How To Section */
+.how {
+    margin: 1rem;
+    display: grid;
+    justify-content: center;
+  }
+  .how-container {
+    text-align: center;
+    margin: 0 2rem;
+    padding-bottom: 2rem;
+  }
+  .how-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .directions {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .directions img {
+    width: 16px;
+    height: 16px;
+  }
+  .directions p {
+    padding: 0;
+    margin: 0;
+  }
+  /* Get Started Button */
+  .how-outside {
+    display: flex;
+    justify-content: center;
+  }
+  .how-btn {
+    width: 137px;
+    height: 34px;
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 4px;
+  }
+  .how-btn:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+  }
+/* End How To */
  
- .description-3 {
-     font-family: 'Open Sans', sans-serif;
-     font-size: 18px;
-     font-weight: 400;
-     margin-top: -5px;
-     margin-left: 2em;
-     
- }
-
- .number-4-icon {
-    text-align: left; 
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    color: var(--darkgray);
- }
- 
- .description-4 {
-     font-family: 'Open Sans', sans-serif;
-     font-size: 18px;
-     font-weight: 400;
-     margin-top: -5px;
-     margin-left: 2em;
-     
- }
-
+  /* Get Started  */
  .get-started-btn {
      background-color: var(--yellow);
      color: var(--black);
@@ -386,8 +242,9 @@ body {
 .dr-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: space-evenly;
-    grid-gap: 20px;
+    justify-content: space-between;
+    grid-gap: 30px;
+    margin: auto;
 }
 
 .dr-card {
@@ -398,56 +255,19 @@ body {
     color: var(--darkgray);
 }
 .dr-card img {
-    height: 100px;
+    height: 150px;
     width: auto;
 }
-.dr-btn {
-    height: 40px;
-    width: 100px;
-    cursor: pointer;
-    font-size: 12px;
-    border-radius: 4px;
-    border: 1px solid var(--lightgray);
-    color: var(--darkgray);
+.doctors-btn {
+    display: grid;
+    justify-content: center;
 }
-.dr-btn:hover {
+.view-doctors-btn:hover {
     background-color: var(--white);
     border: 1px solid var(--blue);
     color: var(--blue);
 }
- /**Doctor Section**/
- .doctors-section {
-     display: block;
-     font-weight: 700;
-     font-family: 'Open Sans', sans-serif;
-     margin-top: 10em;
- }
-
- .doctors-header {
-     text-align: center;
- }
-
- .doctors-subheading {
-     color: var(--darkgray);
-     font-weight: 400;
-     text-align: left;
-     display: block;
-     width: 45%;
-     margin-left: 310px;
- }
-
- .doctors-pictures {
-     display: grid;
-     grid-template-columns: repeat(3, 35%);
-     grid-template-rows: (2, 100vw);
- }
-
- .doctor-4, .doctor-5 img {
-     margin-top: 5em;
-     margin-left: 12em;
- }
-
- .view-doctors-btn {
+.view-doctors-btn {
     background-color: var(--yellow);
     color: var(--black);
     border-radius: 4px;
@@ -458,130 +278,69 @@ body {
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
- }
-
- .view-doctors-btn:hover {
-     background-color: var(--white);
-     border: 2px solid var(--blue);
-     color: var(--blue);
- }
-.doctors-btn {
+}
+button.dr-btn {
+    height: 40px;
+width: 100px;
+cursor: pointer;
+font-size: 12px;
+border-radius: 4px;
+border: 1px solid var(--lightgray);
+color: var(--darkgray);
+}
+.dr-btn:hover {
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+/* Testimonies */
+.testimony {
+    display: grid;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.testimony h2 {
+    font-size: 30px;
+}
+.testimonies img{
+    width: 80%;
+}
+/* Track App Section */
+.track {
+    background-image: url(images/landing-page/track-app-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    font-size: 12px;
+    padding: 0;
+    height: 400px;
     display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.phone {
+    display: none;
+}
+.track-outer {
+    margin-top: auto;
+}
+.store-btns img {
+    width: 100px;
+}
+.track-wrapper {
+    display: grid;
     justify-content: center;
+    margin-left: 2rem;
 }
-/****Testimonial Section****/
-.testimonial-section {
-    display: flexbox;
-
-    margin-left: 3.5em
+.track-wrapper h2, .track-wrapper p {
+    padding: 0;
+    margin: 10px;
 }
-
- .testimonial-header {
-     font-family: 'Open Sans', sans-serif;
-     font-size: 37px;
-    margin-top: 3em;
-   text-align: center;
-
- }
-
-.row {
-    display: flex;
-    align-items: baseline;
+.store-btns {
+    padding: 0;
+    margin: 10px;
 }
-
-.column {
-    flex: 50%;
-    padding: 10px;
-}
-
-.circles {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-   margin-left: 320px;
-    width: 40%;
-}
-
-.dot {
-    height: 25px;
-    width: 25px;
-    background-color: var(--blue);
-    border-radius: 50%;
-}
-
-.dot:hover {
-    background-color: var(--lightgray);
-    cursor: pointer;
-}
-
-
-
-/******Lower Section*****/
-
-.lower-section {
-    background-color: var(--verylightgray);
-    width: 100%;
-    height: 100vh;
-    margin-top: 4em;
-    background-image: url(images/landing-page/Ellipse\ 7.png);
-    background-position: 16% 35%;
-    margin-top: 3em;
-    background-size: 25%;
-    background-repeat: no-repeat;
-
-}
-
-
- .lower-left img {
-    transform: rotate(-15deg);
-    background-image: url(images/landing-page/imageedit_2_8918979501.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 65%;
-    margin-left: 5em;
-}
-
-.lower-right {
-    margin-top: -350px;
-    background-image: url(images/landing-page/oie_20212938aXa34w6q.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 350px;
-    margin-right: 150px;     
-}
-
-.lower-header {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 31px;
-    font-weight: 700;
-    text-align: left;
-    margin-left: 550px;
-    width: 50%;
-}  
-
-.lower-subheading {
-    margin-left: 550px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--black);
-}
-
-.store-icons {
-    margin-left: 570px;
-    cursor: pointer;;
-}
-
-#apple {
-    margin: 1em;
-    width: 30%;
-}
-
-#google {
-    margin: 1em;
-    width: 30%;
-}
-
 /*****Subscription Section*****/
 .subscribe-header {
     display: grid;
@@ -590,17 +349,14 @@ body {
     text-align: center;
     margin: 1rem;
 }
-
 .subscription-head {
     font-size: 30px;
     font-weight: 700;
 }
-
 .subscription-subheader {
     font-size: 21px;
     font-weight: 400;
 }
-
 .email-box {
     border: 1px solid var(--lightgray);
     background-color: var(--white);
@@ -608,7 +364,6 @@ body {
     width: 235px;
     height: 40px;
 }
-
 #subscribe-btn {
     background-color: var(--yellow);
     border-radius: 6px;
@@ -620,13 +375,11 @@ body {
     height: 45px;
     margin-left: -77px;
 }
-
 #subscribe-btn:hover {
     background-color: var(--white);
     color: var(--blue);
     border: 2px solid var(--blue);
 }
-
 /*****Footer****/
 .brand-footer img {
     vertical-align: top;
@@ -682,6 +435,7 @@ footer img {
 .follow {
     grid-area: follow;
 }
+
 .navbar-footer {
     margin-top: 3.5em;
 }
@@ -716,56 +470,6 @@ footer a:hover, footer li:hover {
    
 /************ Styling for Desktop View ***********/
 @media screen and (min-width: 768px) {
-    /* doctor for desktop */
-    .doctors h2 {
-        font-size: 30px;
-    }
-    .dr-about p {
-        font-size: 20px;
-        margin: 2rem 20rem;
-    }
-    .hidden {
-        display: none;
-    }
-    .dr-card {
-        width: 200px;
-        height: auto;
-        padding: 2rem;
-    }
-    .dr-card img {
-        height: 200px;
-        width: auto;
-    }
-    
-   .dr-container {
-
-       display: grid;
-       grid-template-areas: 
-        "dr1 dr2 dr3"
-        "dr4 dr4 dr5";
-        grid-gap: 40px;
-        width: 80%;
-        justify-content: center;
-        margin-left: 135px;
-   }
-   .dr1 {
-       grid-area: dr1;
-   }
-   .dr2 {
-       grid-area: dr2;
-   }
-   .dr3 {
-       grid-area: dr3;
-   }
-   .dr4 {
-       grid-area: dr4;
-       display: grid;
-       margin-left: 200px;  
-   }
-   .dr5 {
-       grid-area: dr5;
-       margin-left: -200px;
-   }
     
     /* subscribe for desktop */
     form {
@@ -802,3 +506,200 @@ footer a:hover, footer li:hover {
         font-size: 16px;
     }
 }
+
+@media screen and (max-width: 857px) {
+    /*Navbar Mobile View */
+  .topnav {
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  .navbar {
+    display: none;
+  }
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  #myLinks a:hover {
+    color: var(--lightblue);
+  }
+  /* Style navigation menu links */
+  .topnav a {
+    color: #180126;
+    padding: 20px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    text-align: center;
+  }
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    background: #f9f9f9;;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+@media  screen and (min-width: 500px) {
+      /* Ipad view for Track */
+ .track {
+    background-image: url(/images/landing-page/track-app-desktop.svg);
+}
+.phone {
+    display: block;
+    width: 90%;
+    margin-left: 70px;
+}
+.track-outer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.track-wrapper {
+    margin-top: 0;
+}   
+.footer-info {
+    padding: 2rem;
+}
+/* iPad view for Dr */
+.dr-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    grid-gap: 4rem;
+}
+.doctors-btn {
+    margin-top: -25px;
+    margin-bottom:25px;
+}
+}
+@media screen and (min-width: 768px) {
+    /* Hero Desktop View */
+    .hero {
+        background-image: url(/images/landing-page/hero-desktop.png);
+        height: 50vh;
+        margin:0;
+    }
+    .hero-wrapper {
+        text-align: left;
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 3rem;
+    }
+    .hero-btn {
+        margin-top: 0;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero-p{
+        display: block;
+    }
+    .mobiletext {
+        display: none;
+    }
+    /* Stats Box Desktop View */
+    .stats-wrapper {
+        justify-content: right;
+        margin-right: 100px;
+    }
+    .stats {
+        width: 300px;
+        height: 80px;
+    }
+    .numbers {
+        font-size: 20px;
+    }
+    .words {
+        font-size: 12px;
+    }
+    /* How To Desktop View */
+    .how {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 75px;
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+    .how-container {
+        margin-right: 100px;
+        text-align: left;
+    }
+    .how-container h2 {
+        font-size: 28px;
+    }
+    .how-container p {
+        width: 80%;
+    }
+    .column3 {
+        margin-top: 75px;
+    }
+    .directions {
+        width: 50%;
+    }
+    .how-btn {
+      height: 40px;
+      width: 197px;
+  }
+  /* Testimony */
+  .testimonies img {
+    margin-right: 20px;
+    width: auto;
+  }
+  }
+  /* Styling for Large Screens 1000px and up */
+  @media screen and (min-width: 1000px){
+      /* doctor for desktop */
+    .doctors h2 {
+        font-size: 30px;
+    }
+    .dr-about p {
+        font-size: 20px;
+        margin: 2rem 20rem;
+    }
+   
+    .dr-card {
+        width: 200px;
+        height: auto;
+        padding: 2rem;
+    }
+    .dr-card img {
+        height: 200px;
+        width: auto;
+    }
+   /* Track App */
+    .phone {
+        width: 60%;
+        display: flex;
+        align-items: flex-start;
+        margin-left: 250px;
+    }
+    .track {
+      background-image: url(/images/landing-page/track-app-desktop.svg);
+      width: 100vw;  
+      height: 550px;
+    }
+    .track-outer {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+    }
+  
+   .track-wrapper {
+      margin: 0;
+      
+   } 
+   
+   
+    .track p{
+        font-size: 21px;
+        width: 50%;
+    }
+    .track h2 {
+        font-size: 30px;
+        width: 50%;
+    }
+  }

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     <title>About Us</title>
-    <link rel="stylesheet" href="{% static 'about-us.css'%}">
+    <link rel="stylesheet" href="{% static 'about-us.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
@@ -17,61 +17,51 @@
     <link rel="shortcut icon" href="{% static '/images/admin-dash/favicon.svg' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/21d1f09dfc.js" crossorigin="anonymous"></script>
-    <script src="{% static 'faq.js' %}" defer></script>
+    <script src="{% static 'login.js' %}" defer></script>
 </head>
 <header>
-    <!-- Top Navigation Menu -->
-    <div class="topnav">
-        <div class="topnav-logo">
-            <a href="{% url 'homepage' %}" class="active2" id="cross"></a>
-            <a href="{% url 'homepage' %}" class="logo-header" id="logo-header"><img class="mobile-cross" src="{% static './images/about-us/logo.svg' %}" alt=""> <p class="mobile-logo">Century Health</p></a>
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <div class="logo-div">
+            <img src="{% static 'images/logo/logoicon.svg' %}" class="nav-logo" alt="logo image" />
+            <span class="nav-logo-text">Century Health</span>
         </div>
+        <div class="nav-tabs">
+            <ul>
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li  class="about-nav"><a href="{% url 'about-us' %}">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="medical-practitioners.html">Find a Doctor</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="login">
+            <ul>
+                <li><a  href="login.html">Log In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="topnav">
+        <a href="{% url 'homepage' %}" class="active"><img src="{% static 'images/logo/logoicon.svg' %}"> <span class="nav-logo-text">Century
+                Health</span></a>
         <!-- Navigation links (hidden by default) -->
         <div id="myLinks">
             <a href="{% url 'homepage' %}">Home</a>
             <a href="{% url 'about-us' %}">About</a>
             <a href="faq.html">FAQ</a>
+            <a href="medical-practitioners.html">Find a Doctor</a>
             <a href="contact.html">Contact Us</a>
-            <a href="login.html">Login</a>
-            <a href="signup.html">Register</a>
+            <a href="signup.html">Sign Up</a>
         </div>
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
-    <nav>
-        <a href="{% url 'homepage' %}" class="home-btn">
-                <img src="{% static './images/about-us/logo.svg' %}" alt="" width="100%">
-        </a>
-        <h1 class="hlogo">
-            Century Health
-        </h1>
-        <ul class="nav-ul">
-            <a href="{% url 'homepage' %}">
-                <li class="nav1 navmenu">Home</li>
-            </a>
-            <a href="{% url 'about-us' %}">
-                <li class="nav2 navmenu">About</li>
-            </a>
-            <a href="faq.html">
-                <li class="nav3 navmenu">FAQ</li>
-            </a>
-            <a href="medical-practitioners.html">
-                <li class="nav7 navmenu">Find A Doctor</li>
-            </a>
-            <a href="contact.html">
-                <li class="nav4 navmenu">Contact Us</li>
-            </a>
-            <a href="login.html">
-                <li class="nav5">Log In</li>
-            </a>
-            <a href="signup.html">
-                <li class="nav6">Sign Up</li>
-            </a>
-        </ul>
-    </nav>
 </header>
+
+
 <style>a {text-decoration: none;}</style>
 <body>
     <div class="wrapper">
@@ -81,6 +71,7 @@
             </p>
         </div>
         <div class="container">
+            <div class="content-1">
             <div class="om">
                 <p class="omh">
                     Our Mission
@@ -94,7 +85,15 @@
             <div class="omi">
                 <img class="imageom" src="{% static './images/about-us/omi.svg' %}" alt="doctor and patient">
             </div>
+            </div>
+
+
+
             <div class="mot">
+                <div><p class="moth">
+                    Meet Our Team
+                </p></div>
+               <div class="content-2">
                 <div class="mk">
                     <img class="doctorimg" src="{% static './images/about-us/mk.svg' %}" alt="doctor michael king">
                     <p class="mott">
@@ -108,11 +107,9 @@
                     </p>
                 </div>
                 <div class="kj">
-                    <p class="moth">
-                        Meet Our Team
-                    </p>
+                   
                     <img class="dkj doctorimg" src="{% static './images/about-us/kj.svg' %}" alt="doctor kimberly johnson">
-                    <p class="kjt">
+                    <p class="mott kjt">
                         Dr. Kimberly Johnson Otolaryngologist
                     </p>
                 </div>
@@ -128,8 +125,15 @@
                         Dr. Kenneth Coleman Neurologist
                     </p>
                 </div>
+                </div>
+
             </div>
-            <div class="pswo">
+
+            <div class="mot">
+                <p class="moth">
+                    Popular Services We Offer
+                </p>
+                <div class="content-2">
                 <div class="ap">
                     <img class="pswoimg" src="{% static './images/about-us/ap.svg' %}" alt="">
                     <p class="pswot">
@@ -137,17 +141,15 @@
                     </p>
                 </div>
                 <div class="ecg">
-                    <img class="pswoimg" src="{% static './images/about-us/ecg.svg'%}" alt="">
+                    <img class="pswoimg" src="{% static './images/about-us/ecg.svg' %}" alt="">
                     <p class="pswot">
                         Electrocardiogram (ECG)
                     </p>
                 </div>
                 <div class="at">
-                    <p class="pswoh">
-                        Popular Services We Offer
-                    </p>
+                   
                     <img class="dat pswoimg" src="{% static './images/about-us/at.svg' %}" alt="">
-                    <p class="att">
+                    <p class="pswot att">
                         Allergy Testing
                     </p>
                 </div>
@@ -164,19 +166,23 @@
                     </p>
                 </div>
             </div>
-</body>
+            </div>
+</div>
+</div>
 <footer>
     <div class="blue">
-        <div class="footer-wrapper">
             <div class="mission">
+             <div>
+                <div class="footer-logo">
                 <img class="logof footm" src="{% static './images/about-us/logo.svg' %}" alt="Century Health logo">
-                <h4 class="fh footm">Century Health</h3>
+                <span class="fh footm">Century Health</span>
+                   </div>
                 <p class="fm footm">We will always consider<br> the well-being of our patients. <br>You matter.</p>
-
+             </div>
                 <div class="social footm">
                     <h4>Follow us</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-google-plus-g"></i></a>
                     </div>
@@ -193,12 +199,13 @@
             <div class="find-us">
                 <h4>Office Address</h4>
                 <p>15668, Boulevard<br> Avenue Oxford</p>
-                <h4>Email</h4>
-                <a class="emailf" href="mailto:name@email.com">centuryhealth@hotmail.com</a><br>
-                <a class="emailf" href="mailto:name@email.com">centuryhealth@gmail.com</a>
+                <div>
+                    <h4>Email</h4>
+                    <a class="emailf" href="mailto:name@email.com">centuryhealth@hotmail.com</a><br>
+                    <a class="emailf" href="mailto:name@email.com">centuryhealth@gmail.com</a>
+                </div>
+               
             </div>
-        </div>
-
     </div>
     <div class="copyright">
         <p>Copyright
@@ -207,4 +214,19 @@
         </p>
     </div>
 </footer>
+</body>
 </html>
+<!-- 
+<script>
+    // HAMBURGER MENU
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+</script> -->
