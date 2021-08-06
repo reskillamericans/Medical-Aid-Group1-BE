@@ -3,16 +3,17 @@ from django.urls import path
 from django.urls.conf import include
 from .views import (
     doctor_dash_view, 
+    doctor_profile_view,
     doctor_patient_view, 
     doctor_search_view, 
     doctor_appointment_view, 
-    support_view,
-    support_success_view,
     doctor_schedule_view,
     doctor_schedule_week_view,
     doctor_support_view,
     doctor_support_success_view,
     doctor_signup_view,
+    support_view,
+    support_success_view,
 )
 
 urlpatterns = [
@@ -27,7 +28,7 @@ urlpatterns = [
     path('doctor-signup', doctor_signup_view, name ='doctor-signup' ),
     path('support/', support_view, name = "support"),
     path('support-success/', support_success_view, name = "support-success"),
-    
-    
+    path('doctor-profile/', doctor_profile_view, name = "doctor-profile"),
+        
 ]
 

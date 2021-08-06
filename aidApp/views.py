@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.mail import BadHeaderError, send_mail
+from django.core.mail import send_mail
+from django.db.models import Q
 from .models import Feedback, Patient, Health_Practitioner
-import datetime
 
 # Create your views here.
 def index(request):
@@ -18,15 +18,16 @@ def doctor_dash_view(request):
     }
     return render(request, 'aidApp/doctor/doctor-dash.html', context)
 
+def doctor_profile_view(request):
+    return render(request, 'aidApp/doctor/doctor-profile.html')
+
 def doctor_patient_view(request):
     return render(request, 'aidApp/doctor/doctor-patient.html')
 
 def doctor_search_view(request):
-    # input and then filter
     if request.method == "POST":
         search = request.POST.get('search')
-        patients =Patient.objects.filter(patient__first_name__icontains=search)
-        print(patients)
+        patients =Patient.objects.filter(Q(patient__first_name__icontains=search) | Q(patient__last_name__icontains=search))
     else:
         patients = Patient.objects.all()
 
