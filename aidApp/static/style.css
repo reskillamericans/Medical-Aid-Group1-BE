@@ -19,6 +19,7 @@ body {
     color: var(--black);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 header {
     margin: 0;
@@ -40,7 +41,7 @@ header {
   .navbar a:visited {
     color: #180126;
   }
-  .active img {
+  .logo img {
     vertical-align: bottom;
   }
   .navbar li {
@@ -120,7 +121,7 @@ header {
   }
   /* Stats Box */
   .stats-wrapper {
-    display: flex;
+    display: grid;
     justify-content: center;
   }
   .stats {
@@ -298,14 +299,77 @@ color: var(--darkgray);
     display: grid;
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 .testimony h2 {
     font-size: 30px;
 }
-.testimonies img{
-    width: 80%;
+  /* carousel */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+.mySlides {
+    display: none;
 }
+.img-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.img-slide img {
+    width: 100%;
+}
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: var(--blue);
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
 /* Track App Section */
 .track {
     background-image: url(images/landing-page/track-app-mobile.svg);
@@ -562,22 +626,11 @@ footer a:hover, footer li:hover {
 .footer-info {
     padding: 2rem;
 }
-/* iPad view for Dr */
-.dr-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-evenly;
-    grid-gap: 4rem;
-}
-.doctors-btn {
-    margin-top: -25px;
-    margin-bottom:25px;
-}
 }
 @media screen and (min-width: 768px) {
     /* Hero Desktop View */
     .hero {
-        background-image: url(/images/landing-page/hero-desktop.png);
+        background-image: url(images/landing-page/hero-desktop.png);
         height: 50vh;
         margin:0;
     }
@@ -648,6 +701,17 @@ footer a:hover, footer li:hover {
     margin-right: 20px;
     width: auto;
   }
+  /* iPad view for Dr */
+.dr-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    grid-gap: 4rem;
+}
+.doctors-btn {
+    margin-top: -25px;
+    margin-bottom:25px;
+}
   }
   /* Styling for Large Screens 1000px and up */
   @media screen and (min-width: 1000px){
@@ -677,7 +741,7 @@ footer a:hover, footer li:hover {
         margin-left: 250px;
     }
     .track {
-      background-image: url(/images/landing-page/track-app-desktop.svg);
+      background-image: url(images/landing-page/track-app-desktop.svg);
       width: 100vw;  
       height: 550px;
     }
@@ -703,3 +767,4 @@ footer a:hover, footer li:hover {
         width: 50%;
     }
   }
+
