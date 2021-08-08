@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from django.utils.safestring import mark_safe
-from .forms import CustomUserCreationForm
+from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
@@ -10,48 +9,58 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("<h1>Medical Aid app Homepage</h1>")
 
+# User Registration (Signup)
+
 def signup(request):
-    form = CustomUserCreationForm()
 
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'{form.cleaned_data["email"]} registered successfully!')
+        fullname = request.POST['fullname']
+        username= request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1'] 
+        password2 = request.POST['password2']
 
-    context = {'form': form}
-    return render(request, 'users/signup.html', context)
+        if password1==password2:
+            if User.objects.filter(email = email).exists():
+                messages.info(request,'Please note that this email is already taken.')
+                return render(request,'users/signup.html')
+            else:
+                user = User.objects.create_user(username=username, email=email, password=password1)
+                user.fullname = fullname
+                user.save()
+                print('Please note that the user is created.')
+                return render(request,'users/login.html')
 
-def login_view(request):
-    if request.user.is_authenticated:
-        messages.info(request, mark_safe(f'You are already logged in as <b> {request.username.email} </b>.)'))
-        return redirect('website:index')
-    
-    username = ""
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        remember_me = request.POST.get('remember_me')
-        user = authenticate(request,username=username, password=password)
-        if user:
-            login(request,user)
-            messages.success(request,f'User{user.username} logged in successfully!')
-            if not remember_me:
-                request.session.set_expiry(0)
-            return redirect('website:index')
         else:
-            messages.warning(request,'We could not authenticate, please check credentials.')
-   
-    return render(request,'users/login.html',({"username":username}))
+            messages.info(request,'Please note that the passwords are not matching.')
+            return render(request,'users/signup.html')
+        return redirect('/')
+    
+    else:
+        return render(request,'users/signup.html')
 
-def logout_view(request):
-    logout(request)
-    messages.success(request,'You have logged out successfully!')
-    return redirect('users:login')
+# User Login
 
+def login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
 
+        try:
+            user = auth.authenticate(email=email, password=password)
+            auth.login(request, user)
+            return render(request,'/')
+        except:
+            return render(request,'users/login.html')
+    else: 
+        return render(request,'users/login.html')
 
+# User Logout
 
-
-
-
+def logout(request):
+    try:
+        logout(request)
+        messages.add_message(request, messages.INFO, 'You are currently logged out.')
+    except:
+        messages.add_message(request, messages.ERROR, 'You are unable to logout.')
+    return render(request,'users/login.html')
