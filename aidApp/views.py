@@ -1,15 +1,25 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.db.models import Q
-from .models import Feedback, Patient, Health_Practitioner
+from .models import Feedback, Patient, Health_Practitioner, FAQ
 
 # Create your views here.
 def index(request):
     return HttpResponse("<h1>Medical Aid app Homepage</h1>")
+
+def faq(request):
+
+    faqs = FAQ.objects.all()
+    context = {
+        "Faqs":faqs
+
+    }
+    return render(request,'aidApp/faq.html',context)
 
 @login_required
 def doctor_dash_view(request):

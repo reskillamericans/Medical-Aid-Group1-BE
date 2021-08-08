@@ -21,10 +21,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from aidApp import views as aid_app_views
 from users import views as users_views
+#from . import views
 
 
 
 urlpatterns = [
+    #path('faq/', views.faq, name = 'faq'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('', aid_app_views.index, name = "index"),
