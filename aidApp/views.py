@@ -9,8 +9,14 @@ from django.db.models import Q
 from .models import Feedback, Patient, Health_Practitioner, FAQ
 
 # Create your views here.
+
+# Landing page 
 def index(request):
-    return HttpResponse("<h1>Medical Aid app Homepage</h1>")
+    return render(request, 'index.html')
+
+# About Us page 
+def about_us(request):
+    return render(request, 'about-us.html')
 
 def faq(request):
 

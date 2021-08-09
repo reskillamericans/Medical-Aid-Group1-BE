@@ -31,7 +31,4 @@ urlpatterns = [
     path('support-success/', support_success_view, name = "support-success"),
     path('doctor-profile/', doctor_profile_view, name = "doctor-profile"),
     path('faq/', views.faq, name = 'faq')
-        
-
 ]
-
