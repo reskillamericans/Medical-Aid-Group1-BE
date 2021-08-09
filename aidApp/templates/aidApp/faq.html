@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" href="images\faq-page-images\cross.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type = "text/css" href="{% static 'aidApp/css/faq.css' %}" />
+    <link rel="icon" href="images\faq-page-images\cross.png" />
+    <!-- <link rel="stylesheet" type = "text/css" href="{% static 'aidApp/images/chevron.png' %}" />-->
+    <link rel="icon" href="{% static 'aidApp/images/cross.png' %}" />
+    <link rel="stylesheet" href="faq.css" />
+
+
+    <title>Century Health-FAQ</title>
+  </head>
+  <body>
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <div class="topnav-logo">
+        <a href="index.html" class="active2" id="cross"
+          > <img
+            class="nav-cross"
+            src="aidApp\images\cross.png"
+            src="images\faq-page-images\cross.png" 
+            alt="Medical Cross with Century Health Text"
+            /></a>
+           
+            
+         
+
+        <a href="index.html" class="logo-header" id="logo-header"
+          >Century Health</a
+        >
+      </div>
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Register</a>
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="container">
+      <nav>
+        <!--<img
+          class="nav-cross"
+          src="images\faq-page-images\cross.png"
+          alt="Medical Cross"
+        />-->
+       <img
+          class="nav-cross"
+           src="{% static 'aidApp/images/cross.png' %}"
+          alt="Medical Cross"
+        />
+        <a href="index.html" class="home-btn"
+          ><h1 class="nav-header">Century Health</h1></a
+        >
+
+        <ul class="nav-ul">
+          <a href="index.html"><li>Home</li></a>
+          <a href="about-us.html"><li>About Us</li></a>
+          <a href="faq.html"><li class="faq-li">FAQ</li></a>
+          <a href="contact.html"><li>Contact Us</li></a>
+          <a href="login.html"><li>Login</li></a>
+          <a href="signup.html"><li>Register</li></a>
+        </ul>
+      </nav>
+      <main>
+        <div class="search-bar-div">
+          <h1 class="greeting-h1">How Can I Help You?</h1>
+          <div class="input">
+            <input type="text" name="search" id="search-box" />
+            <button class="search-btn">Search</button>
+          </div>
+        </div>
+        <h1 class="questions-h1">Frequently Asked Questions</h1>
+
+             
+
+        <div class="accordion-div">
+            {% for faq in Faqs %}
+            <button class="accordion">{{faq.question}}</button>
+                <div class="answer">
+                    <p>
+                        {{faq.answer}}
+                    </p>
+                </div>  
+            {% endfor %}
+        </div>
+      </main>
+
+      <footer>
+        <h3>Unable to find the answer you need?</h3>
+        <i class="fas fa-phone-alt"></i>
+        <a href="mailto:info@centuryhealth.org" class="email"
+          ><i class="far fa-envelope"></i
+        ></a>
+        <div class="contact-info">
+          <div class="call-us">
+            <p class="call-paragraph">Call us at (555) CEN-TURY</p>
+          </div>
+          <div class="email-us">
+            <p class="email-paragraph">
+              <a href="mailto:info@centuryhealth.org" class="email-a-tag">
+                Email us at info@centuryhealth.org</a
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="{% static 'aidApp/js/faq.js' %}"></script>
+  </body>
+</html>
