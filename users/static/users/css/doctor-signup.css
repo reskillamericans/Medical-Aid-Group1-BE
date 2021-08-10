@@ -54,7 +54,7 @@ a {
 }
 
 .nav-logo-text {
-color: rgb (69 122 255);
+color: rgb(69 122 255);
   font-weight: bold;
    display: inline;
    font-size: larger;
@@ -88,7 +88,6 @@ ul.login {
     display: inline-block;
      padding: 8px 12px; 
   }
-
   .navbar li:hover {
     background-color: #f3ea12;
    border-radius: 4px;    
@@ -158,6 +157,7 @@ white-space: nowrap ;
 input[type="firstname"],
 input[type="lastname"],
 input[type="email"],
+input[type="license"],
 input[type="password"] {
   width: 320px;
   padding: 8px 32px 8px 10px;
@@ -250,126 +250,95 @@ h6{
   padding-left: 0px;
   }
 
-  .tab-wrapper a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #180126;
-      padding-bottom: 0.5em;
+  
+  .doc-link {
+    border-bottom: 3.5px solid #f3ea12;
   }
 
-      .patient-link {
-        border-bottom: 3.5px solid #f3ea12;
-      }
+  .patient-link {
+    border-bottom: 3.5px solid #c3c7d2;
+  }
 
-      .doc-link {
-        border-bottom: 3.5px solid #c3c7d2;
-      }
+  .patient-link:hover {
+    border-bottom: 3.5px solid #f3ea12;
+  }
 
-      .doc-link:hover {
-        border-bottom: 3.5px solid #f3ea12;
-      }
-  
 
 /* .patient-tab, .doc-tab {
   border: 1.5px solid #c3c7d2;
   border-radius: 7px;
-}
-.patient-tab {
-  background-color: #c3c7d2;
-  border-bottom: 1.5px solid #c3c7d2;
 } */
 
 
+/* .patient-tab {
+    border-bottom: 1.5px solid #c3c7d2;
+} */
+
+/* .doc-tab {
+    background-color: #c3c7d2;
+} */
+
 @media screen and (max-width: 1024px) and (min-width: 768px){
-  .tab-wrapper ul {
-      margin-right: 36px;
-  }
+     .logo-img {
+      padding-left: 0;
+    }
 }
 
 @media screen and (max-width: 991px) and (min-width: 751px){
-  .topnav{
-  overflow: hidden;
-  display: block;
-  position: relative;
-  }
-  .content-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  }
-  div .inner{
-  width:100%;
-  text-align-last: center;
-  }
-  .topnav {
-    display: none;
-  }
-   p {
-    text-align: center;
-   }
-  .content-logo {
-    padding-right: 77px;
-  }
-  .content-img {
-    padding-top: 65px;
-  }
-  .topnav {
-    overflow: hidden;
-    display: block;
-    position: relative;
-  }
-  .content-div {
-    margin-top: 0;
-    padding-top: 0;
-  }
-
-  .navbar {
-    display: none;
-  }
-  
-  /* Hide the links inside the navigation menu (except for logo/home) */
-  .topnav #myLinks {
-    display: none;
-  }
-
-   
-  /* Style navigation menu links */
-  .topnav a {
-    color: #180126;
-    /* vertical-align: middle; */
-    padding: 20px 16px;
-    text-decoration: none;
-    font-size: 15px;
-    display: flex;
-align-items: center;
-    text-align: center;
+    .topnav {
+        overflow: hidden;
+        display: block;
+        position: relative;
+      }
     
-     }
-
-     .topnav a:hover {
-      color: rgb(164,162,179);
-     }
-  
-  /* Style the hamburger menu */
-  .topnav a.icon {
-    background: #f9f9f9;;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  div.content-logo {
-    display: none;
-  }
-
-  .tab-wrapper ul {
-    margin-right: 0;
-    padding-right: 0;
-}
-
-
-
+      #deleted-br {
+        display: none;
+      }
+    
+      .content-div {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    
+      .navbar {
+        display: none;
+      }
+      
+      /* Hide the links inside the navigation menu (except for logo/home) */
+      .topnav #myLinks {
+        display: none;
+      }
+    
+       
+      /* Style navigation menu links */
+      .topnav a {
+        color: #180126;
+        /* vertical-align: middle; */
+        padding: 20px 16px;
+        text-decoration: none;
+        font-size: 15px;
+        display: flex;
+    align-items: center;
+        text-align: center;
+        
+         }
+    
+         .topnav a:hover {
+          color: rgb(164,162,179);
+         }
+      
+      /* Style the hamburger menu */
+      .topnav a.icon {
+        background: #f9f9f9;;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      
+      div.content-logo {
+        display: none;
+      }
   }
 
 
@@ -436,6 +405,14 @@ align-items: center;
   .form {
     text-align: center;  }
 
+input[type="firstname"],
+input[type="lastname"],
+input[type="email"],
+input[type="license"],
+input[type="password"] {
+  width: 310px;
+}
+
     .social-div{
       display: flex;
       justify-content: center;
@@ -443,11 +420,19 @@ align-items: center;
 
     .checkbox {
       display: block;
-      
-    }
+      }
+
+      input[type="checkbox"] {
+        width: 11px;
+        vertical-align: text-top;
+      }
 
     label.checkbox {
       white-space: nowrap ;
+    }
+
+    .signup-btn {
+      width: 305px;
     }
  
  .login-btn {
