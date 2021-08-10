@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor-Profile</title>
+    <link rel="shortcut icon" href="{% static 'doctor/images/admin-dash/favicon.svg' %}"">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'doctor/css/doctor-consultation.css' %}">
+    <script src="{% static 'doctor/js/doctor-dash.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="{% url 'homepage' %}"><img src="{% static 'doctor/images/admin-dash/logo_header.svg' %}" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="{% static 'doctor/images/admin-dash/fi_menu.svg' %}"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="{% url 'doctor-dash' %}">
+                        <img src="{% static 'doctor/images/doctor-dash/icon-inactive-dashboard.svg' %}" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="{% url 'doctor-profile' %}">
+                        <img src="{% static 'doctor/images/doctor-dash/profile-icon.svg' %}" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="{% url 'doctor-search' %}">
+                        <img src="{% static 'doctor/images/doctor-dash/patients-icon.svg' %}" alt="patients icon">
+                        Patients</a>
+                </li>
+                <li>
+                    <a href="{% url 'doctor-consultations' %}" class="activeLink">
+                        <img src="{% static 'doctor/images/doctor-dash/icon-consultation-active.svg' %}" alt="consultation icon">
+                        Consultations</a>
+                </li>
+                <li>
+                    <a href="{% url 'doctor-schedule' %}">
+                        <img src="{% static 'doctor/images/doctor-dash/schedule-icon.svg' %}" alt="calendar icon">
+                        My Schedule</a>
+                </li>
+                <li>
+                    <a href="{% url 'doctor-support' %}">
+                        <img src="{% static 'doctor/images/doctor-dash/contact-icon.svg' %}" alt="phone icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="{% url 'homepage' %}">
+                        <img src="{% static 'doctor/images/admin-dash/logout_icon.svg' %}" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+       <!--Consultations Recent Requests-->
+       <section class="requests">
+        <div class="heading">
+            <h2>Recent Requests</h2>
+        </div>
+        <div class="bubble-heading">
+            <p><b>Patient</b></p>
+            <p><b>Reason for Appointment</b></p>
+            <p><b>Date</b></p>
+            <p><b>Time</b></p>
+            <p><b>Action</b></p>
+        </div>
+        <div class="request-bubble bubble-style">
+            <div class="patient">
+                <img src="{% static 'doctor/images/doctor-profile/kirk.svg' %}" alt="image of recent patient">
+                <p><b>Mr. James Kirk</b></p>
+            </div>
+            <div class="reason">
+                <p>Blood test and physical</p>
+            </div>
+            <div class="date">
+                <p>6/7/21</p>
+            </div>
+            <div class="time">
+                <p>11:00am</p>
+            </div>
+            <div class="buttons"> 
+                <div class="review-btns">
+                <button class="review">Review</button>
+                </div>
+                <div class="accept-btns">
+                <button class="accept">Accept</button>
+                </div>
+            </div>    
+        </div>
+        <div class="request-bubble bubble-style">
+            <div class="patient">
+                <img src="{% static 'doctor/images/doctor-profile/keiko.svg' %}" alt="image of recent patient">
+                <p><b>Mrs. Keiko O'brien</b></p>
+            </div>
+            <div class="reason">
+                <p>Pain in left shoulder</p>
+            </div>
+            <div class="date">
+                <p>8/22/21</p>
+            </div>
+            <div class="time">
+                <p>12:30pm</p>
+            </div>    
+            <div class="buttons"> 
+                <div class="review-btns">
+                <button class="review">Review</button>
+                </div>
+                <div class="accept-btns">
+                <button class="accept">Accept</button>
+                </div>
+            </div>    
+        </div>
+        <div class="request-bubble bubble-style">
+            <div class="patient">
+                <img src="{% static 'doctor/images/doctor-profile/kira.svg' %}" alt="image of recent patient">
+                <p><b>Mrs. Kira Nereys</b></p>
+            </div>
+            <div class="reason">
+                <p>Prostate exam</p>
+            </div>
+            <div class="date">
+                <p>3/5/21</p>
+            </div>
+            <div class="time">
+                <p>2:30pm</p>
+            </div>    
+                <div class="buttons"> 
+                    <div class="review-btns">
+                    <button class="review">Review</button>
+                    </div>
+                    <div class="accept-btns">
+                    <button class="accept">Accept</button>
+                    </div>
+                </div>    
+        </div>
+    </section>
+     <!--Consultations Previous-->
+     <section class="consultations">
+        <div class="heading">
+            <h2>Previous Consultations</h2>
+        </div>
+        <div class="bubble-heading">
+            <p><b>Patient</b></p>
+            <p><b>Reason for Appointment</b></p>
+            <p><b>Date</b></p>
+            <p><b>Time</b></p>
+            <p><b>Results</b></p>
+        </div>
+        <div class="request-bubble bubble-style">
+            <div class="patient">
+                <img src="{% static 'doctor/images/doctor-profile/kirk.svg' %}" alt="image of recent patient">
+                <p><b>Mr. James Kirk</b></p>
+            </div>
+            <div class="reason">
+                <p>Blood test and physical</p>
+            </div>
+            <div class="date">
+                <p>6/7/21</p>
+            </div>
+            <div class="time">
+                <p>11:00am</p>
+            </div>  
+            <div class="pdf-btns">
+                <button class="download">Download pdf</button>
+            </div>
+        </div>
+        <div class="request-bubble bubble-style">
+            <div class="patient">
+                <img src="{% static 'doctor/images/doctor-profile/keiko.svg' %}" alt="image of recent patient">
+                <p><b>Mrs. Keiko O'brien</b></p>
+            </div>
+            <div class="reason">
+                <p>Pain in left shoulder</p>
+            </div>
+            <div class="date">
+                <p>8/22/21</p>
+            </div>
+            <div class="time">
+                <p>12:30pm</p>
+            </div>   
+            <div class="pdf-btns">
+                <button class="download">Download pdf</button>
+            </div>
+        </div>
+        <div class="request-bubble bubble-style">
+            <div class="patient">
+                <img src="{% static 'doctor/images/doctor-profile/kira.svg' %}" alt="image of recent patient">
+                <p><b>Mrs. Kira Nereys</b></p>
+            </div>
+            <div class="reason">
+                <p>Prostate exam</p>
+            </div>
+            <div class="date">
+                <p>3/5/21</p>
+            </div>
+            <div class="time">
+                <p>2:30pm</p>
+            </div>   
+            <div class="pdf-btns">
+                <button class="download">Download pdf</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

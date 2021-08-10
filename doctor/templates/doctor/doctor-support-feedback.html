@@ -7,18 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Support - Century Health</title>
-    <link rel="shortcut icon" href="{% static 'aidApp/images/admin-dash/favicon.svg' %}">
+    <link rel="shortcut icon" href="{% static 'doctor/images/admin-dash/favicon.svg' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'aidApp/css/patient-support-feedback.css' %}">
-    <script src="{% static 'aidApp/js/doctor-dash.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'doctor/css/doctor-support-feedback.css' %}">
+    <script src="{% static 'doctor/js/doctor-dash.js' %}" defer></script>
 </head>
 
 <body>
     <div class="wrapper">
         <!--Header-->
-        <header><a href="{% url 'index' %}"><img src="{% static 'aidApp/images/admin-dash/logo_header.svg' %}" class="logo"></a>
+        <header><a href="{% url 'homepage' %}"><img src="{% static 'doctor/images/admin-dash/logo_header.svg' %}" class="logo"></a>
             <button class="hamburger" id="hamburger"><img src="{% static 'doctor/images/admin-dash/fi_menu.svg' %}"></button>
         </header>
         <!--Navigation-->
@@ -26,32 +26,32 @@
             <ul class="nav-ul" id="nav-ul">
                 <li>
                     <a href="{% url 'doctor-dash' %}">
-                        <img src="{% static 'aidApp/images/doctor-dash/icon-inactive-dashboard.svg' %}" alt="dashboard icon">
+                        <img src="{% static 'doctor/images/doctor-dash/icon-inactive-dashboard.svg' %}" alt="dashboard icon">
                         Dashboard</a>
                 </li>
                 <li>
                     <a  href="{% url 'doctor-search' %}">
-                        <img src="{% static 'aidApp/images/doctor-dash/patients-icon.svg' %}" alt="patients icon">
+                        <img src="{% static 'doctor/images/doctor-dash/patients-icon.svg' %}" alt="patients icon">
                         Patients</a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="{% static 'aidApp/images/doctor-dash/consultations-icon.svg' %}" alt="consultation icon">
+                    <a href="{% url 'doctor-consultations' %}">
+                        <img src="{% static 'doctor/images/doctor-dash/consultations-icon.svg' %}" alt="consultation icon">
                         Consultations</a>
                 </li>
                 <li>
                     <a href="{% url 'doctor-schedule' %}">                    
-                        <img src="{% static 'aidApp/images/doctor-dash/schedule-icon.svg' %}" alt="calendar icon">
+                        <img src="{% static 'doctor/images/doctor-dash/schedule-icon.svg' %}" alt="calendar icon">
                         My Schedule</a>
                 </li>
                 <li>
                     <a href="{% url 'doctor-support' %}" class="active-link">
-                        <img src="{% static 'aidApp/images/patient-support-img/contact-icon-yellow.svg' %}" alt="phone icon">
+                        <img src="{% static 'doctor/images/doctor-support-img/contact-icon-yellow.svg' %}" alt="phone icon">
                         Contact Us / Support</a>
                 </li>             
                 <li>
-                    <a href="{% url 'index' %}">
-                        <img src="{% static 'aidApp/images/admin-dash/logout_icon.svg' %}" alt="logout icon" />
+                    <a href="{% url 'homepage' %}">
+                        <img src="{% static 'doctor/images/admin-dash/logout_icon.svg' %}" alt="logout icon" />
                         Logout</a>
                 </li>
             </ul>
@@ -63,7 +63,7 @@
                 <p>Your message has been submitted and you will receive an email confirmation shortly.
                     Feedback is reviewed within 48 hours.</p>
                 <div class="feedback">
-                    <img src="{% static 'aidApp/images/patient-support-feedback-img/support-feedback.svg' %}" alt="doctor holding phone">
+                    <img src="{% static 'doctor/images/doctor-support-feedback-img/support-feedback.svg' %}" alt="doctor holding phone">
                     <div class="feedback-thanks">
                         <h3>Thank you for your feedback!</h3>
                         <p>Your feedback helps us improve the way we provide you with the medical resources you want the most.</p>

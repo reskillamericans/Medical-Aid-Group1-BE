@@ -50,10 +50,8 @@
     grid-template-areas: 
         "header"
         "sidebar"
-        "profile"
-        "contact"
-        "map"
-        "update";
+        "requests"
+        "consultations";
   }
   
   /************************************ Section Styling ************************************/
@@ -113,60 +111,47 @@
      display: flex;
   }
 
-  /* Dr. Profile */
-  
-  .profile {
-    grid-area: profile;
-    /* justify-content: space-between; */
-    text-align: center;
-    margin: 30px;
+  /* Consultations */
+
+  .requests {
+      grid-area: requests;
+  }
+
+  .consultations {
+      grid-area: consultations;
+  }
+
+  .heading {
+      text-align: center;
+  }
+
+  .bubble-heading {
+      display: none;
+  }
+
+  .request-bubble {
+      text-align: center;
+      margin: 30px;
+  }
+
+  .review {
+      border: none;
+      background-color: pink;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 5px;
+  }
+
+  .accept {
+    border: none;
+    background-color: greenyellow;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
 }
 
-.heading{
-    font-style: bold;
-}
 
-.userPic {
-  width: 30%;
-}
-
-.profile-container{
-    background-color:#DAE4FF ;
-    padding: 5px;
-}
-
-/* Details */
-
- .details{
-    text-align: center;
-    margin: 30px;
-} 
-
-.details h1 p {
-    font-style: bold;
-}
-
-.contact {
-    text-align: center;
-    margin: 30px;
-    grid-area: contact;
-}
-
-.locations {
-    padding: 1rem;
-}
-
-.map {
-    display: none;
-    grid-area: map;
-}
-
-.update {
-    /* display: none; */
-    grid-area: update;
-}
-
-.update {
+  .download {
     background: var(--secondaryColor);
     color: var(--primaryText);
     font-size: 13px;
@@ -177,15 +162,7 @@
     /* width: 243px; */
     text-align: center;
     margin: 0 auto;
-}
-
-.update:hover {
-    background-color: var(--background);
-    border: 1px solid var(--primaryColor);
-    color: var(--primaryColor);
-}
-button {
-  cursor: pointer;
+    margin-bottom: 5px;
 }
 
 /************************Styling for Laptops and Small Screens 769px and up*****************************/
@@ -196,10 +173,10 @@ button {
       grid-template-columns: 275px  1fr;
       grid-template-areas: 
       "header  header"
-      "sidebar profile"
-      "sidebar contact"
-      "sidebar map"
-      "sidebar update";
+      "sidebar requests"
+      "sidebar requests"
+      "sidebar consultations"
+      "sidebar consultations";
       margin-right: 2rem;
     }
   
@@ -220,7 +197,7 @@ button {
    }
    
     nav a:hover,
-    .activeLink {
+    a.activeLink {
       color: var(--secondaryColor);
     }
   
@@ -249,70 +226,76 @@ button {
       .wrapper {
           grid-template-columns: 275px 1fr;
           grid-template-areas:
-          "header header header"
-          "sidebar profile profile"
-          "sidebar contact map"
-          "sidebar update update";
+          "header  header header"
+          "sidebar requests requests"
+          "sidebar requests requests"
+          "sidebar consultations consultations "
+          "sidebar consultations consultations";
       }
-
-      
       h1 {
         font-size: 37px;
       }
       h2 {
         font-size: 28px;
       }
-
-      h3 {
-        font-size: 20px;
-      }
-   
-      .profile {
-        display: flex;
-       
-     }
-      .info {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-      } 
-
+    
       .profile h1 {
         padding: 0;
         margin: 0;
       }
-
       .userPic {
         display: block;
       }
 
-      .big-rating h1{
-        font-size: 50px;
-      }
-      .map {
+      .bubble-heading {
           display: flex;
-      }
-      .contact {
-          width: 50%;
-      }
-
-      .update {
-          height: 90%;
+          flex-direction: row ;
+          justify-content: space-between;
+          align-items: center;
       }
 
-    
+      .patient {
+          grid-area: patient;
+      }
+
+      .reason {
+          grid-area: reason;
+      }
+
+      .date {
+        grid-area: date;
+    }
+
+      .time {
+        grid-area: time;
+    }
+
+      .buttons {
+        grid-area: buttons;
+    }
+
+    .request-bubble {
+        display: grid;
+        grid-template-areas: 
+          "patient reason date time buttons";
+        grid-template-columns: 300px 2.5fr 2fr 150px;
+        text-align: left;
+        padding: .25rem 1rem;
+        justify-content: center; 
+    }
 
 
 
 
 
+      
 
 
 
 
+      
 
-
-
+      
 
   
   
