@@ -9,45 +9,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href= {% static 'users/css/signup.css' %} />
-    <title>Sign Up</title>
-    <link rel="icon" href= {% static 'users/images/logo/logoicon.svg' %} type="image/svg">
+    <link rel="stylesheet" href= {% static 'users/css/doctor-signup.css' %} />
+    <title>Doctor Sign Up</title>
+    <link rel="icon" href= {% static "users/images/logo/logoicon.svg" %} type="image/svg">
   </head>
   </head>
   <body>
       <header>
       <!-- NAV BAR -->
       <nav class ="navbar">
-      <div class="logo-div">
-        <img src= {% static 'users/images/logo/logoicon.svg' %} class="nav-logo" alt="logo image"/>
+      <div class= "logo-div">
+        <img src= {% static "users/images/logo/logoicon.svg" %} class="nav-logo" alt="logo image">
             <span class="nav-logo-text">Century Health</span> 
       </div>
       <div class="nav-tabs">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="./Doctor/doctor-dash.html">Find a Doctor</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about-us.html">About</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="doctor-dash.html">Find a Doctor</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
         </ul>
     </div>
     <div class="login">
         <ul>
-            <li><a class ="login-nav" href= {% url 'users:login' %} >Log In</a></li>
+            <li><a class ="login-nav" href= {% url 'users:login' %}>Log In</a></li>
             <li><a class ="signup-nav" href {% url 'users:signup' %}>Sign Up</a></li>
         </ul>
     </div>
   </nav>
   <div class="topnav">
-    <a href="index.html" class="active"><img src= {% static 'users/images/logo/logoicon.svg' %} /> <span class="nav-logo-text">Century Health</span></a>
+    <a href="index.html" class="active"><img src= {% static 'users/images/logo/logoicon.svg' %}> <span class="nav-logo-text">Century Health</span></a>
    
     <!-- Navigation links (hidden by default) -->
     <div id="myLinks">
-      <a href="index.html">Home</a>
-          <a href="about-us.html">About</a>
-          <a href="faq.html">FAQ</a>
-          <a href="./Doctor/doctor-dash.html">Find a Doctor</a>
-          <a href="contact.html">Contact Us</a>
+      <a href="../index.html">Home</a>
+          <a href="../about-us.html">About</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="doctor-dash.html">Find a Doctor</a>
+          <a href="../contact.html">Contact Us</a>
           <a href={% url 'users:login' %}>Log In</a>
     </div>
     <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
@@ -56,15 +56,16 @@
     </a>
   </div>
 </header>
-<!-- PATIENT/DOCTOR PAGE TAB -->
 <div class="tab-switch">
-  <div class="tab-wrapper">
-  <ul>
-      <li class ="patient-tab"><a class="patient-link" href= {% url "users:signup" %}>Patient</a></li>
-      <li class ="doc-tab"><a class="doc-link" href= {% url "users:doctor-signup" %}>Doctor</a></li>
-  </ul>
+    <div class="tab-wrapper">
+    <ul>
+        <li class ="patient-tab"><a class="patient-link" href= {% url "users:signup" %} >Patient</a></li>
+        <li class ="doc-tab"><a class="doc-link" href= {% url "users:doctor-signup" %}>Doctor</a></li>
+    </ul>
 </div>
 </div>
+
+
 <!-- IMAGE CONTENT -->
     <div class="content-div">
         <div class="content-logo">
@@ -72,16 +73,16 @@
             <img src= {% static 'users/images/logo/logoicon.svg' %} class="logo-img" alt="logo image"/>
             <span class="content-span">Century Health</span>
             <h2>Let's Get You Started</h2>
-            <img src= {% static 'users/images/login-img/login-img.png' %} class="content-img" alt="sign up image"/>
+            <img src= {% static 'users/images/login-img/login-img.png' %} class="content-img"alt="sign up image"/>
         </div>
     
 </div>
-    
+     
 <!-- FORM -->
           <div class="form">
             <div class="info">
-            <form action = "signup" method = "POST">
-              {% csrf_token %}
+            <form action = "doctor-signup" method = "POST">
+            {% csrf_token %}
                 <h1>Hello!</h1>
                 <h3>Let's Help You Create An Account</h3>
               </div>
@@ -92,12 +93,19 @@
               name="first_name"
               placeholder="First Name*"
             /><br />
-            <label for="last_name"></label>
+            <label for="lastname"></label>
             <input
               type="lastname"
               id="last_name"
               name="last_name"
               placeholder="Last Name*"
+            /><br />
+            <label for="license"></label>
+            <input
+              type="license"
+              id="license"
+              name="license"
+              placeholder="License No*"
             /><br />
             <label for="email"></label>
             <input
@@ -109,38 +117,38 @@
             <label for="password"></label>
             <input
               type="password"
-              id="password1"
-              name="password1"
+              id="password"
+              name="password"
               placeholder="Password*"
             /><br />
             <label for="password"></label>
             <input
               type="password"
-              id="password2"
-              name="password2"
+              id="password"
+              name="password"
               placeholder="Confirm Password*"
             /><br />
             <label class="checkbox">
-                <input type="checkbox" name="remember_me"> I agree to Century Health <a href="#">Terms of Service</a> and <br> <a href="#">Privacy Policy</a>
-            </label>
-            <br />
-          <button type="submit" class="signup-btn">Sign Up</button>
-            <br />
+                <input type="checkbox" name="remember"> I agree to Century Health <a href="#">Terms of Service</a> and <br id="deleted-br"> <a href="#">Privacy Policy</a>
+              </label>
+              <br />
+           <button type="submit" class="signup-btn">Sign Up</button>
+              <br />
         </form>
           <h6>OR</h6>
           <div class="social-div">
-              <button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/facebook(1).png' %} />Sign up with Facebook</button>
-              <button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/search.png' %} />Sign up with Google</button>
+              <a href="www.facebook.com"><button class="social-btn"> <img class="icon" src={% static 'users/images/logo/facebook(1).png' %} />Sign up with Facebook</button></a>
+              <a href="www.google.com"></a><button class="social-btn"> <img class="icon" src={% static 'users/images/logo/search.png' %}/>Sign up with Google</button>
           </div>
+        <p>Already a member? <a class="login-link" href= {% url 'users:login' %}> Log In!</a></p>
+        </div>
           <div>
           {% for message in messages %}
           <h4> {{message}} </h4>
           {% endfor %}
           </div>
-        <p>Already a member? <a href={% url 'users:login' %}>Log In!</a></p>
-        </div>
       </div>
-      <script src= {% static 'users/js/signup.js' %}></script>
+      <script src= {% static 'users/js/doctor-signup.js' %}></script>
   </body>
 </html>
- {% endblock %}
+{% endblock %}

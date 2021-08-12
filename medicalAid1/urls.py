@@ -1,5 +1,4 @@
 """medicalAid1 URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -29,10 +28,9 @@ urlpatterns = [
     #path('faq/', views.faq, name = 'faq'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
+    path('users/', include('django.contrib.auth.urls')),
     path('', aid_app_views.index, name = "homepage"),
-    path('about-us/', aid_app_views.about_us, name = "about-us"),
     path('aid/', include('aidApp.urls')),
-    path('doctor/', include('doctor.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
