@@ -1,0 +1,240 @@
+/* Body Styling */
+:root {
+  --background: #f9f9f9;
+  --primaryText: #180126;
+  --secondaryText: #7e7a8f;
+  --tertiaryText: #c3c7d2;
+  --primaryColor: #3a5df8;
+  --secondaryColor: #f3ea12;
+}
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+    margin: 0;
+    padding:0;
+    color: var(--primaryText);
+    font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.back {
+    margin-left: 30px;
+    text-decoration: none;
+}
+.back:link,
+.back:visited {
+    color: var(--primaryColor);
+}
+.back:hover {
+    color: var(--secondaryColor);
+    text-shadow:  1px 1px 1px var(--primaryColor);
+}
+
+.support {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.support p {
+    margin: 0 30px;
+    text-align: center;
+}
+.feedback {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.feedback-thanks {
+    padding: 5px;
+    width: 280px;
+    border-radius: 20px;
+    background-color: var(--primaryColor);
+    color: #fff;
+    text-align: center;
+}
+
+
+/* This controls the layout of the page and stacks everything for mobile view (mobile first)  */
+.wrapper {
+  display: grid;
+  grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+}
+
+/************************************ Section Styling ************************************/
+
+/********** Nav Mobile View**********/
+header {
+  grid-area: header;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+nav {
+  grid-area: sidebar;
+}
+.logo {
+  width: 60%;
+  margin: 0;
+}
+.hamburger {
+  display: block;
+  float: right;
+}
+button.hamburger {
+ padding: 0;
+ margin: 0;
+ background-color: transparent;
+ border: none;
+}
+
+.nav-ul {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 70vh;
+  background-color: var(--primaryColor);
+  z-index: 10;
+} 
+.nav-ul a {
+  color: white;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.nav-ul li {
+  padding: 20px;
+  list-style-type: none;
+}
+.nav-ul img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.nav-ul.show {
+   display: flex;
+}
+.active-link {
+    color: var(--secondaryColor) !important;
+    font-weight: 700;
+}
+
+
+/* Styling for Headings */
+
+.main-heading{
+    text-align: center;
+}
+
+main {
+    grid-area: main;
+}
+
+
+
+
+/************************Styling for Laptops and Small Screens 769px and up*****************************/
+@media only screen and (min-width: 769px) {
+ 
+  /* This creates a two column view and makes the sidebar navigation visible  */
+  .wrapper {
+    grid-template-columns: 275px  1fr;
+    grid-template-areas:
+        "header  header"
+        "sidebar main";
+    margin-right: 2rem;
+  }
+
+  /***** Need this to make nav visible *****/
+  /***** Nav *****/
+  .logo {
+    width: 250px;
+  }
+ .nav-ul {
+   display: flex;
+   background-color: var(--primaryColor);
+   border-radius: 0 20px 0 0;
+   color: var(--background);
+   height: 100vh;
+   padding-top: 0;
+   position: sticky;
+   top: 0px;
+ }
+ 
+  nav a:hover,
+  .activeLink {
+    color: var(--secondaryColor);
+  }
+
+  .nav-ul li {
+    line-height: 50px;
+  }
+  .nav-ul img {
+    vertical-align: middle;
+    padding-right: 5px;
+  }
+  
+  /* hides hamburger button */
+  .hamburger {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 949px) {
+    .feedback img {
+        display: none;
+    }
+}
+@media (min-width: 950px) {
+    .feedback img {
+        width:100%;
+    }
+    .feedback-thanks {
+        width: 350px;
+        position: absolute;
+        top: 35px;
+        right: 35px;
+    }
+}
+
+/************************Styling for Desktops and Large Screens 1200px Up*****************************/
+@media (min-width: 1200px) {
+    /* This creates a 3 column view  */
+    .wrapper {
+        grid-template-columns: 275px  1fr;
+        grid-template-areas: 
+            "header  header "
+            "sidebar main ";
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+
+}

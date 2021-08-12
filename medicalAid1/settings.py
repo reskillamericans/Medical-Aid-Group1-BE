@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users',
     'django.contrib.sites',
     'phone_field',
+    'doctor',
 ]
 SITE_ID = 1
 

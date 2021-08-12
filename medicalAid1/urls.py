@@ -32,6 +32,7 @@ urlpatterns = [
     path('', aid_app_views.index, name = "homepage"),
     path('about-us/', aid_app_views.about_us, name = "about-us"),
     path('aid/', include('aidApp.urls')),
+    path('doctor/', include('doctor.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
