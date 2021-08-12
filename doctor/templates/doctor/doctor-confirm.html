@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor-Profile</title>
+    <link rel="shortcut icon" href="/images/admin-dash/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="\Doctor\doctor-confirm.css">
+    <script src="/Doctor/doctor-dash.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="#"><img src="/images/admin-dash/logo_header.svg" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="/images/admin-dash/fi_menu.svg"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="doctor-dash.html" class="activeLink">
+                        <img src="/images/admin-dash/dashboard_icon.svg" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="doctor-profile.html">
+                        <img src="/images/doctor-dash/profile-icon.svg" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="doctor-search.html">
+                        <img src="/images/doctor-dash/patients-icon.svg" alt="patients icon">
+                        Patients</a>
+                </li>
+                <li>
+                    <a href="doctor-consultations.html">
+                        <img src="/images/doctor-dash/consultations-icon.svg" alt="consultation icon">
+                        Consultations</a>
+                </li>
+                <li>
+                    <a href="doctor-schedule.html">
+                        <img src="/images/doctor-dash/schedule-icon.svg" alt="calendar icon">
+                        My Schedule</a>
+                </li>
+                <li>
+                    <a href="../contact.html">
+                        <img src="/images/doctor-dash/contact-icon.svg" alt="phone icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <img src="/images/admin-dash/logout_icon.svg" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Profile -->
+        <section class="profile bubble-style">
+            <div class="profile">
+                <img src="\images\doctor-profile\bostickprofile.svg" alt="image of current user" class="userPic" />
+                <div class="current-user">
+                    <h1>Mr. Michael Bostick</h1>
+                </div>
+                <div class="info">
+                    <div class="birth">
+                        <h3>Date of Birth</h3>
+                        <p>02/22/1983</p>
+                    </div>
+                    <div class="marital">
+                        <h3>Marital Status</h3>
+                        <p>Single</p>
+                    </div>
+                    <div class="ethnicity">
+                        <h3>Ethnicity</h3>
+                        <p>African American</p>
+                        <p>Japanese</p>
+                        <p>Italian</p>
+                    </div>
+                    <div class="gender">
+                        <h3>Gender</h3>
+                        <p>Male</p>
+                    </div>
+                    <div class="smoker">
+                        <h3>Smoker</h3>
+                        <p>No</p>
+                    </div>
+                    <div class="age">
+                        <h3>Age</h3>
+                        <p>35</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Buttons-->
+        <section class="request-buttons bubble-style">
+            <div class="big-review-btn">
+                <button class="review">Review</button>
+            </div>
+            <div class="big-accept-btn">
+                <button class="accept">Accept</button>
+            </div>
+        </section>
+        <!-- Contact info-->
+        <section class="contact">
+            <div class="heading">
+                <h2>Contact and Locations</h2>
+            </div>
+            <div class="contact-info bubble-style">
+                <h3>Address</h3>
+                <p>2972 Westheimer Rd.</p>
+                <p>Santa Ana. Illinois 85486</p>
+                <h3>Phone</h3>
+                <p>(316)555-0116</p>
+                <h3>Email</h3>
+                <p>jackson.graham@example.com</p>
+            </div>
+        </section>
+        <!-- Emergency Contact-->
+        <section class="e-contact">
+            <div class="heading">
+                <h2>Emergency Contact</h2>
+            </div>
+            <div class="emergency-info bubble-style">
+                <div class="info">
+                    <div class="name">
+                        <h3>Name</h3>
+                        <p>Joshua Graham</p>
+                    </div>
+                    <div class="phone">
+                        <h3>Phone</h3>
+                        <p>(090)556-3454</p>
+                    </div>
+                    <div class="relationship">
+                        <h3>Relationship</h3>
+                        <p>Uncle</p>
+                    </div>
+                    <div class="email">
+                        <h3>Email</h3>
+                        <p>email@example.com</p>
+                    </div>
+                    <div class="address">
+                        <h3>Address</h3>
+                        <p>2715 Ash Dr San Jose,</p>
+                        <p>South Dakota 83475</p>
+                    </div>
+                </div>
+        </section>
+        <!-- Recent visits   -->
+        <section class="visits">
+            <div class="heading">
+                <h2>Recent Visits</h2>
+            </div>
+            <div class="bubble-heading">
+                <p><b>Reason for Appointment</b></p>
+                <p><b>Date</b></p>
+                <p><b>Time</b></p>
+            </div>
+            <div class="visit-bubble bubble-style">
+                <div class="reason">
+                    <p>Blood test and physical</p>
+                </div>
+                <div class="date">
+                    <p>6/7/21</p>
+                </div>
+                <div class="time">
+                    <p>11:00am</p>
+                </div>
+            </div>
+            <div class="visit-bubble bubble-style">
+                <div class="reason">
+                    <p>CT scan of right shoulder</p>
+                </div>
+                <div class="date">
+                    <p>6/7/21</p>
+                </div>
+                <div class="time">
+                    <p>11:00am</p>
+                </div>
+            </div>
+            <div class="visit-bubble bubble-style">
+                <div class="reason">
+                    <p>Brain MRI for headaches</p>
+                </div>
+                <div class="date">
+                    <p>6/7/21</p>
+                </div>
+                <div class="time">
+                    <p>11:00am</p>
+                </div>
+            </div>
+        </section>
+        <!-- Medical Records   -->
+        <section class="records">
+            <div class="heading">
+                <h2>Medical Records</h2>
+            </div>
+            <div class="records-bubble bubble-style">
+                <div class="test">
+                    <h3>Blood Test</h3>
+                    <p>6/28/21</p>
+                </div>
+                <div class="results-btn">
+                    <button class="results">Results</button>
+                </div>
+            </div>
+            <div class="records-bubble bubble-style">
+                <div class="test">
+                    <h3>CT Scan</h3>
+                    <p>6/28/21</p>
+                </div>
+                <div class="results-btn">
+                    <button class="results">Results</button>
+                </div>
+            </div>
+            <div class="records-bubble bubble-style">
+                <div class="test">
+                    <h3>MRI Scan</h3>
+                    <p>6/28/21</p>
+                </div>
+                <div class="results-btn">
+                    <button class="results">Results</button>
+                </div>
+            </div>
+        </section>
+</body>
+
+</html>

@@ -12,13 +12,23 @@ from aidApp.models import Feedback, Patient, Health_Practitioner
 
 @login_required
 def doctor_dash_view(request):
+    user = User.objects.get(username = request.user.username)
+    doctors = Health_Practitioner.objects.filter(Q(health_practitioner__first_name=user.first_name) & Q(health_practitioner__last_name=user.last_name))
+
     context = {
-        'doctor': Health_Practitioner.objects.all()
+        'doctors': doctors
     }
     return render(request, 'doctor/doctor-dash.html', context)
 
 def doctor_profile_view(request):
-    return render(request, 'doctor/doctor-profile.html')
+    user = User.objects.get(username = request.user.username)
+    doctors = Health_Practitioner.objects.filter(Q(health_practitioner__first_name=user.first_name) & Q(health_practitioner__last_name=user.last_name))
+    
+    context = {
+        'doctors': doctors
+    }
+    return render(request, 'doctor/doctor-profile.html', context)
+    
 
 def doctor_patient_view(request):
     return render(request, 'doctor/doctor-patient.html')
@@ -99,5 +109,4 @@ def doctor_support_view(request):
 def doctor_support_success_view(request):
     return render(request, 'doctor/doctor-support-feedback.html')
 
-def doctor_signup_view(request):
-    return render(request, 'doctor/doctor-signup.html')
+

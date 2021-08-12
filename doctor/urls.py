@@ -10,7 +10,6 @@ from .views import (
     doctor_schedule_week_view,
     doctor_support_view,
     doctor_support_success_view,
-    doctor_signup_view,
     doctor_consultation_view,
 
 )
@@ -26,7 +25,6 @@ urlpatterns = [
     path('doctor-schedule-week/', doctor_schedule_week_view, name = "schedule-week"),
     path('doctor-support/', doctor_support_view, name = "doctor-support"),
     path('doctor-support-success/', doctor_support_success_view, name = "doctor-support-success"),
-    path('doctor-signup/', doctor_signup_view, name ='doctor-signup' ),   
     path('doctor-profile/', doctor_profile_view, name = "doctor-profile"),
         
 ]

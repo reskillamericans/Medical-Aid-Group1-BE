@@ -1,0 +1,326 @@
+/* Body Styling */
+:root {
+    --background: #f9f9f9;
+    --primaryText: #180126;
+    --secondaryText: #7e7a8f;
+    --tertiaryText: #c3c7d2;
+    --primaryColor: #3a5df8;
+    --secondaryColor: #f3ea12;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+      margin: 0;
+      padding:0;
+      color: var(--primaryText);
+      font-family: "Open Sans", sans-serif;
+  }
+  button {
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  /* ˅ This is so all the content sections have the same border, color and are vertically centered */
+  .bubble-style{
+    border-radius: 20px;
+      background-color: var(--background);
+      border: 1px solid var(--tertiaryText);
+      align-items: center;
+      margin: 1rem 0;
+  }
+  /* This controls the layout of the page and stacks everything for mobile view (mobile first)  */
+  .wrapper {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "sidebar"
+        "profile"
+        "contact"
+        "new"
+        "input"
+        "update";
+  }
+  
+  /************************************ Section Styling ************************************/
+  
+  /********** Nav Mobile View**********/
+  header {
+    grid-area: header;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+  }
+  nav {
+    grid-area: sidebar;
+  }
+  .logo {
+    width: 60%;
+    margin: 0;
+  }
+  .hamburger {
+    display: block;
+    float: right;
+  }
+  button.hamburger {
+   padding: 0;
+   margin: 0;
+   background-color: transparent;
+   border: none;
+  }
+  
+  .nav-ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 70vh;
+    background-color: var(--primaryColor);
+    justify-content: center;
+    z-index: 10;
+  } 
+  .nav-ul a {
+    color: white;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  .nav-ul li {
+    padding: 20px;
+    list-style-type: none;
+  }
+  .nav-ul img {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .nav-ul.show {
+     display: flex;
+  }
+
+/* Profile */
+
+.profile {
+    grid-area: profile;
+    /* justify-content: space-between; */
+    text-align: center;
+    margin: 30px;       
+}
+
+.heading{
+    font-style: bold;
+}
+
+.userPic {
+  width: 30%;
+}
+
+.profile-container{
+    background-color:#DAE4FF ;
+    padding: 5px;
+}
+
+.contact {
+    /* display: none; */
+    text-align: center;
+    margin: 30px;
+    grid-area: contact;   
+}
+
+.heading {
+    text-align: center;
+    margin: 30px;  
+}
+
+.new-patients {
+    margin: 15px;
+}
+
+.new {
+  grid-area: new;
+}
+
+/* Form */
+.container {
+  /* padding: 1rem; */
+  display: inline-block;
+}
+
+
+.info-input {
+    padding: 1rem;
+    grid-area: input;    
+}
+
+input {
+    margin: 15px 0;
+    width: 90%;
+    padding: 8px;
+    background-color:#C3C7D2 ;
+}
+
+select {
+    width:90% ;
+    margin: 15px 0;
+    padding: 8px;
+}
+
+.update {
+    background: var(--secondaryColor);
+    color: var(--primaryText);
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding:10px;
+    /* width: 243px; */
+    text-align: center;
+    margin: 0 auto;
+    grid-area: update;
+}
+
+
+/************************Styling for Laptops and Small Screens 769px and up*****************************/
+@media only screen and (min-width: 769px) {
+ 
+    /* This creates a two column view and makes the sidebar navigation visible  */
+    .wrapper {
+      grid-template-columns: 275px  1fr;
+      grid-template-areas: 
+      "header  header"
+      "sidebar profile"
+      "sidebar contact"
+      "sidebar new"
+      "sidebar input"
+      "sidebar update";
+      margin-right: 2rem;
+    }
+  
+    /***** Need this to make nav visible *****/
+    /***** Nav *****/
+    .logo {
+      width: 250px;
+    }
+   .nav-ul {
+     display: flex;
+     background-color: var(--primaryColor);
+     border-radius: 0 20px 0 0;
+     color: var(--background);
+     height: 100vh;
+     padding-top: 0;
+     position: sticky;
+     top: 0px;
+   }
+   
+   nav a:hover,
+   a.activeLink{
+     color: var(--secondaryColor);
+   }
+  
+    .nav-ul li {
+      line-height: 50px;
+    }
+    .nav-ul img {
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+    
+    /* hides hamburger button */
+    .hamburger {
+      display: none;
+    }
+    /***** styling for content headings *****/
+    h2 {
+        font-size: 22px;
+      }
+    }
+
+    .container {
+     display: inline-block;
+     margin-left: 15%;
+    }
+
+    .container1 {
+      display:grid;
+      grid-template-areas: "container1"; 
+    }
+
+    
+
+
+  
+  
+  /************************Styling for Desktops and Large Screens 1200px Up*****************************/
+  @media (min-width: 1400px) {
+  
+      .wrapper {
+          grid-template-columns: 275px 1fr;
+          grid-template-areas:
+          "header  header header"
+          "sidebar profile profile"
+          "sidebar contact input"
+          "sidebar new input"
+          "sidebar update update";
+      }
+      h1 {
+        font-size: 37px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+      .profile {
+        display: flex;
+      }
+      .profile h1 {
+        padding: 0;
+        margin: 0;
+      }
+      .userPic {
+        display: block;
+      }
+
+      .container1{
+        display:inline-grid;
+        padding: 10px;   
+      }
+
+      .info-input {
+        width: 400px;
+        margin-left: 0;
+        margin-left: -300px;
+      }
+
+      .contact {
+        width: 60%;
+        height: 500px;
+      }
+
+      .new {
+        width: 60%;
+        margin-top: -500px;
+        margin-left: 100px;
+      }
+
+      
+
+  
+  
+  
+  
+  }

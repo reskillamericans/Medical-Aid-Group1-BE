@@ -107,22 +107,23 @@
                 </div>
         </section> -->
         <section class="profile bubble-style">
+            {% for doctor in doctors %}   
             <div class="profile">
                 <img src="{% static 'doctor/images/doctor-dash/crusher.svg'%}" alt="image of current user" class="userPic" />
                 <div class="current-user">
-                    <h1>Dr. Crusher, MD</h1>
+                    <h1>Dr. {{ doctor.health_practitioner.last_name }}, MD</h1>
                 </div>
                 <div class="info">
                     <div class="specialty">
                         <h3>Specialty</h3>
-                        <p>Internal Medicine and Pediatrics</p>
+                        <p>{{ doctor.specialty }}</p>
                     </div>
                     <div class="languages">
                         <h3>Languages</h3>
                         <p>English and Spanish</p>
                     </div> <div class="location">
                         <h3>Location</h3>
-                        <p>Cleveland General Hospital</p>
+                        <p>{{ doctor.clinics.name }}</p>
                     </div> <div class="new-patients">
                         <h3>Accepting New Patients</h3>
                         <p>Yes</p>
@@ -156,7 +157,8 @@
                 <p>4517 Washington Ave.</p>
                 <p>Manchester,Kentucky 39495</p>
                 <p>(455)888-3884</p>
-            </div>                
+            </div>   
+            {% endfor %}              
         </section>
         <!-- Map -->
         <section class="map">
