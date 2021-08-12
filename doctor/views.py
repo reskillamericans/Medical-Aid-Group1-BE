@@ -109,4 +109,8 @@ def doctor_support_view(request):
 def doctor_support_success_view(request):
     return render(request, 'doctor/doctor-support-feedback.html')
 
+def doctor_confirm_view(request):
+    return render(request, 'doctor/doctor-confirm.html')
 
+def doctor_edit_view(request):
+    return render(request, 'doctor/doctor-edit.html')

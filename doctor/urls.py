@@ -11,6 +11,8 @@ from .views import (
     doctor_support_view,
     doctor_support_success_view,
     doctor_consultation_view,
+    doctor_confirm_view,
+    doctor_edit_view,
 
 )
 
@@ -26,5 +28,7 @@ urlpatterns = [
     path('doctor-support/', doctor_support_view, name = "doctor-support"),
     path('doctor-support-success/', doctor_support_success_view, name = "doctor-support-success"),
     path('doctor-profile/', doctor_profile_view, name = "doctor-profile"),
+    path('doctor-confirm/', doctor_confirm_view, name = "doctor-confirm"),
+    path('doctor-edit/', doctor_edit_view, name = "doctor-edit"),
         
 ]
