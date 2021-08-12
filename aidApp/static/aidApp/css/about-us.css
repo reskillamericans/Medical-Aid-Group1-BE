@@ -1,16 +1,25 @@
 body,
 h4 {
-  background: #f9f9f9;
   font-family: "Open Sans", sans-serif;
   color: #180126;
   margin: 0;
   padding: 0;
+}
+body {  
+  background-color: #f9f9f9;
+}
+h2 {
+  text-align: center;
+  font-weight: 400;
+  line-height: 0px;
+  font-size: x-large;
 }
 a {
   text-decoration: none;
 
   color: #180126;
 }
+
 /* NAVBAR */
 .navbar {
   display: flex;
@@ -66,49 +75,49 @@ ul.nav-tabs,
 ul.login {
   list-style-type: none;
 }
-
+/* active-link settings */
 .about-nav {
   background-color: #f3ea12;
-  /* padding: 8px 12px; */
   border-radius: 4px;
 }
 
+/* Not used in about-us.html */
 /* li {
   display: inline-block;
   padding: 0px 10px;
   
 } */
 
-.content-div {
+/* .content-div {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
   margin-top: 11px;
-}
-
+} */
+/* 
 .logo-img {
   vertical-align: middle;
   padding-top: 4px;
   padding-left: 35px;
   width: 13%;
-}
+} */
 
-.content-span {
+/* .content-span {
   color: rgb(69 122 255);
   font-weight: bold;
   font-size: 30px;
   vertical-align: middle;
-}
+} */
 
-div.content-logo {
+/* div.content-logo {
   background-color: #eef0f6;
   margin-top: 40px;
   width: 50%;
   border-radius: 20px;
   margin-left: 25px;
-}
+} */
 
-div.inner {
+/* div.inner {
   padding-top: 45px;
   display: block;
   margin-left: auto;
@@ -120,14 +129,7 @@ div.inner {
 .content-img {
   width: 115%;
   padding-top: 125px;
-}
-
-h2 {
-  text-align: center;
-  font-weight: 400;
-  line-height: 0px;
-  font-size: x-large;
-}
+} */
 
 .login-btn {
   background: #f3ea12;
@@ -144,11 +146,6 @@ h2 {
 button:hover {
   background: #eef0f6;
 }
-
-label.checkbox,
-.password {
-  white-space: nowrap;
-}
 .topnav {
   display: none;
 }
@@ -161,13 +158,17 @@ label.checkbox,
   font-size: 35px;
   font-weight: bold;
 }
+label.checkbox,
+.password {
+  white-space: nowrap;
+}
 .moth {
-  padding-bottom: 2.5em;
+/*   padding-bottom: 2.5em; */
   text-align: center;
   font-weight: bold;
   font-size: 20px;
   position: relative;
-  top: 130px;
+/*   top: 130px; */
 }
 .content-1 {
   display: flex;
@@ -178,6 +179,7 @@ label.checkbox,
   display: flex;
   justify-content: space-around;
   align-items: center;
+flex-wrap:wrap;
 }
 .content-2 div {
   margin: 1em 0em;
@@ -231,7 +233,7 @@ footer .blue {
   justify-content: space-around;
   align-items: flex-start;
   padding: 2em;
-  background-color: #FAFCFF;
+  background-color: #F3F4FE;
 }
 footer .quick-links {
   display: flex;
@@ -268,7 +270,7 @@ footer .quick-links a:hover {
   padding: 4px 7px 4px 7px;
 }
 .social-links a:hover{
-  background-color: #7E7A8F;
+  color: rgb(69 122 255);
 }
 .copyright {
   text-align: center;
@@ -280,7 +282,9 @@ footer .quick-links a:hover {
 .fm{
   color: #7E7A8F;
 }
-
+#logo-foot {
+  color: rgb(69 122 255);
+}
 .find-us p, a{
   color: #7E7A8F;
   transition: 0.3s ease;
@@ -298,9 +302,9 @@ footer .quick-links a:hover {
     position: relative;
   }
 
-  .content-div {
+  /* .content-div {
     display: block;
-  }
+  } */
 
   .navbar {
     display: none;

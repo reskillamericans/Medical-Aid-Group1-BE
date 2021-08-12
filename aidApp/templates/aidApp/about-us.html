@@ -1,69 +1,68 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     <title>About Us</title>
-    <link rel="stylesheet" href="{% static 'about-us.css' %}">
+    <link rel="stylesheet" href="{% static 'aidApp/css/about-us.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="{% static '/images/admin-dash/favicon.svg' %}">
+    <link rel="shortcut icon" href="{% static 'aidApp/images/admin-dash/favicon.svg' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/21d1f09dfc.js" crossorigin="anonymous"></script>
-    <script src="{% static 'login.js' %}" defer></script>
+    <script src="login.js" defer></script>
 </head>
-<header>
-    <!-- NAV BAR -->
-    <nav class="navbar">
-        <div class="logo-div">
-            <img src="{% static 'images/logo/logoicon.svg' %}" class="nav-logo" alt="logo image" />
-            <span class="nav-logo-text">Century Health</span>
-        </div>
-        <div class="nav-tabs">
-            <ul>
-                <li><a href="{% url 'homepage' %}">Home</a></li>
-                <li  class="about-nav"><a href="{% url 'about-us' %}">About</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="medical-practitioners.html">Find a Doctor</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="login">
-            <ul>
-                <li><a  href="login.html">Log In</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="topnav">
-        <a href="{% url 'homepage' %}" class="active"><img src="{% static 'images/logo/logoicon.svg' %}"> <span class="nav-logo-text">Century
-                Health</span></a>
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks">
-            <a href="{% url 'homepage' %}">Home</a>
-            <a href="{% url 'about-us' %}">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="medical-practitioners.html">Find a Doctor</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="signup.html">Sign Up</a>
-        </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
-</header>
 
-
-<style>a {text-decoration: none;}</style>
 <body>
+    <header>
+        <!-- NAV BAR -->
+        <nav class="navbar">
+            <a class="logo-div" href="{% url 'homepage' %}">
+                <img src="{% static 'aidApp/images/logo/logoicon.svg' %}" class="nav-logo" alt="logo image" />
+                <span class="nav-logo-text">Century Health</span>
+            </a>
+            <div class="nav-tabs">
+                <ul>
+                    <li><a href="{% url 'homepage' %}">Home</a></li>
+                    <li class="about-nav"><a href="{% url 'about-us' %}">About</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="./Doctor/doctor-dash.html">Find a Doctor</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="login">
+                <ul>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="topnav">
+            <a href="{% url 'homepage' %}" class="active"><img src="{% static 'aidApp/images/logo/logoicon.svg' %}"> <span class="nav-logo-text">Century
+                    Health</span></a>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+                <a href="{% url 'homepage' %}">Home</a>
+                <a href="{% url 'about-us' %}">About</a>
+                <a href="faq.html">FAQ</a>
+                <a href="./Doctor/doctor-dash.html">Find a Doctor</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
     <div class="wrapper">
         <div class="title">
             <p>
@@ -72,59 +71,61 @@
         </div>
         <div class="container">
             <div class="content-1">
-            <div class="om">
-                <p class="omh">
-                    Our Mission
-                </p>
-                <p class="omt">
-                    Our mission is to provide our clients with an easy way to access their 
-                    medical information in one place and to provide them with easy ways to 
-                    make appointments.
-                </p>
-            </div>
-            <div class="omi">
-                <img class="imageom" src="{% static './images/about-us/omi.svg' %}" alt="doctor and patient">
-            </div>
+                <div class="om">
+                    <p class="omh">
+                        Our Mission
+                    </p>
+                    <p class="omt">
+                        Our mission is to provide our clients with an easy way to access their
+                        medical information in one place and to provide them with easy ways to
+                        make appointments.
+                    </p>
+                </div>
+                <div class="omi">
+                    <img class="imageom" src="{% static 'aidApp/images/about-us/omi.svg' %}" alt="doctor and patient">
+                </div>
             </div>
 
 
 
             <div class="mot">
-                <div><p class="moth">
-                    Meet Our Team
-                </p></div>
-               <div class="content-2">
-                <div class="mk">
-                    <img class="doctorimg" src="{% static './images/about-us/mk.svg' %}" alt="doctor michael king">
-                    <p class="mott">
-                        Dr. Michael King Chief Physician
+                <div>
+                    <p class="moth">
+                        Meet Our Team
                     </p>
                 </div>
-                <div class="jt">
-                    <img class="doctorimg" src="{% static './images/about-us/jt.svg' %}" alt="doctor jennifer townsend">
-                    <p class="mott">
-                        Dr. Jennifer Townsend Cardiologist
-                    </p>
-                </div>
-                <div class="kj">
-                   
-                    <img class="dkj doctorimg" src="{% static './images/about-us/kj.svg' %}" alt="doctor kimberly johnson">
-                    <p class="mott kjt">
-                        Dr. Kimberly Johnson Otolaryngologist
-                    </p>
-                </div>
-                <div class="jm">
-                    <img class="doctorimg jmi" src="{% static './images/about-us/jm.svg' %}" alt="doctor john matthews">
-                    <p class="mott jmt">
-                        Dr. John Matthews Neurologist
-                    </p>
-                </div>
-                <div class="kc">
-                    <img class="doctorimg kci" src="{% static './images/about-us/kc.svg' %}" alt="doctor kenneth coleman">
-                    <p class="mott kct">
-                        Dr. Kenneth Coleman Neurologist
-                    </p>
-                </div>
+                <div class="content-2">
+                    <div class="mk">
+                        <img class="doctorimg" src="{% static 'aidApp/images/about-us/mk.svg' %}" alt="doctor michael king">
+                        <p class="mott">
+                            Dr. Michael King Chief Physician
+                        </p>
+                    </div>
+                    <div class="jt">
+                        <img class="doctorimg" src="{% static 'aidApp/images/about-us/jt.svg' %}" alt="doctor jennifer townsend">
+                        <p class="mott">
+                            Dr. Jennifer Townsend Cardiologist
+                        </p>
+                    </div>
+                    <div class="kj">
+
+                        <img class="dkj doctorimg" src="{% static 'aidApp/images/about-us/kj.svg' %}" alt="doctor kimberly johnson">
+                        <p class="mott kjt">
+                            Dr. Kimberly Johnson Otolaryngologist
+                        </p>
+                    </div>
+                    <div class="jm">
+                        <img class="doctorimg jmi" src="{% static 'aidApp/images/about-us/jm.svg' %}" alt="doctor john matthews">
+                        <p class="mott jmt">
+                            Dr. John Matthews Neurologist
+                        </p>
+                    </div>
+                    <div class="kc">
+                        <img class="doctorimg kci" src="{% static 'aidApp/images/about-us/kc.svg' %}" alt="doctor kenneth coleman">
+                        <p class="mott kct">
+                            Dr. Kenneth Coleman Neurologist
+                        </p>
+                    </div>
                 </div>
 
             </div>
@@ -134,51 +135,51 @@
                     Popular Services We Offer
                 </p>
                 <div class="content-2">
-                <div class="ap">
-                    <img class="pswoimg" src="{% static './images/about-us/ap.svg' %}" alt="">
-                    <p class="pswot">
-                        Annual Physical
-                    </p>
-                </div>
-                <div class="ecg">
-                    <img class="pswoimg" src="{% static './images/about-us/ecg.svg' %}" alt="">
-                    <p class="pswot">
-                        Electrocardiogram (ECG)
-                    </p>
-                </div>
-                <div class="at">
-                   
-                    <img class="dat pswoimg" src="{% static './images/about-us/at.svg' %}" alt="">
-                    <p class="pswot att">
-                        Allergy Testing
-                    </p>
-                </div>
-                <div class="mri">
-                    <img class="pswoimg mrii" src="{% static './images/about-us/mri.svg' %}" alt="">
-                    <p class="pswot mrit">
-                        Magnetic Resonance Imaging (MRI)
-                    </p>
-                </div>
-                <div class="bt">
-                    <img class="pswoimg bti" src="{% static './images/about-us/bt.svg' %}" alt="">
-                    <p class="pswot btt">
-                        Blood Test
-                    </p>
+                    <div class="ap">
+                        <img class="pswoimg" src="{% static 'aidApp/images/about-us/ap.svg' %}" alt="">
+                        <p class="pswot">
+                            Annual Physical
+                        </p>
+                    </div>
+                    <div class="ecg">
+                        <img class="pswoimg" src="{% static 'aidApp/images/about-us/ecg.svg' %}" alt="">
+                        <p class="pswot">
+                            Electrocardiogram (ECG)
+                        </p>
+                    </div>
+                    <div class="at">
+
+                        <img class="dat pswoimg" src="{% static 'aidApp/images/about-us/at.svg' %}" alt="">
+                        <p class="pswot att">
+                            Allergy Testing
+                        </p>
+                    </div>
+                    <div class="mri">
+                        <img class="pswoimg mrii" src="{% static 'aidApp/images/about-us/mri.svg' %}" alt="">
+                        <p class="pswot mrit">
+                            Magnetic Resonance Imaging (MRI)
+                        </p>
+                    </div>
+                    <div class="bt">
+                        <img class="pswoimg bti" src="{% static 'aidApp/images/about-us/bt.svg' %}" alt="">
+                        <p class="pswot btt">
+                            Blood Test
+                        </p>
+                    </div>
                 </div>
             </div>
-            </div>
-</div>
-</div>
-<footer>
-    <div class="blue">
+        </div>
+    </div>
+    <footer>
+        <div class="blue">
             <div class="mission">
-             <div>
-                <div class="footer-logo">
-                <img class="logof footm" src="{% static './images/about-us/logo.svg' %}" alt="Century Health logo">
-                <span class="fh footm">Century Health</span>
-                   </div>
-                <p class="fm footm">We will always consider<br> the well-being of our patients. <br>You matter.</p>
-             </div>
+                <div>
+                    <a class="footer-logo" href="{% url 'homepage' %}">
+                        <img class="logof footm" src="{% static 'aidApp/images/about-us/logo.svg' %}" alt="Century Health logo">
+                        <span class="fh footm" id="logo-foot">Century Health</span>
+                    </a>
+                    <p class="fm footm">We will always consider<br> the well-being of our patients. <br>You matter.</p>
+                </div>
                 <div class="social footm">
                     <h4>Follow us</h4>
                     <div class="social-links">
@@ -204,29 +205,16 @@
                     <a class="emailf" href="mailto:name@email.com">centuryhealth@hotmail.com</a><br>
                     <a class="emailf" href="mailto:name@email.com">centuryhealth@gmail.com</a>
                 </div>
-               
+
             </div>
-    </div>
-    <div class="copyright">
-        <p>Copyright
-            ©
-            2021
-        </p>
-    </div>
-</footer>
+        </div>
+        <div class="copyright">
+            <p>Copyright
+                ©
+                2021
+            </p>
+        </div>
+    </footer>
 </body>
+
 </html>
-<!-- 
-<script>
-    // HAMBURGER MENU
-
-        function myFunction() {
-            var x = document.getElementById("myLinks");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
-        }
-
-</script> -->
