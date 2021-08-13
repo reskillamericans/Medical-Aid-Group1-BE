@@ -10,11 +10,11 @@ from .models import Feedback, FAQ
 
 # Landing page 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'aidApp/index.html')
 
 # About Us page 
 def about_us(request):
-    return render(request, 'about-us.html')
+    return render(request, 'aidApp/about-us.html')
 
 def faq(request):
 

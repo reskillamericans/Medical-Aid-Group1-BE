@@ -1,5 +1,5 @@
-{% load static %}
 <!-- The landing page html codes here -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,50 +7,54 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'style.css' %}">
-  <link rel="shortcut icon" type="cross-logo" href="{% static 'images/landing-page/cross.png' %}">
-  <script src="https://kit.fontawesome.com/539f78907e.js" crossorigin="anonymous"></script>
-  <script src="./login.js" defer></script>
-  <script src="carousel.js" defer></script>
+  <link rel="stylesheet" href="{% static 'aidApp/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{% static 'aidApp/images/admin-dash/favicon.svg' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/21d1f09dfc.js" crossorigin="anonymous"></script>
+  <script src="login.js" defer></script>
   <title>Landing Page</title>
 </head>
 
 <body>
   <header>
-    <!-- NAV BAR -->
     <nav class="navbar">
-      <div class="logo-div">
-        <a href="{% url 'homepage' %}"> <img src="{% static 'images/logo/logoicon.svg' %}" class="nav-logo" alt="logo image">
-          <span class="nav-logo-text">Century Health</span></a>
-      </div>
+      <a class="logo-div" href="{% url 'homepage' %}">
+        <img src="{% static 'aidApp/images/logo/logoicon.svg' %}" class="nav-logo" alt="logo image" />
+        <span class="nav-logo-text">Century Health</span>
+      </a>
       <div class="nav-tabs">
         <ul>
-          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li class="active-nav"><a href="{% url 'homepage' %}">Home</a></li>
           <li><a href="{% url 'about-us' %}">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="Doctor/doctor-dash.html">Find a Doctor</a></li>
+          <li><a href="./Doctor/doctor-dash.html">Find a Doctor</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
       <div class="login">
         <ul>
-          <li><a class="login-nav" href="login.html">Log In</a></li>
-          <li class="active-link"><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
         </ul>
       </div>
     </nav>
     <div class="topnav">
-      <a href="{% url 'homepage' %}" class="logo"><img src="{% static 'images/logo/logoicon.svg' %}"> <span class="nav-logo-text">Century
+      <a href="{% url 'homepage' %}"><img src="{% static 'aidApp/images/logo/logoicon.svg' %}"> <span class="nav-logo-text">Century
           Health</span></a>
       <!-- Navigation links (hidden by default) -->
       <div id="myLinks">
         <a href="{% url 'homepage' %}">Home</a>
         <a href="{% url 'about-us' %}">About</a>
         <a href="faq.html">FAQ</a>
-        <a href="Doctor/doctor-dash.html">Find a Doctor</a>
+        <a href="./Doctor/doctor-dash.html">Find a Doctor</a>
         <a href="contact.html">Contact Us</a>
-        <a href="login.html">Log In</a>
-        <a class="active-hamburger" href="signup.html">Sign Up</a>
+        <a href="signup.html">Sign Up</a>
       </div>
       <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -99,37 +103,37 @@
       <h2 class="how-h2">How It Works</h2>
       <p>You can get started on Century Health in 4 simple steps. Easy, right? All you need to do is:
       </p>
-      <img class="how-img" src="{% static 'images/landing-page/illustration-door.svg' %}">
+      <img class="how-img" src="{% static 'aidApp/images/landing-page/illustration-door.svg' %}">
     </div>
     <div class="how-steps">
       <div class="column2">
         <div class="step-1">
-          <img src="{% static 'images/landing-page/icon-number1.svg' %}" alt="The number 1">
+          <img src="{% static 'aidApp/images/landing-page/icon-number1.svg' %}" alt="The number 1">
           <div class="directions">
-            <img src="{% static 'images/landing-page/icon-search.svg' %}" alt="Search icon of magnifying glass">
+            <img src="{% static 'aidApp/images/landing-page/icon-search.svg' %}" alt="Search icon of magnifying glass">
             <p>Search for a doctor near you and get 2 free consultations</p>
           </div>
         </div>
         <div class="step-3">
-          <img src="{% static 'images/landing-page/icon-number3.svg' %}" alt="The number 3">
+          <img src="{% static 'aidApp/images/landing-page/icon-number3.svg' %}" alt="The number 3">
           <div class="directions">
-            <img src="{% static 'images/landing-page/icon-calendar.svg' %}" alt="Calendar icon">
+            <img src="{% static 'aidApp/images/landing-page/icon-calendar.svg' %}" alt="Calendar icon">
             <p>Check with the doctor and book an appointment</p>
           </div>
         </div>
       </div>
       <div class="column3">
         <div class="step-2">
-          <img src="{% static 'images/landing-page/icon-number2.svg' %}" alt="The number 2">
+          <img src="{% static 'aidApp/images/landing-page/icon-number2.svg' %}" alt="The number 2">
           <div class="directions">
-            <img src="{% static 'images/landing-page/icon-doctor.svg' %}" alt="Doctor icon">
+            <img src="{% static 'aidApp/images/landing-page/icon-doctor.svg' %}" alt="Doctor icon">
             <p>Check Doctor’s profile for your choice</p>
           </div>
         </div>
         <div class="step-4">
-          <img src="{% static 'images/landing-page/icon-number4.svg' %}" alt="The number 4">
+          <img src="{% static 'aidApp/images/landing-page/icon-number4.svg' %}" alt="The number 4">
           <div class="directions">
-            <img src="{% static 'images/landing-page/icon-support.svg' %}" alt="Customer Support icon">
+            <img src="{% static 'aidApp/images/landing-page/icon-support.svg' %}" alt="Customer Support icon">
             <p>Get your healthcare solution.</p>
           </div>
         </div>
@@ -149,37 +153,37 @@
     </div>
     <div class="dr-container">
       <div class="dr-card dr1">
-        <img src="{% static 'images/landing-page/dr-ariv.svg' %}" alt="Image of Doctor">
+        <img src="{% static 'aidApp/images/landing-page/dr-ariv.svg' %}" alt="Image of Doctor">
         <h3>Dr. Kapur Ariv</h3>
         <p>Surgeon</p>
         <button class="dr-btn">View Profile</button>
       </div>
       <div class="dr-card dr2">
-        <img src="{% static 'images/landing-page/dr-oke.svg' %}" alt="Image of Doctor">
+        <img src="{% static 'aidApp/images/landing-page/dr-oke.svg' %}" alt="Image of Doctor">
         <h3>Dr. Blessing Oke</h3>
         <p>Pediatrician</p>
         <button class="dr-btn">View Profile</button>
       </div>
       <div class="dr-card dr3">
-        <img src="{% static 'images/landing-page/dr-walters.svg' %}" alt="Image of Doctor">
+        <img src="{% static 'aidApp/images/landing-page/dr-walters.svg' %}" alt="Image of Doctor">
         <h3>Dr. Alice Walters</h3>
         <p>Cosmetic Surgeon</p>
         <button class="dr-btn">View Profile</button>
       </div>
       <div class="dr-card dr4">
-        <img src="{% static 'images/landing-page/dr-davies.svg' %}" alt="Image of Doctor">
+        <img src="{% static 'aidApp/images/landing-page/dr-davies.svg' %}" alt="Image of Doctor">
         <h3>Dr. Pam Davies</h3>
         <p>Gynecologist</p>
         <button class="dr-btn">View Profile</button>
       </div>
       <div class="dr-card dr5">
-        <img src="{% static 'images/landing-page/dr-alaba.svg' %}" alt="Image of Doctor">
+        <img src="{% static 'aidApp/images/landing-page/dr-alaba.svg' %}" alt="Image of Doctor">
         <h3>Dr. David Alaba</h3>
         <p>Dentist</p>
         <button class="dr-btn">View Profile</button>
       </div>
       <div class="dr-card">
-        <img src="{% static 'images/landing-page/dr-william.svg' %}" alt="Image of Doctor">
+        <img src="{% static 'aidApp/images/landing-page/dr-william.svg' %}" alt="Image of Doctor">
         <h3>Dr. Ken William</h3>
         <p>Caridologist</p>
         <button class="dr-btn">View Profile</button>
@@ -200,22 +204,22 @@
       <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
         <div class="img-slide">
-          <img src="{% static 'images/landing-page/Tina Frey.png' %}">
-          <img src="{% static 'images/landing-page/Olswin.png' %}">
+          <img src="{% static 'aidApp/images/landing-page/Tina Frey.png' %}">
+          <img src="{% static 'aidApp/images/landing-page/Olswin.png' %}">
         </div>
       </div>
       <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
         <div class="img-slide">
-          <img src="{% static 'images/landing-page/Olswin.png' %}">
-          <img src="{% static 'images/landing-page/Olswin.png' %}">
+          <img src="{% static 'aidApp/images/landing-page/Olswin.png' %}">
+          <img src="{% static 'aidApp/images/landing-page/Olswin.png' %}">
         </div>
       </div>
       <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
         <div class="img-slide">
-          <img src="{% static 'images/landing-page/Tina Frey.png' %}">
-          <img src="{% static 'images/landing-page/Tina Frey.png' %}">
+          <img src="{% static 'aidApp/images/landing-page/Tina Frey.png' %}">
+          <img src="{% static 'aidApp/images/landing-page/Tina Frey.png' %}">
         </div>
       </div>
       <br>
@@ -230,7 +234,7 @@
   <section class="track">
     <div class="track-outer">
       <div class="phone-block">
-        <img src="{% static '/images/landing-page/phone-app.svg' %}" alt="image of app on phone" class="phone">
+        <img src="{% static 'aidApp/images/landing-page/phone-app.svg' %}" alt="image of app on phone" class="phone">
       </div>
       <div class="track-wrapper">
         <h2>Track Your Health History Periodically</h2>
@@ -238,8 +242,8 @@
           anywhere.
           Download the App now and say yes to wellness. </p>
         <div class="store-btns">
-          <a href="#"><img src="{% static '/images/landing-page/app-store.svg' %}" alt="apple store link"></a>
-          <a href="#"><img src="{% static '/images/landing-page/google-play.svg' %}" alt="google play store link"></a>
+          <a href="#"><img src="{% static 'aidApp/images/landing-page/app-store.svg' %}" alt="apple store link"></a>
+          <a href="#"><img src="{% static 'aidApp/images/landing-page/google-play.svg' %}" alt="google play store link"></a>
         </div>
       </div>
     </div>
@@ -259,51 +263,48 @@
 
   <!-----Footer------->
   <footer>
-
-    <div class="footer-info">
-
+    <div class="blue">
       <div class="mission">
-        <a class="brand-footer" href="{% url 'homepage' %}">
-          <img src="{% static './images/landing-page/cross.png' %}" class="nav-logo" alt="logo image" />
-          <span class="nav-logo-text">Century Health</span></a>
-        <p class="bold">We will always consider<br> the wellbeing
-          of our<br> patient. You matter</p>
-      </div>
-      <div class="follow">
-        <h4>Follow us</h4>
-        <div class="social-icons">
-          <a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-          <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
-          <a href="www.google.com"><i class="fab fa-google-plus-g"></i></a>
+        <div>
+          <a class="footer-logo" href="{% url 'homepage' %}">
+            <img class="logof footm" src="{% static 'aidApp/images/about-us/logo.svg' %}" alt="Century Health logo">
+            <span class="fh footm" id="logo-foot">Century Health</span>
+          </a>
+          <p class="fm footm">We will always consider<br> the well-being of our patients. <br>You matter.</p>
+        </div>
+        <div class="social footm">
+          <h4>Follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+          </div>
         </div>
       </div>
-
-
-      <div class="link-list">
+      <div class="quick-links">
         <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li class="link"><a href="{% url 'about-us' %}">About</a></li>
-          <li class="link"><a href="#">Services</a></li>
-          <li class="link"><a href="faq.html">FAQ</a></li>
-          <li class="link"><a href="contact.html">Contact Us</a></li>
-          <li class="link"><a href="Doctor/doctor-dash.html">Find a Doctor</a></li>
-        </ul>
+        <a href="{% url 'about-us' %}">About</a>
+        <a href="#">Services</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Find a Doctor</a>
       </div>
-
-      <div class="office-info">
+      <div class="find-us">
         <h4>Office Address</h4>
-        <p class="address-info">15668, Boluevard<br> Avenue Oxford</p>
+        <p>15668, Boulevard<br> Avenue Oxford</p>
+        <div>
+          <h4>Email</h4>
+          <a class="emailf" href="mailto:name@email.com">centuryhealth@hotmail.com</a><br>
+          <a class="emailf" href="mailto:name@email.com">centuryhealth@gmail.com</a>
+        </div>
 
-        <h4>Email</h4>
-        <a href="" mailto:centuryhealth@hotmail.com">centuryhealth@hotmail.com</a><br>
-        <a href="" mailto:centuryhealth@gmail.com">centuryhealth@gmail.com</a>
       </div>
-
-
     </div>
-
     <div class="copyright">
-      <p>Copyright &copy 2021</p>
+      <p>Copyright
+        ©
+        2021
+      </p>
     </div>
   </footer>
 </body>

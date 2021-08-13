@@ -25,63 +25,93 @@ header {
     margin: 0;
     padding: 0;
 }
-/* NAVBAR Desktop View */
+a {
+  text-decoration: none;
+
+  color: #180126;
+}
+.login-btn {
+  background: #f3ea12;
+  text-align: center;
+  border-radius: 2.5px;
+  border-style: none;
+  font-weight: bold;
+  width: 320px;
+  margin-top: 15px;
+  height: 40px;
+}
+
+.login-btn:hover,
+button:hover {
+  background: #eef0f6;
+}
+.topnav {
+  display: none;
+}
+/* NAVBAR */
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    padding: 0em .4em 5px;
-    align-items: center;
-    font-size: 15px;
-   }
-  .navbar a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #180126;
-    }
-  .navbar a:visited {
-    color: #180126;
-  }
-  .logo img {
-    vertical-align: bottom;
-  }
-  .navbar li {
-      display: inline-block;
-      padding: 8px 12px; 
-  }
-  .navbar li:hover, .active-link {
-      background-color: #f3ea12;
-      border-radius: 4px;    
-  }
-  a.active-hamburger {
-      color:#457aff !important;
-  }
-  .nav-logo {
-    vertical-align: middle;
-      width: 16%;
-  }
-  .nav-logo-text {
+  display: flex;
+  justify-content: space-around;
+  padding: 0em 0.4em 5px;
+  align-items: center;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.navbar a {
+  font-weight: 600;
+}
+
+.navbar a:visited {
+  color: #180126;
+}
+
+.active img {
+  vertical-align: bottom;
+}
+
+li {
+  display: inline-block;
+  padding: 8px 12px;
+  color: #180126;
+}
+li:hover {
+  background-color: #f3ea12;
+  border-radius: 4px;
+}
+.login a{
+  color: #180126;
+}
+.nav-logo {
+  vertical-align: middle;
+  width: 16%;
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-text {
   color: rgb(69 122 255);
-    font-weight: bold;
-     display: inline;
-     font-size: larger;
-  }
-  ul.nav-tabs,
-  ul.login {
-    list-style-type: none;
-  }
-  .logo-img {
-    vertical-align: middle;
-    padding-top: 4px;
-    padding-left: 35px;
-    width: 13%;
-  }
-   .topnav {
-    display: none;
-  }
+  font-weight: bold;
+  display: inline;
+  font-size: larger;
+}
+
+ul.nav-tabs,
+ul.login {
+  list-style-type: none;
+}
+/* active-link settings */
+.active-nav {
+  background-color: #f3ea12;
+  border-radius: 4px;
+}
   /* End of Navbar  */
   /* Hero Section Mobile View */
   .hero {
-    background-image: url(/images/landing-page/hero-mobile.png);
+    background-image: url(images/landing-page/hero-mobile.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -445,93 +475,73 @@ color: var(--darkgray);
     border: 2px solid var(--blue);
 }
 /*****Footer****/
-.brand-footer img {
-    vertical-align: top;
-    width: 10%;
+footer .blue {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2em;
+  background-color: #F3F4FE;
 }
-
-.nav-logo-text {
-    color: var(--lightblue);
-    font-weight: bold;
-    display: inline;
+footer .quick-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
-footer { 
-    margin-top: 5em; 
-    font-size: 10px;  
-    color: var(--darkgray)
+footer .quick-links a {
+  padding: 0.5em 0em;
+  color: #7E7A8F;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
 }
-footer a {
-    text-decoration: none;
-    color: var(--darkgray)
+footer .quick-links a:hover {
+  color: #180126;
 }
-footer ul, footer li {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    line-height: 2.5;
+.footer-logo {
+  display: flex;
+  align-items: center;
 }
-footer h4 {
-    color: var(--black);
-    font-size: 12x;
-    margin: 0;
+.footer-logo span {
+  font-size: 20px;
+  font-weight: 700;
 }
-footer img {
-    width: 70%;
+.social-links a {
+  font-size: 20px;
+  padding-right: 1em;
+  color: #180126;
 }
-.footer-info {
-    background-color: var(--paleblue);
-    display: grid;
-    grid-template-areas: 
-        "links office"
-        "mission follow";
-    padding: 3rem 1rem;
+.social-links a{
+  background-color: transparent;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+  border-radius: 100px;
+  padding: 4px 7px 4px 7px;
 }
-.link-list {
-    grid-area: links;
+.social-links a:hover{
+  color: rgb(69 122 255);
 }
-.office-info {
-    grid-area: office;
-}
-.mission {
-    grid-area: mission;
-}
-.follow {
-    grid-area: follow;
-}
-
-.navbar-footer {
-    margin-top: 3.5em;
-}
-
-.social-icons {
-    cursor: pointer;
-    padding: 2px;
-}
-
-.fab {
-    color: var(--black);
-    justify-content: space-between;
-    padding: 4px;
-}
-
-.fab:hover{
-    color: var(--lightblue);
-}
-
-footer a:hover, footer li:hover {
-    color: var(--lightblue);
-}
-
 .copyright {
-    background-color: var(--white);
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--darkgray);
+  text-align: center;
+  color: #7E7A8F;
+  background-color: #eeeeee;
+  padding: 0.1px 0px 0.1px 0px;
 }
-   
+
+.fm{
+  color: #7E7A8F;
+}
+#logo-foot {
+  color: rgb(69 122 255);
+}
+.find-us p, a{
+  color: #7E7A8F;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+
+.find-us a:hover{
+  color: #180126;
+}
+
 /************ Styling for Desktop View ***********/
 @media screen and (min-width: 768px) {
     
@@ -573,43 +583,52 @@ footer a:hover, footer li:hover {
 
 @media screen and (max-width: 857px) {
     /*Navbar Mobile View */
-  .topnav {
-    overflow: hidden;
-    display: block;
-    position: relative;
-  }
-  .navbar {
-    display: none;
-  }
-  /* Hide the links inside the navigation menu (except for logo/home) */
-  .topnav #myLinks {
-    display: none;
-  }
-  #myLinks a:hover {
-    color: var(--lightblue);
-  }
-  /* Style navigation menu links */
-  .topnav a {
-    color: #180126;
-    padding: 20px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-    text-align: center;
-  }
-  /* Style the hamburger menu */
-  .topnav a.icon {
-    background: #f9f9f9;;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+    .topnav {
+      overflow: hidden;
+      display: block;
+      position: relative;
+    }
+  
+    /* .content-div {
+      display: block;
+    } */
+  
+    .navbar {
+      display: none;
+    }
+  
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    .topnav #myLinks {
+      display: none;
+    }
+  
+    /* Style navigation menu links */
+    .topnav a {
+      color: #180126;
+      padding: 20px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+  
+    /* Style the hamburger menu */
+    .topnav a.icon {
+      background: #f9f9f9;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    div.content-logo {
+      display: none;
+    }
 }
 @media  screen and (min-width: 500px) {
       /* Ipad view for Track */
  .track {
-    background-image: url(/images/landing-page/track-app-desktop.svg);
+    background-image: url(images/landing-page/track-app-desktop.svg);
 }
 .phone {
     display: block;
@@ -623,9 +642,7 @@ footer a:hover, footer li:hover {
 .track-wrapper {
     margin-top: 0;
 }   
-.footer-info {
-    padding: 2rem;
-}
+
 }
 @media screen and (min-width: 768px) {
     /* Hero Desktop View */
@@ -768,3 +785,15 @@ footer a:hover, footer li:hover {
     }
   }
 
+  @media screen and (max-width: 991px) and (min-width: 340px) {
+   
+    footer .blue {
+      flex-direction: column;
+    }
+    .footm,
+    .quick-links,
+    .find-us {
+      margin: 0.8em 0em;
+    }
+  }
+  
