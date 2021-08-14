@@ -45,7 +45,7 @@
                         Consultations</a>
                 </li>
                 <li>
-                    <a href="{% url 'doctor-schedule' %}">                    
+                    <a href="{% url 'doctor-schedule' %}">
                         <img src="{% static 'doctor/images/doctor-dash/schedule-icon.svg' %}" alt="calendar icon">
                         My Schedule</a>
                 </li>
@@ -63,20 +63,18 @@
         </nav>
         <!--Welcome Content Block-->
         <section class="welcome bubble-style">
-            {% for doctor in doctors %}
             <div class="welcomeAlerts">
-                <h1>Welcome to your dashboard, Dr. {{ doctor.health_practitioner.last_name }} </h1>
+                <h1>Welcome to your dashboard, Dr. {{ doctor.health_practitioner.last_name }}</h1>
                 <p>Your next appointment is on <b>6/28/21</b> at <b>8:00am</b> with <b>Mr. William Riker</b></p>
                 <p>You have <b>4 test results</b> awaiting review</p>
                 <p>
                     <a href="{% url 'schedule-week' %}">
-                        <button class="appt-schedule">Appointment Schedule</button>
+                        <button class="appt-schedule">Appointment Schedule</button></a>
             </div>
-            <img src= "{% static 'doctor/images/doctor-dash/bstinson.png' %}" alt="image of current user" class="userPic" />
-            {% endfor %}  
+            <img src="{% static 'doctor/images/doctor-dash/doctor-dash-icon.png' %}" alt="image of current user" class="userPic" />
         </section>
         <!--Test Results Content Block-->
-        <!-- <section class="tests">
+        <section class="tests">
             <div class="heading">
                 <h2>Test Results</h2>
                 <div class="buttonViews">
@@ -108,9 +106,9 @@
                 <p class="test-type">CT Scan, MRI, Glucose test</p>
                 <a href="#" class="results">Get Results</a>
             </div>
-        </section> -->
+        </section>
         <!--Rating Section-->
-        <!-- <section class="rating">
+        <section class="rating">
             <div class="heading">
                 <h2>Overall Rating</h2>
             </div>
@@ -123,9 +121,9 @@
                 <img src="{% static 'doctor/images/doctor-dash/ratings-chart.svg' %}" class="star-chart"
                     alt="chart of various review ratings received">
             </div>
-        </section> -->
+        </section>
         <!--Recent Visits Content Block-->
-        <!-- <section class="visits">
+        <section class="visits">
             <div class="heading">
                 <h2>Recent Visits</h2>
             </div>
@@ -137,7 +135,7 @@
             </div>
             <div class="visit-bubble bubble-style">
                 <div class="patient">
-                    <img src="{% static 'doctor/images/doctor-dash/bostick.svg' %}" alt="image of recent patient">
+                    <img src="{% static 'doctor/images/doctor-dash/user-icon.svg' %}" alt="image of recent patient">
                     <p><b>Mr. Michael Bostick</b></p>
                 </div>
                 <p class="location">San Jose General Hospital</p>
@@ -150,7 +148,7 @@
             </div>
             <div class="visit-bubble bubble-style">
                 <div class="patient">
-                    <img src="{% static 'doctor/images/doctor-dash/laforge.svg' %}" alt="image of recent patient">
+                    <img src="{% static 'doctor/images/doctor-dash/user-icon.svg' %}" alt="image of recent patient">
                     <p><b>Mr. Geordi La Forge</b></p>
                 </div>
                 <p class="location">Haight Street Clinic</p>
@@ -163,7 +161,7 @@
             </div>
             <div class="visit-bubble bubble-style">
                 <div class="patient">
-                    <img src="{% static 'doctor/images/doctor-dash/janeway.svg' %}" alt="image of recent patient">
+                    <img src="{% static 'doctor/images/doctor-dash/user-icon.svg' %}" alt="image of recent patient">
                     <p><b>Mrs. Katherine Janeway</b></p>
                 </div>
                 <p class="location">Haight Street Clinic</p>
@@ -175,7 +173,7 @@
                 </div>
             </div>
 
-        </section> -->
+        </section>
     </div>
 </body>
 

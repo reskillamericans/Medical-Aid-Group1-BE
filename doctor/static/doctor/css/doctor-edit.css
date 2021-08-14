@@ -229,7 +229,7 @@ select {
    }
    
    nav a:hover,
-   a.activeLink{
+   a.activeLink {
      color: var(--secondaryColor);
    }
   
