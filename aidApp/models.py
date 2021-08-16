@@ -19,7 +19,7 @@ class FAQ(models.Model):
 
 class Contact(models.Model):
 
-    CHOICES = [(None, "Nature of Inquiry"),('feedback','Feedback'),('career','Career'),('support','Support'),]
+    CHOICES = [(None, "Nature of Inquiry"),('Feedback','Feedback'),('Career','Career'),('Support','Support'),]
 
     fname = models.CharField(max_length=50, null=True)
     lname = models.CharField(max_length=50, null=True)
