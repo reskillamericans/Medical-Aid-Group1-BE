@@ -33,5 +33,5 @@ urlpatterns = [
     path('faq/', views.faq, name = 'faq'),
     path('contact/', views.CreateContact, name='contact'),
     #path('patient-appt/<int:id>', views.CreateAppointment, name='patient-appt'),
-    path('patient-doctor-profile/<int:id>', views.DocProfile, name='patient-doctor-profile'),
+    #path('patient-doctor-profile/<int:id>', views.DocProfile, name='patient-doctor-profile'),
 ]
