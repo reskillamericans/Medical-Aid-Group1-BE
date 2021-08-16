@@ -45,7 +45,7 @@ class Patient(models.Model):
     # medical_history = models.TextField(blank=True, null=True)
     @property
     def age(self):
-        return tz.now.year - self.D_O_B.year
+        return tz.now().year - self.D_O_B.year
     
     def __str__(self):
         return self.patient.get_full_name() 
