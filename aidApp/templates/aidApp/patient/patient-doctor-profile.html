@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}    
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient - Century Health</title>
+    <link rel="shortcut icon" href="{% static 'aidApp/images/admin-dash/favicon.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'aidApp/css/patient-doctor-profile.css' %}">
+    <script src="{% static 'aidApp/js/patient-dash.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="#"><img src="{% static 'aidApp/images/patient-images/logo.svg' %}" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="{% static 'aidApp/images/admin-dash/fi_menu.svg' %}"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="/patient/patient-dash.html">
+                        <img src="{% static 'aidApp/images/patient-images/dash-icon.svg' %}" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="/patient/patient-profile.html">
+                        <img src="{% static 'aidApp/images/patient-images/profile-icon.svg' %}" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="/patient/patient-doctor.html" class="active-link">
+                        <img src="{% static 'aidApp/images/patient-doctor-img/doctor-icon-yellow.svg' %}" alt="doctor icon">
+                        Talk to a Doctor</a>
+                </li>
+                <li>
+                    <a href="patient-clinic.html">
+                        <img src="{% static 'aidApp/images/patient-images/clinic-icon.svg' %}" alt="clinics icon">
+                        Pharmacies and Clinics</a>
+                </li>
+
+                <li>
+                    <a href="patient-support.html" >
+                        <img src="{% static 'aidApp/images/patient-images/contact-icon.svg' %}" alt="contact icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <img src="{% static 'aidApp/images/patient-images/logout.svg' %}" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <a class="back" href="templates/aidApp/patient/patient-doctor.html">< Back</a>
+            <section class="dr-section bubble-style">
+                <img src="{% static 'aidApp/images/patient-doctor-profile-img/drcrusher.svg' %}" alt="Dr Crusher">
+
+                <div class="dr-info">
+                    <h1>{{form.professional_title}} {{form.health_practitioner}} {{form.professional_suffix}}</h1><!--Dr. Beverly Crusher, MD-->
+                    <div class="dr-info-details">
+                    <div class="dr-info-group">
+                        <p class="dr-info-title">Specialty</p>
+                        <p class="dr-info-detail"><b>{{form.specialty}}</b></p><!--Internal Medicine and Pediatrics-->
+
+                        <p class="dr-info-title">Location</p>
+                        <p class="dr-info-detail"><b>{{form.clinics.0}}</b></p><!--Cleveland General Hospital-->
+                        
+                        <p class="dr-info-title">Insurance Accepted</p>
+                        <p class="dr-info-detail"><b>{{form.insurance_accepted}}</b></p><!--Blue Cross, Cigna, and Shield-->
+                    </div>
+                    <div class="dr-info-group">
+                    <p class="dr-info-title">Languages</p>
+                    <p class="dr-info-detail"><b>{{form.languages}}</b></p><!--English and Spanish-->
+
+                    <p class="dr-info-title">Accepting New Patients</p>
+                    <p class="dr-info-detail"><b>{{form.accepting_new_patients}}</b></p><!--Yes-->
+                    </div>
+                    </div>
+                </div>
+                <div class="rating-review-info">
+                    <h1 class="rating">{{form.rating_reviews}}</h1><!--4.6-->
+                    <div class="star-rating">
+                        <img src="{% static 'aidApp/images/patient-doctor-profile-img/star.svg' %}">
+                        <img src="{% static 'aidApp/images/patient-doctor-profile-img/star.svg' %}">
+                        <img src="{% static 'aidApp/images/patient-doctor-profile-img/star.svg' %}">
+                        <img src="{% static 'aidApp/images/patient-doctor-profile-img/star.svg' %}">
+                        <img src="{% static 'aidApp/images/patient-doctor-profile-img/star.svg' %}">
+                    
+                    </div>
+                    <div class="review">
+                        <p><b>{{form.reviews}} </b>Reviews</p><!--34-->
+                        <p><b>{{form.patient_comments}} </b>Patient Comments</p><!--30-->
+                    </div>
+                    <button class="schedule-btn">
+                        <a href="{% url 'patient-appt' form.health_practitioner.health_practitioner_id %}">Make an Appointment</a>
+                    </button>
+                    <!--button class="schedule-btn">Make an Appointment</button-->
+                    <!--input type="submit" class="submit-btn" value="Submit" /-->
+                </div>
+            </section>
+
+        <!--Contact and Locations-->
+            <section class="location">
+                <div class="location-details">
+                    <h2 class="heading">Contact and Locations</h2>
+                
+                    <div class="location-address bubble-style">
+                        <div class="address">
+                            <p><b>Monday, Wednesday, Friday</b></p>
+                            {% if form.clinics %} 
+                                {% for clinic in form.clinics %}
+                                <p>{{clinic}}<br><!--Cleveland General Hospital-->
+                                {{clinic.address}}<br><!--4517 Washington Ave.-->
+                                    <!--Manchester, Kentucky 39495<br>-->
+                                    <br>
+                                {{clinic.telephone}} <!--(455) 888-3884-->
+                                </p>
+                                {% endfor %}
+                            {% else %} 
+                                <li><b>Sorry, {{form.professional_title}} {{form.health_practitioner}} has no clinics assigned.</li></b> 
+                            {% endif %}        
+                        </div>
+                        <!--div class="address">
+                            <p><b>Tuesday, Thursday</b></p>
+                            <p>{{form.clinics.1.name}}<br><Corner Health Center>
+                                {{form.clinics.1.address}}<br><4517 Washington Ave.>
+                                <Manchester, Kentucky 39495<br>
+                                <br>
+                                {{form.telephone}} <(455) 888-3884>
+                            </p>
+                        </div-->
+                    </div>
+                </div>
+                <img src="{% static 'aidApp/images/patient-doctor-profile-img/doctor-map.svg' %}">
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
