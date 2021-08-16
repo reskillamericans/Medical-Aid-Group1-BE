@@ -1,0 +1,799 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --white:#f9f9f9;
+    --black:#180126;
+    --darkgray: #7e7a8f;
+    --lightgray: #cec7d2;
+    --verylightgray: #F3F3F3;
+    --blue:#0721c8;
+    --yellow: #f3ea12;
+    --lightblue: #457AFF;
+    --paleblue: #F3F4FE;
+}
+
+body {
+    background-color: var(--white);
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+header {
+    margin: 0;
+    padding: 0;
+}
+a {
+  text-decoration: none;
+
+  color: #180126;
+}
+.login-btn {
+  background: #f3ea12;
+  text-align: center;
+  border-radius: 2.5px;
+  border-style: none;
+  font-weight: bold;
+  width: 320px;
+  margin-top: 15px;
+  height: 40px;
+}
+
+.login-btn:hover,
+button:hover {
+  background: #eef0f6;
+}
+.topnav {
+  display: none;
+}
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 0em 0.4em 5px;
+  align-items: center;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.navbar a {
+  font-weight: 600;
+}
+
+.navbar a:visited {
+  color: #180126;
+}
+
+.active img {
+  vertical-align: bottom;
+}
+
+li {
+  display: inline-block;
+  padding: 8px 12px;
+  color: #180126;
+}
+li:hover {
+  background-color: #f3ea12;
+  border-radius: 4px;
+}
+.login a{
+  color: #180126;
+}
+.nav-logo {
+  vertical-align: middle;
+  width: 16%;
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-text {
+  color: rgb(69 122 255);
+  font-weight: bold;
+  display: inline;
+  font-size: larger;
+}
+
+ul.nav-tabs,
+ul.login {
+  list-style-type: none;
+}
+/* active-link settings */
+.active-nav {
+  background-color: #f3ea12;
+  border-radius: 4px;
+}
+  /* End of Navbar  */
+  /* Hero Section Mobile View */
+  .hero {
+    background-image: url(images/landing-page/hero-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0 1rem;
+    padding: 2rem;
+  }
+  .hero-wrapper {
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .hero p {
+    font-size: 14px;
+    color: var(--darkgray);
+  }
+  .hero-p {
+    display: none;
+  }
+  .hero-btn {
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    width: 197px;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  .hero-btn:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+  }
+  .how-img {
+    width: 80%;
+  }
+  /* Stats Box */
+  .stats-wrapper {
+    display: grid;
+    justify-content: center;
+  }
+  .stats {
+    background-color: var(--verylightgray);
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    padding: 10px 15px;
+    margin-top: -10px;
+  }
+  .numbers {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  .words {
+    font-size: 10px;
+    color: #7E7A8F;
+    padding: 0;
+    margin: 5px 0 0 0;
+  }
+  /* End Stats Box */
+ 
+/* How To Section */
+.how {
+    margin: 1rem;
+    display: grid;
+    justify-content: center;
+  }
+  .how-container {
+    text-align: center;
+    margin: 0 2rem;
+    padding-bottom: 2rem;
+  }
+  .how-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .directions {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .directions img {
+    width: 16px;
+    height: 16px;
+  }
+  .directions p {
+    padding: 0;
+    margin: 0;
+  }
+  /* Get Started Button */
+  .how-outside {
+    display: flex;
+    justify-content: center;
+  }
+  .how-btn {
+    width: 137px;
+    height: 34px;
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 4px;
+  }
+  .how-btn:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+  }
+/* End How To */
+ 
+  /* Get Started  */
+ .get-started-btn {
+     background-color: var(--yellow);
+     color: var(--black);
+     border-radius: 4px;
+     border: none;
+     height: 40px;
+     width: 200px;
+     font-size: 16px;
+     font-weight: 700; 
+     cursor: pointer;
+ }
+ .get-started-btn:hover {
+     background-color: var(--white);
+     color: var(--blue);
+     border: 2px solid var(--blue);
+ }
+.start-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+/* Doctor Section */
+.doctors {
+    display: grid;
+    justify-content: center;
+    margin: 2rem;
+    font-size: 14px;
+}
+
+.doctors h2 {
+    font-size: 16px;
+}
+.doctors h3 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color: var(--black);
+}
+.dr-about {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.dr-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    grid-gap: 30px;
+    margin: auto;
+}
+
+.dr-card {
+    background-color: var(--verylightgray);
+    width: 125px;
+    margin: 0;
+    padding: 16px;
+    color: var(--darkgray);
+}
+.dr-card img {
+    height: 150px;
+    width: auto;
+}
+.doctors-btn {
+    display: grid;
+    justify-content: center;
+}
+.view-doctors-btn:hover {
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+.view-doctors-btn {
+    background-color: var(--yellow);
+    color: var(--black);
+    border-radius: 4px;
+    border: none;
+    height: 40px;
+    width: 200px;
+    margin-top: 5em;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+button.dr-btn {
+    height: 40px;
+width: 100px;
+cursor: pointer;
+font-size: 12px;
+border-radius: 4px;
+border: 1px solid var(--lightgray);
+color: var(--darkgray);
+}
+.dr-btn:hover {
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+/* Testimonies */
+.testimony {
+    display: grid;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.testimony h2 {
+    font-size: 30px;
+}
+  /* carousel */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+.mySlides {
+    display: none;
+}
+.img-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.img-slide img {
+    width: 100%;
+}
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: var(--blue);
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+/* Track App Section */
+.track {
+    background-image: url(images/landing-page/track-app-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    font-size: 12px;
+    padding: 0;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.phone {
+    display: none;
+}
+.track-outer {
+    margin-top: auto;
+}
+.store-btns img {
+    width: 100px;
+}
+.track-wrapper {
+    display: grid;
+    justify-content: center;
+    margin-left: 2rem;
+}
+.track-wrapper h2, .track-wrapper p {
+    padding: 0;
+    margin: 10px;
+}
+.store-btns {
+    padding: 0;
+    margin: 10px;
+}
+/*****Subscription Section*****/
+.subscribe-header {
+    display: grid;
+    margin-top: 60px;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem;
+}
+.subscription-head {
+    font-size: 30px;
+    font-weight: 700;
+}
+.subscription-subheader {
+    font-size: 21px;
+    font-weight: 400;
+}
+.email-box {
+    border: 1px solid var(--lightgray);
+    background-color: var(--white);
+    border-radius: 6px;
+    width: 235px;
+    height: 40px;
+}
+#subscribe-btn {
+    background-color: var(--yellow);
+    border-radius: 6px;
+    border: 1px solid var(--yellow);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    width: 75px;
+    height: 45px;
+    margin-left: -77px;
+}
+#subscribe-btn:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+/*****Footer****/
+footer .blue {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2em;
+  background-color: #F3F4FE;
+}
+footer .quick-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer .quick-links a {
+  padding: 0.5em 0em;
+  color: #7E7A8F;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+footer .quick-links a:hover {
+  color: #180126;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+.footer-logo span {
+  font-size: 20px;
+  font-weight: 700;
+}
+.social-links a {
+  font-size: 20px;
+  padding-right: 1em;
+  color: #180126;
+}
+.social-links a{
+  background-color: transparent;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+  border-radius: 100px;
+  padding: 4px 7px 4px 7px;
+}
+.social-links a:hover{
+  color: rgb(69 122 255);
+}
+.copyright {
+  text-align: center;
+  color: #7E7A8F;
+  background-color: #eeeeee;
+  padding: 0.1px 0px 0.1px 0px;
+}
+
+.fm{
+  color: #7E7A8F;
+}
+#logo-foot {
+  color: rgb(69 122 255);
+}
+.find-us p, a{
+  color: #7E7A8F;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+
+.find-us a:hover{
+  color: #180126;
+}
+
+/************ Styling for Desktop View ***********/
+@media screen and (min-width: 768px) {
+    
+    /* subscribe for desktop */
+    form {
+        display: inline-block;
+    }
+    .email-box{
+        width: 320px;
+    }
+    #subscribe-btn {
+        width: 200px;
+    }
+    .copyright {
+        font-size: 16px;
+    }
+    .footer-info {
+        grid-template-areas: 
+            "mission links office"
+            "follow links office";
+        padding: 4rem 150px;
+    }
+    footer img {
+        width: auto;
+    }
+    footer {
+        font-size: 16px;
+        line-height: 2;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+    }
+    footer li {
+        line-height: 2;
+    }
+    footer h4 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 857px) {
+    /*Navbar Mobile View */
+    .topnav {
+      overflow: hidden;
+      display: block;
+      position: relative;
+    }
+  
+    /* .content-div {
+      display: block;
+    } */
+  
+    .navbar {
+      display: none;
+    }
+  
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    .topnav #myLinks {
+      display: none;
+    }
+  
+    /* Style navigation menu links */
+    .topnav a {
+      color: #180126;
+      padding: 20px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+  
+    /* Style the hamburger menu */
+    .topnav a.icon {
+      background: #f9f9f9;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    div.content-logo {
+      display: none;
+    }
+}
+@media  screen and (min-width: 500px) {
+      /* Ipad view for Track */
+ .track {
+    background-image: url(images/landing-page/track-app-desktop.svg);
+}
+.phone {
+    display: block;
+    width: 90%;
+    margin-left: 70px;
+}
+.track-outer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.track-wrapper {
+    margin-top: 0;
+}   
+
+}
+@media screen and (min-width: 768px) {
+    /* Hero Desktop View */
+    .hero {
+        background-image: url(images/landing-page/hero-desktop.png);
+        height: 50vh;
+        margin:0;
+    }
+    .hero-wrapper {
+        text-align: left;
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 3rem;
+    }
+    .hero-btn {
+        margin-top: 0;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero-p{
+        display: block;
+    }
+    .mobiletext {
+        display: none;
+    }
+    /* Stats Box Desktop View */
+    .stats-wrapper {
+        justify-content: right;
+        margin-right: 100px;
+    }
+    .stats {
+        width: 300px;
+        height: 80px;
+    }
+    .numbers {
+        font-size: 20px;
+    }
+    .words {
+        font-size: 12px;
+    }
+    /* How To Desktop View */
+    .how {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 75px;
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+    .how-container {
+        margin-right: 100px;
+        text-align: left;
+    }
+    .how-container h2 {
+        font-size: 28px;
+    }
+    .how-container p {
+        width: 80%;
+    }
+    .column3 {
+        margin-top: 75px;
+    }
+    .directions {
+        width: 50%;
+    }
+    .how-btn {
+      height: 40px;
+      width: 197px;
+  }
+  /* Testimony */
+  .testimonies img {
+    margin-right: 20px;
+    width: auto;
+  }
+  /* iPad view for Dr */
+.dr-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    grid-gap: 4rem;
+}
+.doctors-btn {
+    margin-top: -25px;
+    margin-bottom:25px;
+}
+  }
+  /* Styling for Large Screens 1000px and up */
+  @media screen and (min-width: 1000px){
+      /* doctor for desktop */
+    .doctors h2 {
+        font-size: 30px;
+    }
+    .dr-about p {
+        font-size: 20px;
+        margin: 2rem 20rem;
+    }
+   
+    .dr-card {
+        width: 200px;
+        height: auto;
+        padding: 2rem;
+    }
+    .dr-card img {
+        height: 200px;
+        width: auto;
+    }
+   /* Track App */
+    .phone {
+        width: 60%;
+        display: flex;
+        align-items: flex-start;
+        margin-left: 250px;
+    }
+    .track {
+      background-image: url(images/landing-page/track-app-desktop.svg);
+      width: 100vw;  
+      height: 550px;
+    }
+    .track-outer {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+    }
+  
+   .track-wrapper {
+      margin: 0;
+      
+   } 
+   
+   
+    .track p{
+        font-size: 21px;
+        width: 50%;
+    }
+    .track h2 {
+        font-size: 30px;
+        width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 991px) and (min-width: 340px) {
+   
+    footer .blue {
+      flex-direction: column;
+    }
+    .footm,
+    .quick-links,
+    .find-us {
+      margin: 0.8em 0em;
+    }
+  }
+  
