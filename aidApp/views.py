@@ -9,7 +9,7 @@ from django.core.mail import send_mail, get_connection
 from django.conf import settings
 from django.db.models import Q
 from .models import Feedback, Patient, Health_Practitioner, FAQ, Appointment, Clinic
-from .forms import CreateContactForm, AppCreateForm, DocProfileForm #, AppUpdateForm, AppRetrieveForm 
+from .forms import CreateContactForm#, AppUpdateForm, AppRetrieveForm ,AppCreateForm, DocProfileForm 
 
 # Create your views here.
 
@@ -182,29 +182,3 @@ def CreateContact(request):
     return render(request, 'aidApp/contact/contact.html', context) 
 
 
-@login_required
-def DocProfile(request, id=None):
-
-    #user = User.objects.get(id = id)
-    hp = Health_Practitioner.objects.get(health_practitioner_id=id)
-    cl = Clinic.objects.filter(health_practitioner=hp)
-    form = DocProfileForm()
-    
-    form = {'health_practitioner' : hp,
-            'professional_title' : hp.professional_title,
-            'professional_suffix': hp.professional_suffix,
-            'telephone' : hp.telephone,
-            'specialty' : hp.specialty,
-            'consultation_times' : hp.consultation_times,
-            'clinics' : cl,
-            'insurance_accepted' : hp.insurance_accepted,
-            'languages' : hp.languages,
-            'accepting_new_patients' : hp.accepting_new_patients,
-            'reviews': hp.reviews,
-            'rating_reviews': hp.rating_reviews,
-            'patient_comments': hp.patient_comments,
-
-    }
-        
-    return render(request, 'aidApp/patient/patient-doctor-profile.html', {'form': form})
- 
