@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
 from django.contrib import messages
+from datetime import date
+from django.utils import timezone as tz
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.mail import send_mail
+from django.core.mail import send_mail, get_connection
+from django.conf import settings
 from django.db.models import Q
-from .models import Feedback, Patient, Health_Practitioner, FAQ
+from .models import Feedback, Patient, Health_Practitioner, FAQ, Appointment, Clinic
+from .forms import CreateContactForm, AppCreateForm, DocProfileForm #, AppUpdateForm, AppRetrieveForm 
 
 # Create your views here.
 
@@ -142,3 +145,66 @@ def support_view(request):
 
 def support_success_view(request):
     return render(request, 'aidApp/patient/patient-support-feedback.html')
+
+
+@login_required
+def CreateContact(request):
+    
+    context = {}
+        
+    if request.method == 'POST':
+         form = CreateContactForm(request.POST)
+         if form.is_valid():
+             
+             subject = form.cleaned_data['subject']
+             message = form.cleaned_data['comment']
+             sender = form.cleaned_data['email']
+             
+             administrators = []
+             for admin in User.objects.filter(is_superuser=True):
+                administrators.append(admin.email)
+            
+             con = get_connection(settings.EMAIL_BACKEND)
+             send_mail(subject,
+                      message,
+                      sender,
+                      administrators,
+                      connection=con            
+             )
+             form.save()
+             messages.success(request, "Your message was submitted successfully! Thank you.")
+                     
+         else:
+             
+             return render(request,'aidApp/contact/contact.html',{'form': form})
+ 
+    context = {'form': CreateContactForm()}
+    return render(request, 'aidApp/contact/contact.html', context) 
+
+
+@login_required
+def DocProfile(request, id=None):
+
+    #user = User.objects.get(id = id)
+    hp = Health_Practitioner.objects.get(health_practitioner_id=id)
+    cl = Clinic.objects.filter(health_practitioner=hp)
+    form = DocProfileForm()
+    
+    form = {'health_practitioner' : hp,
+            'professional_title' : hp.professional_title,
+            'professional_suffix': hp.professional_suffix,
+            'telephone' : hp.telephone,
+            'specialty' : hp.specialty,
+            'consultation_times' : hp.consultation_times,
+            'clinics' : cl,
+            'insurance_accepted' : hp.insurance_accepted,
+            'languages' : hp.languages,
+            'accepting_new_patients' : hp.accepting_new_patients,
+            'reviews': hp.reviews,
+            'rating_reviews': hp.rating_reviews,
+            'patient_comments': hp.patient_comments,
+
+    }
+        
+    return render(request, 'aidApp/patient/patient-doctor-profile.html', {'form': form})
+ 
