@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users',
     'django.contrib.sites',
     'phone_field',
+    'doctor',
 ]
 SITE_ID = 1
 
@@ -130,6 +131,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_URL = '/users/login'
+
 LOGIN_REDIRECT_URL = '/'
 
 
@@ -138,8 +141,12 @@ LOGIN_REDIRECT_URL = '/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 django_heroku.settings(locals())
+
+AUTHENTICATION_BACKENDS = (
+    'users.backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 # EMAIL_BACKEND='django.core.mail.backends.filebased.EmailBackend'
 # EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))

@@ -26,12 +26,11 @@ from users import views as users_views
 
 
 urlpatterns = [
-    #path('faq/', views.faq, name = 'faq'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
-    path('', aid_app_views.index, name = "homepage"),
-    path('about-us/', aid_app_views.about_us, name = "about-us"),
-    path('aid/', include('aidApp.urls')),
+    path('users/', include('django.contrib.auth.urls')),
+    path('', include('aidApp.urls')),
+    path('doctor/', include('doctor.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
