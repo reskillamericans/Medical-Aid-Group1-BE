@@ -55,7 +55,7 @@ class Health_Practitioner(models.Model):
 
     health_practitioner = models.OneToOneField(User, on_delete=models.CASCADE)
     professional_title = models.CharField(default= "Dr. ", max_length=50)
-    image = models.ImageField(null=True, blank=True) #default='image.jpg', upload_to='profile_pics') 
+    # image = models.ImageField(null=True, blank=True) #default='image.jpg', upload_to='profile_pics') 
     telephone = models.CharField(max_length=20)
     specialty = models.TextField(max_length=254)
     consultation_times = models.TextField(default="Monday - 10:00am to 11:00am", max_length=400)
@@ -92,7 +92,6 @@ class Pharmacy(models.Model):
     website = models.URLField(max_length=100)
     directions = models.TextField(max_length=254)
     
-
     def __str__(self):
         return self.name
 
@@ -123,7 +122,6 @@ class Appointment(models.Model):
     app_date = models.DateField(default=timezone.now())
     app_time = models.TimeField(default=time(hour=9, minute=00))
     app_status = models.CharField(blank=True, max_length=10)
-    
 
     def __str__(self):
         return "Patient {} Date {} Time {} for {}".format(self.patient, self.app_date, self.app_time, self.health_practitioner)
