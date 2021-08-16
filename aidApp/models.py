@@ -89,17 +89,7 @@ class Health_Practitioner(models.Model):
     patient_comments = models.IntegerField(default=25)
     appointments_pending = models.IntegerField(default=0)
     appointments_approved = models.IntegerField(default=0)
-    
-    # new_patients = models.CharField(max_length=10)
-    # name = models.CharField(max_length=50)
-    # gender = models.CharField(max_length=20)
-    # age = models.CharField(max_length=20)
-    # insurance = models.TextField(max_length=250)   
-    # language = models.CharField(max_length=50)
-    # location = models.CharField(max_length=100)
-    # address = models.TextField
-    # address_two = models.TextField
-    
+
     def __str__(self):
         return self.health_practitioner.get_full_name()
     
