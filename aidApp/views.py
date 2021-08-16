@@ -10,7 +10,7 @@ from django.core.mail import send_mail, get_connection
 from django.conf import settings
 from django.db.models import Q
 from .models import Feedback, Patient, Health_Practitioner, FAQ, Appointment, Clinic
-from .forms import CreateContactForm, AppCreateForm, DocProfileForm#, AppUpdateForm, AppRetrieveForm  
+from .forms import CreateContactForm#, AppUpdateForm, AppRetrieveForm  ,AppCreateForm, DocProfileForm
 
 
 # Create your views here.
