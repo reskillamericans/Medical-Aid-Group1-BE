@@ -30,20 +30,7 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.subject
-    
-class Clinic(models.Model):
 
-    name = models.CharField(max_length=40)
-    website = models.URLField(max_length=100)
-    located_in = models.TextField(max_length=100)
-    address = models.TextField(max_length=254)
-    hours = models.TextField(max_length=254) 
-    appointments_url = models.URLField(max_length=100)
-    telephone = models.CharField(max_length=20)
-    question_answer = models.TextField(max_length=254)
-    
-    def __str__(self):
-        return self.name
 
 
 class Patient(models.Model):
@@ -63,6 +50,7 @@ class Patient(models.Model):
         return self.patient.get_full_name() 
 
 
+
 class Health_Practitioner(models.Model):
 
     health_practitioner = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -71,23 +59,20 @@ class Health_Practitioner(models.Model):
     telephone = models.CharField(max_length=20)
     specialty = models.TextField(max_length=254)
     consultation_times = models.TextField(default="Monday - 10:00am to 11:00am", max_length=400)
+    clinics =  models.ManyToManyField('Clinic')
     appointments_pending = models.IntegerField(default=0)
     appointments_approved = models.IntegerField(default=0)
-    # clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
+    
     # new_patients = models.CharField(max_length=10)
     # name = models.CharField(max_length=50)
     # gender = models.CharField(max_length=20)
-    # age = models.Charfield(max_length=20)
+    # age = models.CharField(max_length=20)
     # insurance = models.TextField(max_length=250)   
     # language = models.CharField(max_length=50)
     # location = models.CharField(max_length=100)
     # address = models.TextField
     # address_two = models.TextField
     
-   
-    
-    
-
     def __str__(self):
         return self.health_practitioner.get_full_name()
     
@@ -118,6 +103,20 @@ class Pharmacy(models.Model):
     directions = models.TextField(max_length=254)
     
 
+    def __str__(self):
+        return self.name
+
+class Clinic(models.Model):
+
+    name = models.CharField(max_length=40)
+    website = models.URLField(max_length=100)
+    located_in = models.TextField(max_length=100)
+    address = models.TextField(max_length=254)
+    hours = models.TextField(max_length=254) 
+    appointments_url = models.URLField(max_length=100)
+    telephone = models.CharField(max_length=20)
+    question_answer = models.TextField(max_length=254)
+    
     def __str__(self):
         return self.name
 
