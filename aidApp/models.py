@@ -119,7 +119,6 @@ class Pharmacy(models.Model):
     website = models.URLField(max_length=100)
     directions = models.TextField(max_length=254)
     
-
     def __str__(self):
         return self.name
 
@@ -165,8 +164,7 @@ class Appointment(models.Model):
     timeslots = models.IntegerField(choices=TIMESLOTS, default=0)
     appt_reason = TextField(default= 'Annual Physical Examination', max_length=200)
     app_status = models.CharField(blank=True, max_length=10)
-    
-    
+  
     def __str__(self):
         return "Patient {} Date {} Time {} for {}".format(self.patient, self.app_date, self.time, self.health_practitioner)
     

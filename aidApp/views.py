@@ -106,5 +106,3 @@ def CreateContact(request):
  
     context = {'form': CreateContactForm()}
     return render(request, 'aidApp/contact/contact.html', context) 
-
-
