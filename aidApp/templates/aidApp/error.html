@@ -1,0 +1,90 @@
+
+{% url 'home' %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="about-us.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="about-us.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="error.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/admin-dash/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/21d1f09dfc.js" crossorigin="anonymous"></script>
+    <script src="login.js" defer></script>
+</head>
+<header>
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <div class="logo-div">
+            <img src="images/logo/logoicon.svg" class="nav-logo" alt="logo image" />
+            <span class="nav-logo-text">Century Health</span>
+        </div>
+        <div class="nav-tabs">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li  class="about-nav"><a href="about-us.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="medical-practitioners.html">Find a Doctor</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="login">
+            <ul>
+                <li><a  href="login.html">Log In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="topnav">
+        <a href="index.html" class="active"><img src="images/logo/logoicon.svg"> <span class="nav-logo-text">Century
+                Health</span></a>
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="medical-practitioners.html">Find a Doctor</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</header>
+<body>
+    <div class="page-div">
+        <h1 class="error-head">
+            Oops!
+        </h1>
+    </div>
+    <div class="page-div">
+        <img class="error-img" src="images/error/Group 96.svg" alt="404 error image">
+    </div>
+    <div class="page-div">
+        <h3 class="page-not-found">
+            PAGE NOT FOUND
+        </h3>
+    </div>
+    <div class="page-div">
+        <p class="page-not-found-text">
+            The page you are looking for may have been moved, deleted or possibly never existed. Let's get you back on track.
+        </p>
+    </div>
+    <div class="page-div">
+        <a class="back-to-home-button" href="index.html">Back To Home</a>
+    </div>
+</body>
+</html>
