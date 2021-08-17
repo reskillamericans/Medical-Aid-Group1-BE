@@ -15,3 +15,5 @@ urlpatterns = [
     #path('patient-doctor-profile/<int:id>', views.DocProfile, name='patient-doctor-profile'),
     #path('faq/', views.faq, name = 'faq')
   ]
+
+handler404 = "aidApp.views.handler404"

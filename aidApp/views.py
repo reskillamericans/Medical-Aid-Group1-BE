@@ -106,3 +106,6 @@ def CreateContact(request):
  
     context = {'form': CreateContactForm()}
     return render(request, 'aidApp/contact/contact.html', context) 
+
+def handler404(request, *args, **argv):
+    return render(request, 'aidApp/error.html')

@@ -1,0 +1,108 @@
+html{
+    padding-bottom: 100px;
+}
+
+.page-div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 99.8%;
+}
+
+.error-head{
+    font-size: 3vw;
+}
+
+.error-img{
+    width: 30%;
+}
+
+.page-not-found{
+    font-size: 1.7vw;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.page-not-found-text{
+    text-align: center;
+    font-size: 2vw;
+    width: 45%;
+}
+
+.back-to-home-button{
+    display: flex;
+    padding: 30px;
+    font-size: 1.5vw;
+    font-weight: 700;
+    background-color: #f3ea12;
+    font-family: "open sans";
+    border: none;
+    border-radius: 7px;
+    width: 30%;
+    justify-content: center;
+    align-content: center;
+    color: black;
+}
+
+.back-to-home-button:hover{
+    cursor: pointer;
+    background-color: #f8f472;
+    transition: 0.2s ease-out;
+}
+
+.about-nav{
+    background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 375px) {
+    .error-head{
+        font-size: 6vw;
+    }
+
+    .back-to-home-button{
+        padding: 15px 10px;
+    }
+
+    .error-img{
+        width: 100%;
+    }
+
+    .page-not-found{
+        font-size: 3.5vw;
+    }
+
+    .page-not-found-text{
+        font-size: 3.5vw;
+    }
+
+    .back-to-home-button{
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width:376px){
+    .error-head{
+        font-size: 5vw;
+    }
+
+    .error-img{
+        width: 70%;
+    }
+
+    .page-not-found{
+        font-size: 3.5vw;
+    }
+
+    .page-not-found-text{
+        font-size: 3.5vw;
+    }
+
+    .back-to-home-button{
+        font-size: 3vw;
+        padding: 15px 20px;
+    }
+}
+
+@media screen and (max-width: 767px){
+
+}
