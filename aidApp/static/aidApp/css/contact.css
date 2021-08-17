@@ -1,0 +1,656 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+html {
+  resize: none;
+}
+
+body {
+  background: #f9f9f9;
+  font-family: "Open Sans", sans-serif;
+  color: #180126;
+  display: block;
+  margin: 0;
+ }
+
+/* NAVBAR */
+.logo-text{
+font-size: 28px;
+font-weight: bold;
+color: rgb(69 122 255);
+width: 214px;
+height: 23px;
+}
+
+.logo-img {
+vertical-align: middle;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 25px 5px;
+  align-items: center;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.navbar a {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: #180126;
+  }
+
+.navbar a:visited {
+  color: #180126;
+}
+
+.logo-div {
+  display: flex;
+align-items: center;
+}
+
+.active {
+  display: flex;
+align-items: center;
+}
+
+.active a:hover {
+  background-color: #f9f9f9;
+}
+
+.navbar li a:hover {
+  background-color: #f3ea12;
+   }
+
+.nav-logo {
+  vertical-align: middle;
+  width: 16%;
+}
+
+.nav-logo-text {
+color: rgb(69 122 255);
+  font-weight: bold;
+   display: inline;
+   font-size: larger;
+
+}
+
+.login {
+  padding-right: 20px;
+}
+
+.signup-btn:hover, button:hover{
+  background: #eef0f6;
+}
+
+ul.nav-tabs,
+ul.login {
+  list-style-type: none;
+}
+
+.signup {
+    margin-top: auto;
+}
+
+.signup-nav {
+    background-color: #f3ea12;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+
+  li {
+    display: inline-block;
+     padding: 8px 12px; 
+  }
+
+  .navbar li:hover {
+    background-color: #f3ea12;
+   border-radius: 4px;    
+  }
+
+.topnav {
+    display: none;
+  }
+  
+  h2{
+      text-align: center;
+      font-weight: 100;
+      font-size: xx-large;
+    }
+ 
+   label {
+     font-weight: bold;
+     text-align-last: start;
+   } 
+
+   input, select#inquiry{
+    width: 300px;
+    height: 39px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+   }
+
+   label, input {
+     display: block;
+   }
+
+   .contact-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 60px;
+    padding-top: 10px;
+    white-space: nowrap;
+   }
+
+   .map-img {
+    width: 35%;
+   }
+
+   .phone-img {
+    width: 30%;
+   }
+
+   .email-img {
+    width: 21%;
+   }
+
+   figcaption {
+    font-weight: 700;
+    color: rgb(69,122,255);
+   }
+   
+  .form {
+    width: 90%;
+    margin: auto;
+    }
+
+    .input-container {
+      margin: auto;
+      justify-content: center;
+      display: flex;
+      flex-direction: row;
+     }
+
+    .form-div{
+    display: inline-block;
+   }
+
+   .dropdown{
+    display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    margin-top: 13px;
+    padding-bottom: 30px;
+   }
+
+   .bottom-form {
+   display: inline-block;
+   }
+
+   #fname, #email {
+    margin-right: 100px;
+   }
+
+   textarea#comment {
+    resize: none;
+    height: 300px;
+    width: 740px;
+    }
+
+   .submit-btn{
+   background: #f3ea12;
+  text-align: center;
+  border-radius: 2.5px;
+  border-style: none;
+  font-weight: bold;
+  width: 190px;
+   margin-top: 15px;
+  height: 40px;
+   }
+
+   .submit-btn:hover {
+    background: #eef0f6;
+   }
+
+   footer {
+    margin-top: 2em;   
+        }
+
+   p {
+    color: rgb(164,162,179);
+    }
+
+    .follow-us, .address-header, .email-header {
+      color: #180126;
+    }
+
+
+.navbar-footer {
+    margin-top: 15px;
+}
+
+.content-span{
+color: rgb(69 122 255);
+  font-weight: bold;
+   display: inline;
+   font-size: 23px;
+   vertical-align: middle;
+}
+
+.bold {
+    font-weight: 400;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    background-color: rgb(238,240,246);
+    padding-bottom: 20px;
+    padding-top: 12px;
+   }
+
+
+.follow-us {
+    font-size: 21px;
+    font-weight: 700;
+   }
+
+.social-icons {
+    padding-top: 39px;
+    margin-left: 29px;
+}
+
+.footer-icon {
+  width: 26px;
+  padding: 2px;
+}
+
+.fab {
+    justify-content: space-between;
+    padding: 4px;
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    padding-left: 0px;
+}
+
+.quick-links {
+    font-size: 18px;
+    font-weight: 700;
+    
+}
+
+.link {
+    font-weight: 400;
+    font-size: 18px;
+    padding: 15px;   
+    }
+
+.link a {
+  color: rgb(164,162,179)
+}
+
+.link a:hover{
+  color: #180126;
+}
+
+/* .office-info {
+    margin-top: -342px;
+    margin-left: 570px;
+} */
+
+.address-header {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.address-info{
+  font-size: 14px;
+}
+
+.email-header {
+  margin-bottom: 0px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 110px;
+}
+
+.email-info {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 0px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-top: 14px;
+    }
+
+    .copyright p {
+      margin-top: 0px;
+    }
+
+
+    @media screen and (max-width: 768px) and (min-width: 427px) {
+      .topnav {
+        overflow: hidden;
+        display: block;
+        position: relative;
+      }
+  
+      .topnav a {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        color: #180126;
+        padding: 20px 16px;
+      text-decoration: none;
+      font-size: 15px;
+       text-align: center;
+      }
+
+      
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    .topnav #myLinks {
+      display: none;
+    }
+  
+     
+    /* Style navigation menu links */
+    .topnav a {
+      color: #180126;
+      padding: 20px 16px;
+      text-decoration: none;
+      font-size: 15px;
+      display: block;
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+
+     /* Style the hamburger menu */
+     .topnav a.icon {
+      background: #f9f9f9;;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav img {
+      vertical-align: middle;
+    }
+
+    .topnav a:hover {
+      color: rgb(164,162,179);
+     }
+
+      .navbar {
+        display: none;
+      }
+
+      #fname, #email {
+        margin-right: 54px;
+       }
+
+       .map-div, .phone-div, .email-div {
+        margin-right: 15px;
+        margin-left: 15px;  
+        }
+
+        .dropdown {
+          display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        }
+
+        textarea#comment {
+          width: 667px;
+        }
+
+        .input-container {
+          margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+        }
+
+        input, select#inquiry {
+          margin-right: 56px;
+        }
+
+    }
+     
+  @media screen and (max-width: 426px) and (min-width: 320px) {
+    .topnav {
+      overflow: hidden;
+      display: block;
+      position: relative;
+    }
+
+    .topnav a {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      color: #180126;
+      padding: 20px 16px;
+    text-decoration: none;
+    font-size: 15px;
+     text-align: center;
+    }
+    
+  
+    h6 {
+      padding: 0;
+    } 
+  
+    .content-div {
+      display: block;
+    }
+  
+    .navbar {
+      display: none;
+    }
+    
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    .topnav #myLinks {
+      display: none;
+    }
+  
+     
+    /* Style navigation menu links */
+    .topnav a {
+      color: #180126;
+      padding: 20px 16px;
+      text-decoration: none;
+      font-size: 15px;
+      display: block;
+      text-align: center;
+      display: flex;
+align-items: center;
+      
+       }
+  
+    
+    /* Style the hamburger menu */
+    .topnav a.icon {
+      background: #f9f9f9;;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav img {
+      vertical-align: middle;
+    }
+
+    .topnav a:hover {
+      color: rgb(164,162,179);
+     }
+
+       h2 {
+      font-size: large;
+    }
+
+    .contact-div {
+      align-items: flex-end;
+
+      padding-top: 0;
+      white-space: normal;
+      justify-content: unset;
+      padding-bottom: 25px;
+      
+    }
+
+    .map-img {
+      width: 50%;
+    }
+
+    .map-div, .phone-div, .email-div {
+    margin-right: 0;
+    margin-left: 0;  
+    }
+
+    .phone-div {
+      padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+
+    figcaption {
+      font-size: 11px
+    }
+
+    .phone-img {
+     width: 45%;
+    }
+
+    .email-img {
+      width: 31%;
+    }
+
+    .form, .dropdown {
+      width: 100%;
+      text-align: center; 
+    }
+    input, select#inquiry {
+      margin-right: 0x;
+    }
+    
+
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+
+    textarea#comment {
+      height: 215px;
+      width: 390px;
+      }
+
+      #fname, #email {
+        margin-right: 0;
+       }
+
+       .submit-btn {
+       margin-left: 100px;
+       }
+
+       .footer-info {
+         display: flex;
+         flex-direction: column;
+         padding: 0;
+         margin: 0;
+         }
+
+         .logo-img {
+           width: 5%;
+         }
+
+         .content-span {
+           font-size: 18px;
+         }
+
+       .footer-links {
+        margin-left: 276px;
+        white-space: nowrap;
+        margin-top: -149px;
+
+        }
+
+       .office-info {
+         margin: 0;
+         padding-left: 15px;
+       }
+
+       .email-header {
+        margin: 0;
+       }
+
+       .link-list {
+        width: 0px;
+        height: 0px;
+       }
+
+       .bold {
+         padding-left: 14px;
+         font-size: 14px;
+         margin-top: 1em;
+       }
+
+       .follow-us {
+        font-size: 17px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        }
+
+       .social-icons {
+        margin-left: 17px;
+        padding-top: 1px;
+        width: 70%
+       }
+
+       .address-header {
+         margin-bottom: 0px;
+       }
+
+       .address-info {
+         margin-top: 7px;
+       }
+
+       .email-info {
+         font-size: 14px;
+       }
+
+       .footer-icon {
+        width: 6%;
+        padding: 4px;
+       }
+
+}

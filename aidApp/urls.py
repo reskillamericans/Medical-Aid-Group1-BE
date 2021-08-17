@@ -7,6 +7,8 @@ urlpatterns = [
 
     path('', views.index, name="homepage"),
     path('about-us/', views.about_us, name = "about-us"),
+    path('support/', views.support_view, name = "support"),
+    path('support-success/', views.support_success_view, name = "support-success"),
     path('faq/', views.faq, name = 'faq'),
     path('contact/', views.CreateContact, name='contact'),
     #path('patient-appt/<int:id>', views.CreateAppointment, name='patient-appt'),
