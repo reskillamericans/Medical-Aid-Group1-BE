@@ -36,7 +36,7 @@
     <!-- Top Navigation Menu -->
     <div class="topnav">
       <div class="topnav-logo">
-        <a href="index.html" class="active2" id="cross"
+        <a href="{% url 'homepage' %}" class="active2" id="cross"
           > <img
             class="nav-cross"
             src="aidApp\images\cross.png"
@@ -47,19 +47,19 @@
             
          
 
-        <a href="index.html" class="logo-header" id="logo-header"
+        <a href="{% url 'homepage' %}" class="logo-header" id="logo-header"
           >Century Health</a
         >
       </div>
 
       <!-- Navigation links (hidden by default) -->
       <div id="myLinks">
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Register</a>
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'about-us' %}">About</a>
+        <a href="{% url 'faq' %}">FAQ</a>
+        <a href="{% url 'contact' %}">Contact Us</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Register</a>
       </div>
       <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -78,17 +78,17 @@
            src="{% static 'aidApp/images/cross.png' %}"
           alt="Medical Cross"
         />
-        <a href="index.html" class="home-btn"
+        <a href="{% url 'homepage' %}" class="home-btn"
           ><h1 class="nav-header">Century Health</h1></a
         >
 
         <ul class="nav-ul">
-          <a href="index.html"><li>Home</li></a>
-          <a href="about-us.html"><li>About Us</li></a>
-          <a href="faq.html"><li class="faq-li">FAQ</li></a>
-          <a href="contact.html"><li>Contact Us</li></a>
-          <a href="login.html"><li>Login</li></a>
-          <a href="signup.html"><li>Register</li></a>
+          <a href="{% url 'homepage' %}"><li>Home</li></a>
+          <a href="{% url 'about-us' %}"><li>About Us</li></a>
+          <a href="{% url 'faq' %}"><li class="faq-li">FAQ</li></a>
+          <a href="{% url 'contact' %}"><li>Contact Us</li></a>
+          <a href="{% url 'login' %}"><li>Login</li></a>
+          <a href="{% url 'signup' %}"><li>Register</li></a>
         </ul>
       </nav>
       <main>
