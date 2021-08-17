@@ -30,34 +30,34 @@
         </div>
         <div class="nav-tabs">
           <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="/aidApp/about-us.html">About</a></li>
-            <li><a href="/aidApp/faq.html">FAQ</a></li>
-            <li><a href="/aidApp/doctor-dash.html">Find a Doctor</a></li>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'about-us' %}">About</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            <li><a href="{% url 'doctor-dash' %}">Find a Doctor</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
           </ul>
         </div>
         <div class="login">
           <ul>
-            <li><a class="login-nav" href="/aidApp/login.html">Log In</a></li>
-            <li><a href="/aidApp/signup.html">Sign Up</a></li>
+            <li><a class="login-nav" href="{% url 'users:login' %}">Log In</a></li>
+            <li><a href="{% url 'users:signup' %}">Sign Up</a></li>
           </ul>
         </div>
       </nav>
       <div class="topnav">
-        <a href="../index.html" class="active">
+        <a href="{% url 'homepage' %}" class="active">
           <img src="{% static '/images/logo/logoicon.svg' %}" />
           <span class="nav-logo-text">Century Health</span>
         </a>
         <!-- Navigation links (hidden by default) -->
         <div id="myLinks">
-          <a href="../index.html">Home</a>
-          <a href="../about-us.html">About</a>
-          <a href="../faq.html">FAQ</a>
-          <a href="/aidApp/doctor/doctor-dash.html">Find a Doctor</a>
+          <a href="{% url 'homepage' %}">Home</a>
+          <a href="{% url 'about-us' %}">About</a>
+          <a href="{% url 'faq' %}">FAQ</a>
+          <a href="{% url 'doctor-dash' %}">Find a Doctor</a>
           <a href="{% url 'contact' %}">Contact Us</a>
-          <a href="/aidApp/login.html">Log In</a>
-          <a href="/aidApp/signup.html">Sign Up</a>
+          <a href="{% url 'users:login' %}">Log In</a>
+          <a href="{% url 'users:signup' %}">Sign Up</a>
         </div>
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -186,11 +186,11 @@
       <div class="link-list">
         <ul class="footer-links">
           <li class="quick-links">Quick Links</li>
-          <li class="link"><a href="../index.html">Home</a></li>
-          <li class="link"><a href="../about-us.html">About</a></li>
-          <li class="link"><a href="../faq.html">FAQ</a></li>
+          <li class="link"><a href="{% url 'homepage' %}">Home</a></li>
+          <li class="link"><a href="{% url 'about-us' %}">About</a></li>
+          <li class="link"><a href="{% url 'faq' %}">FAQ</a></li>
           <li class="link">
-            <a href="/aidApp/doctor/doctor-dash.html">Find a Doctor</a>
+            <a href="/aidApp/doctor/{% url 'doctor-dash' %}">Find a Doctor</a>
           </li>
           <li class="link"><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>

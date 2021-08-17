@@ -31,8 +31,8 @@
       </div>
       <div class="login">
         <ul>
-          <li class="active-nav"><a href="{% url 'login' %}">Log In</a></li>
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li class="active-nav"><a href="{% url 'users:login' %}">Log In</a></li>
+          <li><a href="{% url 'users:signup' %}">Sign Up</a></li>
         </ul>
       </div>
     </nav>
@@ -46,7 +46,7 @@
         <a href="{% url 'faq' %}">FAQ</a>
         <a href="{% url 'patient-doctor' %}">Find a Doctor</a>
         <a href="{% url 'contact' %}">Contact Us</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
+        <a href="{% url 'users:signup' %}">Sign Up</a>
       </div>
       <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -93,7 +93,7 @@
         <a href="www.google.com"><button class="social-btn"> <img class="icon" src="{% static 'users/images/logo/searchicon.svg' %}">Login
             with Google</button></a>
       </div>
-      <p>Don't have an account? <a class="signup-link" href="{% url 'signup' %}">Sign up!</a></p>
+      <p>Don't have an account? <a class="signup-link" href="{% url 'users:signup' %}">Sign up!</a></p>
     </div>
   </div>
   <script src="{% static 'users/js/login.js' %}"></script>

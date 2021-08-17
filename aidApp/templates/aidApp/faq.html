@@ -58,8 +58,8 @@
         <a href="{% url 'about-us' %}">About</a>
         <a href="{% url 'faq' %}">FAQ</a>
         <a href="{% url 'contact' %}">Contact Us</a>
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'signup' %}">Register</a>
+        <a href="{% url 'users:login' %}">Login</a>
+        <a href="{% url 'users:signup' %}">Register</a>
       </div>
       <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -87,8 +87,8 @@
           <a href="{% url 'about-us' %}"><li>About Us</li></a>
           <a href="{% url 'faq' %}"><li class="faq-li">FAQ</li></a>
           <a href="{% url 'contact' %}"><li>Contact Us</li></a>
-          <a href="{% url 'login' %}"><li>Login</li></a>
-          <a href="{% url 'signup' %}"><li>Register</li></a>
+          <a href="{% url 'users:login' %}"><li>Login</li></a>
+          <a href="{% url 'users:signup' %}"><li>Register</li></a>
         </ul>
       </nav>
       <main>

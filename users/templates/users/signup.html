@@ -49,7 +49,7 @@
         <a href="{% url 'faq' %}">FAQ</a>
         <a href="{% url 'patient-doctor' %}">Find a Doctor</a>
         <a href="{% url 'contact' %}">Contact Us</a>
-        <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'users:login' %}">Log In</a>
       </div>
       <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -62,7 +62,7 @@
     <div class="tab-wrapper">
       <ul>
         <li class="patient-tab"><a class="patient-link">Patient</a></li>
-        <li class="doc-tab"><a class="doc-link" href="{% url 'signup' %}">Doctor</a></li>
+        <li class="doc-tab"><a class="doc-link" href="{% url 'users:doctor-signup' %}">Doctor</a></li>
       </ul>
     </div>
   </div>
@@ -109,7 +109,7 @@
         <a href="www.google.com"></a><button class="social-btn"> <img class="icon"
             src="{% static 'users/images/logo/searchicon.svg' %}">Sign up with Google</button>
       </div>
-      <p>Already a member? <a class="login-link" href="{% url 'login' %}">Log In!</a></p>
+      <p>Already a member? <a class="login-link" href="{% url 'users:login' %}">Log In!</a></p>
     </div>
   </div>
   <script src="{% static 'users/js/signup.js' %}"></script>

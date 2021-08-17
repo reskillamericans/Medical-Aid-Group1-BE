@@ -38,10 +38,10 @@
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="login">
+            <div class="users:signup">
                 <ul>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a href="{% url 'users:signup' %}">Log In</a></li>
+                    <li><a href="{% url 'users:signup' %}">Sign Up</a></li>
                 </ul>
             </div>
         </nav>
@@ -55,7 +55,7 @@
                 <a href="{% url 'faq' %}">FAQ</a>
                 <a href="{% url 'patient-doctor' %}">Find a Doctor</a>
                 <a href="{% url 'contact' %}">Contact Us</a>
-                <a href="{% url 'signup' %}">Sign Up</a>
+                <a href="{% url 'users:signup' %}">Sign Up</a>
             </div>
             <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
