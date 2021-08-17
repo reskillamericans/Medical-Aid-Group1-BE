@@ -14,7 +14,6 @@ urlpatterns = [
     path('about-us/', about_us, name = "about-us"),
     path('support/', support_view, name = "support"),
     path('support-success/', support_success_view, name = "support-success"),
-    #path('doctor-profile/', doctor_profile_view, name = "doctor-profile"),
     path('faq/', views.faq, name = 'faq'),
     path('contact/', views.CreateContact, name='contact'),
     #path('patient-appt/<int:id>', views.CreateAppointment, name='patient-appt'),
