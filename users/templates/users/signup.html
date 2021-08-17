@@ -31,8 +31,10 @@
       </div>
       <div class="login">
         <ul>
-          <li><a class="login-nav" href="{% url 'login' %}">Log In</a></li>
-          <li class="active-nav"><a class="signup-nav">Sign Up</a></li>
+
+            <li><a class ="login-nav" href= {% url 'users:login' %} >Log In</a></li>
+            <li><a class ="signup-nav" href {% url 'users:signup' %}>Sign Up</a></li>
+
         </ul>
       </div>
     </nav>
@@ -64,6 +66,7 @@
       </ul>
     </div>
   </div>
+
   <!-- IMAGE CONTENT -->
   <div class="content-div">
     <div class="content-logo">
