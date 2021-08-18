@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'medicalAid1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DATABASE_ENGINE'),
+        'ENGINE': os.getenv('DATABASE_ENGINE'), 
         'NAME': os.getenv('DATABASE_NAME'),
         'USER': os.getenv('DATABASE_USER'),
         'HOST': os.getenv('DATABASE_HOST'),
@@ -131,8 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-LOGIN_URL = '/users/login'
 
 LOGIN_REDIRECT_URL = '/'
 
