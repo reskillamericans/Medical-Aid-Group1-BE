@@ -93,17 +93,6 @@ DATABASES = {
 }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'medical-aid-backendpython1',
-        'USER': 'pythontest',
-        'HOST': '68.183.121.201',
-        'PORT': 3306,
-        'PASSWORD': 'pdai2@2o21SA',
-    }
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
