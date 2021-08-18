@@ -45,7 +45,7 @@
                         Consultations</a>
                 </li>
                 <li>
-                    <a href="{% url 'doctor-schedule' %}">                    
+                    <a href="{% url 'doctor-schedule' %}">
                         <img src="{% static 'doctor/images/doctor-dash/schedule-icon.svg' %}" alt="calendar icon">
                         My Schedule</a>
                 </li>
@@ -64,13 +64,14 @@
         <!--Welcome Content Block-->
         <section class="welcome bubble-style">
             <div class="welcomeAlerts">
-                <h1>Welcome to your dashboard, Dr. Crusher</h1>
+                <h1>Welcome to your dashboard, Dr. {{ doctor.health_practitioner.last_name }}</h1>
                 <p>Your next appointment is on <b>6/28/21</b> at <b>8:00am</b> with <b>Mr. William Riker</b></p>
                 <p>You have <b>4 test results</b> awaiting review</p>
                 <p>
-                    <button class="appt-schedule">Appointment Schedule</button>
+                    <a href="{% url 'schedule-week' %}">
+                        <button class="appt-schedule">Appointment Schedule</button></a>
             </div>
-            <img src="{% static 'doctor/images/doctor-dash/crusher.svg' %}" alt="image of current user" class="userPic" />
+            <img src="{% static 'doctor/images/doctor-dash/doctor-dash-icon.png' %}" alt="image of current user" class="userPic" />
         </section>
         <!--Test Results Content Block-->
         <section class="tests">
@@ -134,7 +135,7 @@
             </div>
             <div class="visit-bubble bubble-style">
                 <div class="patient">
-                    <img src="{% static 'doctor/images/doctor-dash/bostick.svg' %}" alt="image of recent patient">
+                    <img src="{% static 'doctor/images/doctor-dash/user-icon.svg' %}" alt="image of recent patient">
                     <p><b>Mr. Michael Bostick</b></p>
                 </div>
                 <p class="location">San Jose General Hospital</p>
@@ -147,7 +148,7 @@
             </div>
             <div class="visit-bubble bubble-style">
                 <div class="patient">
-                    <img src="{% static 'doctor/images/doctor-dash/laforge.svg' %}" alt="image of recent patient">
+                    <img src="{% static 'doctor/images/doctor-dash/user-icon.svg' %}" alt="image of recent patient">
                     <p><b>Mr. Geordi La Forge</b></p>
                 </div>
                 <p class="location">Haight Street Clinic</p>
@@ -160,7 +161,7 @@
             </div>
             <div class="visit-bubble bubble-style">
                 <div class="patient">
-                    <img src="{% static 'doctor/images/doctor-dash/janeway.svg' %}" alt="image of recent patient">
+                    <img src="{% static 'doctor/images/doctor-dash/user-icon.svg' %}" alt="image of recent patient">
                     <p><b>Mrs. Katherine Janeway</b></p>
                 </div>
                 <p class="location">Haight Street Clinic</p>

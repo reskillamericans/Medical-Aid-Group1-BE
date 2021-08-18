@@ -1,3 +1,4 @@
+from django import urls
 from django.urls import path
 from . import views
 
@@ -9,5 +10,6 @@ urlpatterns = [
    path('login', views.login_view, name = 'login'),
    path('logout', views.logout_view, name = 'logout'),
    path('patient-dash', views.patient_dashboard, name = 'patient-dash'),
-   path('doctor-dash', views.doctor_dashboard, name = 'doctor-dash'),
+   path('doctor-dash', views.doctor_dashboard, name = 'doctor-dash')
+
 ]

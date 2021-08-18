@@ -5,20 +5,31 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.db.models import Q
 import datetime
-from aidApp.models import Feedback, Patient, Health_Practitioner
+from aidApp.models import Feedback, Patient, Health_Practitioner, Clinic
 
 
 # Create your views here.
 
 @login_required
 def doctor_dash_view(request):
+    user = User.objects.get(username = request.user.username)
+    doctor = Health_Practitioner.objects.get(health_practitioner = user)
+    
     context = {
-        'doctor': Health_Practitioner.objects.all()
+        'doctor': doctor
     }
     return render(request, 'doctor/doctor-dash.html', context)
 
 def doctor_profile_view(request):
-    return render(request, 'doctor/doctor-profile.html')
+    user = User.objects.get(username = request.user.username)
+    doctor = Health_Practitioner.objects.get(health_practitioner = user)
+    
+    context = {
+        'doctor': doctor,
+        
+    }
+    return render(request, 'doctor/doctor-profile.html', context)
+    
 
 def doctor_patient_view(request):
     return render(request, 'doctor/doctor-patient.html')
@@ -99,5 +110,15 @@ def doctor_support_view(request):
 def doctor_support_success_view(request):
     return render(request, 'doctor/doctor-support-feedback.html')
 
-def doctor_signup_view(request):
-    return render(request, 'doctor/doctor-signup.html')
+def doctor_confirm_view(request):
+    return render(request, 'doctor/doctor-confirm.html')
+
+def doctor_edit_view(request):
+    user = User.objects.get(username = request.user.username)
+    doctor = Health_Practitioner.objects.get(health_practitioner = user)
+    
+    context = {
+        'doctor': doctor,
+        
+    }
+    return render(request, 'doctor/doctor-edit.html', context)

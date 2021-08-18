@@ -1,10 +1,17 @@
+import django
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+from datetime import date
+from django.utils import timezone as tz
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.mail import send_mail
-from .models import Feedback, FAQ
+from django.core.mail import send_mail, get_connection
+from django.conf import settings
+from django.db.models import Q
+from .models import Feedback, Patient, Health_Practitioner, FAQ, Appointment, Clinic
+from .forms import CreateContactForm#, AppUpdateForm, AppRetrieveForm  ,AppCreateForm, DocProfileForm
+
 
 # Create your views here.
 
@@ -62,3 +69,43 @@ def support_view(request):
 
 def support_success_view(request):
     return render(request, 'aidApp/patient/patient-support-feedback.html')
+
+
+@login_required
+def CreateContact(request):
+    
+    context = {}
+        
+    if request.method == 'POST':
+         form = CreateContactForm(request.POST)
+         if form.is_valid():
+             
+             inquiry = form.cleaned_data['inquiry']
+             #subject = form.cleaned_data['subject']
+             #message = form.cleaned_data['comment']
+             #sender = form.cleaned_data['email']
+             
+             administrators = []
+             for admin in User.objects.filter(is_superuser=True):
+                administrators.append(admin.email)
+
+             email_sub = 'New'+ ' '+inquiry+' '+'inquiry received'               
+             con = get_connection(settings.EMAIL_BACKEND)
+             send_mail(email_sub,
+                      None,
+                      None,
+                      administrators,
+                      connection=con            
+             )
+             form.save()
+             messages.success(request, "Your message was submitted successfully! Thank you.")
+                     
+         else:
+             
+             return render(request,'aidApp/contact/contact.html',{'form': form})
+ 
+    context = {'form': CreateContactForm()}
+    return render(request, 'aidApp/contact/contact.html', context) 
+
+def handler404(request, *args, **argv):
+    return render(request, 'aidApp/error.html')

@@ -1,0 +1,348 @@
+/* Body Styling */
+:root {
+  --background: #f9f9f9;
+  --primaryText: #180126;
+  --secondaryText: #7e7a8f;
+  --tertiaryText: #c3c7d2;
+  --primaryColor: #3a5df8;
+  --secondaryColor: #f3ea12;
+}
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+    margin: 0;
+    padding:0;
+    color: var(--primaryText);
+    font-family: "Open Sans", sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.back {
+    font-weight: 700;
+    margin-left: 30px;
+    text-decoration: none;
+}
+.back:link,
+.back:visited {
+    color: var(--primaryColor);
+}
+.back:hover {
+    color: var(--secondaryColor);
+}
+
+.update-btn {
+    background: var(--secondaryColor);
+    color: var(--primaryText);
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 50px;
+    width: 243px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.update-btn:hover {
+    background-color: var(--background);
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+}
+button {
+  cursor: pointer;
+}
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+p {
+  font-size: 16px;
+  font-weight: 400;
+}
+/* ˅ This is so all the content sections have the same border, color and are vertically centered */
+.bubble-style{
+  border-radius: 20px !important;
+    background-color: var(--background);
+    border: 1px solid var(--tertiaryText);
+}
+/* This controls the layout of the page and stacks everything for mobile view (mobile first)  */
+.wrapper {
+  display: grid;
+  grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+}
+
+/************************************ Section Styling ************************************/
+
+/********** Nav Mobile View**********/
+header {
+  grid-area: header;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+nav {
+  grid-area: sidebar;
+}
+.logo {
+  width: 60%;
+  margin: 0;
+}
+.hamburger {
+  display: block;
+  float: right;
+}
+button.hamburger {
+ padding: 0;
+ margin: 0;
+ background-color: transparent;
+ border: none;
+}
+
+.nav-ul {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 70vh;
+  background-color: var(--primaryColor);
+  /*justify-content: center;*/
+  z-index: 10;
+} 
+.nav-ul a {
+  color: white;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.nav-ul li {
+  padding: 20px;
+  list-style-type: none;
+}
+.nav-ul img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.nav-ul.show {
+   display: flex;
+}
+.active-link {
+    color: var(--secondaryColor) !important;
+    font-weight: 700;
+}
+
+/* Styling for Headings */
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.main-heading{
+    text-align: center;
+}
+.patient-info-block,
+.contact-info-block,
+.emergency-contact-block {
+    justify-content: space-between;
+    margin: 0 1rem;
+    padding: 1rem;
+}
+.patient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userPic {
+    display: block;
+    margin: 30px;
+}
+.patient p {
+    font-weight: 700;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.patient-info {
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin-left: 30px;
+}
+main {
+    grid-area: main;
+}
+.patient-info-block {
+    grid-area: patient;
+}
+
+.contact-info-block {
+    grid-area: contact;
+}
+
+.emergency-contact-block {
+    grid-area: emergency;
+}
+.personal-info,
+.contact-info,
+.emergency-contact{
+    border-radius: 5px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.patient-info input, .patient-info select {
+    padding: 10px;
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid var(--tertiaryText);
+    border-radius: 4px;
+    margin: 0 20px 20px 0;
+}
+
+ input {
+    padding: 10px;
+     width: 385px;
+     background-color: var(--background);
+     border: 1px solid var(--tertiaryText);
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+
+input:focus,
+select:focus,
+input:hover,
+select:hover {
+    border: 1px solid var(--secondaryColor) !important;
+    box-shadow: 0 0 5px var(--secondaryColor);
+    outline-offset: 0;
+    outline: none;
+}
+
+
+
+/************************Styling for Laptops and Small Screens 769px and up*****************************/
+@media only screen and (min-width: 769px) {
+ 
+  /* This creates a two column view and makes the sidebar navigation visible  */
+  .wrapper {
+    grid-template-columns: 275px  1fr;
+    grid-template-areas:
+        "header  header"
+        "sidebar main";
+
+    margin-right: 2rem;
+  }
+
+  /***** Need this to make nav visible *****/
+  /***** Nav *****/
+  .logo {
+    width: 250px;
+  }
+ .nav-ul {
+   display: flex;
+   background-color: var(--primaryColor);
+   border-radius: 0 20px 0 0;
+   color: var(--background);
+   height: 100vh;
+   padding-top: 0;
+   position: sticky;
+   top: 0px;
+ }
+ 
+  nav a:hover,
+  .activeLink {
+    color: var(--secondaryColor);
+  }
+
+  .nav-ul li {
+    line-height: 50px;
+  }
+  .nav-ul img {
+    vertical-align: middle;
+    padding-right: 5px;
+  }
+  
+  /* hides hamburger button */
+  .hamburger {
+    display: none;
+  }
+  /***** styling for content headings *****/
+  h2 {
+    font-size: 22px;
+  }
+    /*.personal-info {*/
+    /*    padding: 15px 30px;*/
+    /*    border-radius: 5px;*/
+    /*    display: flex;*/
+    /*    flex-direction: row;*/
+    /*}*/
+
+}
+
+/************************Styling for Desktops and Large Screens 1200px Up*****************************/
+@media (min-width: 1200px) {
+    /* This creates a 3 column view  */
+    .wrapper {
+        grid-template-columns: 275px 1.5fr 1fr;
+        grid-template-areas: 
+            "header  header header"
+            "sidebar main main";
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .patient-info {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        line-height: 2rem;
+        margin-left: 90px;
+    }
+
+    .personal-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .contact-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: stretch;
+
+    }
+
+
+}
