@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'medicalAid1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DATABASE_ENGINE'),
+        'ENGINE': os.getenv('DATABASE_ENGINE'), 
         'NAME': os.getenv('DATABASE_NAME'),
         'USER': os.getenv('DATABASE_USER'),
         'HOST': os.getenv('DATABASE_HOST'),
@@ -92,6 +92,17 @@ DATABASES = {
     }
 }
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'medical-aid-backendpython1',
+        'USER': 'pythontest',
+        'HOST': '68.183.121.201',
+        'PORT': 3306,
+        'PASSWORD': 'pdai2@2o21SA',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -130,8 +141,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-LOGIN_URL = '/users/login'
 
 LOGIN_REDIRECT_URL = '/'
 
