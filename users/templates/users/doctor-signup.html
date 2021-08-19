@@ -27,7 +27,7 @@
             <li><a href="{% url 'homepage' %}">Home</a></li>
             <li><a href="{% url 'about-us' %}">About</a></li>
             <li><a href="{% url 'faq' %}">FAQ</a></li>
-            <li><a href="{% url 'patient-doctor' %}">Find a Doctor</a></li>
+            <li><a href="{% url 'patient:patient-doctor' %}">Find a Doctor</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
     </div>
@@ -46,7 +46,7 @@
       <a href="{% url 'homepage' %}">Home</a>
           <a href="{% url 'about-us' %}">About</a>
           <a href="{% url 'faq' %}">FAQ</a>
-          <a href="{% url 'patient-doctor' %}">Find a Doctor</a>
+          <a href="{% url 'patient:patient-doctor' %}">Find a Doctor</a>
           <a href="{% url 'contact' %}">Contact Us</a>
           <a href={% url 'users:login' %}>Log In</a>
     </div>
