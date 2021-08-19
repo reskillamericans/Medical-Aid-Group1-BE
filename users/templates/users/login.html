@@ -1,6 +1,10 @@
+{% load static %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,7 +29,7 @@
           <li><a href="{% url 'homepage' %}">Home</a></li>
           <li><a href="{% url 'about-us' %}">About</a></li>
           <li><a href="{% url 'faq' %}">FAQ</a></li>
-          <li><a href="{% url 'patient-doctor' %}">Find a Doctor</a></li>
+          <li><a href="{% url 'patient:patient-doctor' %}">Find a Doctor</a></li>
           <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
       </div>
@@ -44,7 +48,7 @@
         <a href="{% url 'homepage' %}">Home</a>
         <a href="{% url 'about-us' %}">About</a>
         <a href="{% url 'faq' %}">FAQ</a>
-        <a href="{% url 'patient-doctor' %}">Find a Doctor</a>
+        <a href="{% url 'patient:patient-doctor' %}">Find a Doctor</a>
         <a href="{% url 'contact' %}">Contact Us</a>
         <a href="{% url 'users:signup' %}">Sign Up</a>
       </div>
@@ -54,7 +58,7 @@
       </a>
     </div>
   </header>
-  <!-- IMAGE CONTENT -->
+<!-- IMAGE CONTENT -->
   <div class="content-div">
     <div class="content-logo">
       <div class="inner">
@@ -65,38 +69,53 @@
       </div>
     </div>
 
-    <!-- FORM -->
-    <div class="form">
-      <div class="info">
-        <h1>Welcome Back!</h1>
-        <h3>Log Into Your Account</h3>
+<!-- FORM -->
+            <div class="form">
+              <div class="info">
+              <form action = "login" method = "POST">
+                {% csrf_token %}
+                  <h1>Welcome Back!</h1>
+                  <h3>Log Into Your Account</h3>
+                </div>
+              <br />
+            <label for="username"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Username*"
+            /><br />
+            <label for="password"></label>
+            <input
+              type="password"
+              id="password1"
+              name="password1"
+              placeholder="Password*"
+            /><br />
+            <label class="checkbox">
+                <input type="checkbox" name="remember_me"> Remember me
+            </label>
+              <span class="password"> <a href="#"> Forgot password?</a></span>
+            <br />
+            <button type="submit" class="login-btn">Log In</button>
+            <br />
+        </form>
+          <h6>OR</h6>
+          <div class="social-div">
+            <a href="www.facebook.com"><button class="social-btn">  <img class="icon" src= {% static 'users/images/logo/facebookicon.svg' %} >Login with Facebook</button></a>
+            <a href="www.google.com"><button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/searchicon.svg' %} >Login with Google</button></a>
+          </div>
+          <div>
+          {% for message in messages %}
+          <h4> {{message}} </h4>
+          {% endfor %}
+          </div>
+          <p> {{error}} </p>
+        <p>Don't have an account? <a href={% url 'users:signup' %}>Sign up!</a></p>
+        </div>
       </div>
-      <label for="email"></label>
-      <input type="email" id="email" name="email" placeholder="Email Address" />
-      <br />
-      <label for="password"></label>
-      <input type="password" id="password" name="password" placeholder="Password" /><br />
-
-      <label class="checkbox">
-        <input type="checkbox" name="remember"> Remember me
-      </label>
-      <span class="password"> <a href="#"> Forgot password?</a></span>
-      <br>
-
-
-      </form>
-      <button type="submit" class="login-btn">Log In</button>
-      <h6>OR</h6>
-      <div class="social-div">
-        <a href="www.facebook.com"><button class="social-btn"> <img class="icon"
-              src="{% static 'users/images/logo/facebookicon.svg' %}">Login with Facebook</button></a>
-        <a href="www.google.com"><button class="social-btn"> <img class="icon" src="{% static 'users/images/logo/searchicon.svg' %}">Login
-            with Google</button></a>
-      </div>
-      <p>Don't have an account? <a class="signup-link" href="{% url 'users:signup' %}">Sign up!</a></p>
-    </div>
-  </div>
-  <script src="{% static 'users/js/login.js' %}"></script>
-</body>
-
+      <script src= {% static 'users/js/login.js' %} /></script>
+  </body>
 </html>
+{% endblock %}
+    

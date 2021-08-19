@@ -6,7 +6,7 @@ from .views import (
     patient_dash_view,
     patient_doctor_view
 )
-
+app_name = 'patient'
 
 urlpatterns = [
     path('support/', support_view, name = "support"),

@@ -1,6 +1,11 @@
+
+{% load static %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +29,7 @@
         <nav>
             <ul class="nav-ul" id="nav-ul">
                 <li>
-                    <a href="{% url 'patient-dash' %}" class="active-link">
+                    <a href="{% url 'patient:patient-dash' %}" class="active-link">
                         <img src="{% static 'patient/images/patient-images/dash-icon.svg' %}" alt="dashboard icon">
                         Dashboard</a>
                 </li>
@@ -34,7 +39,7 @@
                         Profile</a>
                 </li>
                 <li>
-                    <a href="{% url 'patient-doctor' %}">
+                    <a href="{% url 'patient:patient-doctor' %}">
                         <img src="{% static 'patient/images/patient-images/doctor-icon.svg' %}" alt="doctor icon">
                         Talk to a Doctor</a>
                 </li>
@@ -233,3 +238,4 @@
 </body>
 
 </html>
+ {% endblock %} 
