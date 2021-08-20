@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os 
 import django_heroku
 from pathlib import Path
-print(os.getenv("DATABASE_ENGINE"))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'phone_field',
     'doctor',
+    'patient'
 ]
 SITE_ID = 1
 

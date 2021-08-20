@@ -29,7 +29,7 @@
         <nav>
             <ul class="nav-ul" id="nav-ul">
                 <li>
-                    <a href="{% url 'patient:patient-dash' %}" class="active-link">
+                    <a href="{% url 'patient-dash' %}" class="active-link">
                         <img src="{% static 'patient/images/patient-images/dash-icon.svg' %}" alt="dashboard icon">
                         Dashboard</a>
                 </li>
@@ -39,7 +39,7 @@
                         Profile</a>
                 </li>
                 <li>
-                    <a href="{% url 'patient:patient-doctor' %}">
+                    <a href="{% url 'patient-doctor' %}">
                         <img src="{% static 'patient/images/patient-images/doctor-icon.svg' %}" alt="doctor icon">
                         Talk to a Doctor</a>
                 </li>
@@ -55,7 +55,7 @@
                         Contact Us / Support</a>
                 </li>
                 <li>
-                    <a href="{% url 'homepage' %}">
+                    <a href="{% url 'users:logout' %}">
                         <img src="{% static 'patient/images/patient-images/logout.svg' %}" alt="logout icon" />
                         Logout</a>
                 </li>

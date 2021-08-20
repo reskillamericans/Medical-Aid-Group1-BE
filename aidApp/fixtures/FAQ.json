@@ -1,0 +1,41 @@
+[{
+        "model": "aidApp.FAQ",
+        "pk": 1,
+        "fields": {
+            "question": "How to create an account",
+            "answer": "Follow these steps to create an account: Select the create account button on the website. Enter all required information in the fields provided. Select submit You should receive an email with a confirmation of your account creation."
+        }
+    },
+    {
+        "model": "aidApp.FAQ",
+        "pk": 2,
+        "fields": {
+            "question": "How to schedule an appointment",
+            "answer": "Log into your account and select the Schedule an Appointment button - Choose your preferred physician (Doctor) from the Health practitioners drop-down. - You would see a calendar displayed with their available date shaded in Green. - Choose your preferred visit date and select Confirm. You would receive a confirmation email at the email address you provided on your account."
+        }
+    },
+    {
+        "model": "aidApp.FAQ",
+        "pk": 3,
+        "fields": {
+            "question": "How to find a pharmacy",
+            "answer": "Log into your account Select the Find a Pharmacy button on the page Enter your Zip code in the field provided You should see a list of pharmacies closest to you. Select your preference and click Save. The Pharmacy selected would be saved as the default on your account."
+        }
+    },
+    {
+        "model": "aidApp.FAQ",
+        "pk": 4,
+        "fields": {
+            "question": "How to find a Clinic",
+            "answer": "Log into your account. Select the Choose your preferred clinic button/link on top of the page Enter your zip code in the field provided. A list of associated clinics would be displayed to you. Select your preference and click Save."
+        }
+    },
+    {
+        "model": "aidApp.FAQ",
+        "pk": 5,
+        "fields": {
+            "question": "How to Update your introduction on your account",
+            "answer": "Log into your account with your username and password Select My Profile on the resulting page A page with all your personal information would be displayed to you. Update any information and select the Save button at the bottom of the page."
+        }
+    }
+]
