@@ -16,7 +16,7 @@ from .views import (
 
 )
 
-app_name = 'doctor'
+
 
 urlpatterns = [
     path('doctor-dash/', doctor_dash_view, name = "doctor-dash"),

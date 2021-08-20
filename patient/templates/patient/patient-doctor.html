@@ -52,7 +52,7 @@
                         Contact Us / Support</a>
                 </li>
                 <li>
-                    <a href="{% url 'homepage' %}">
+                    <a href="{% url 'users:logout' %}">
                         <img src="{% static 'patient/images/patient-images/logout.svg' %}" alt="logout icon" />
                         Logout</a>
                 </li>
@@ -79,32 +79,6 @@
                     <p><b>Name</b></p>
                     <p><b>Location</b></p>
                     <p><b>Phone</b></p>
-                </div>
-                <div class="doctors-bubble bubble-style">
-                    <div class="doctor">
-                        <img src="{% static 'patient/images/patient-images/drcrusher.svg' %}" alt="image of doctor">
-                        <div class="doctor-info">
-                            <p><b>Dr Crusher</b></p>
-                            <p>Internal Medicine</p>
-                        </div>
-                    </div>
-                    <p class="clinic">Washington General Hospital</p>
-                    <div class="phone">
-                        <p>(455) 888-3884</p>
-                    </div>
-                </div>
-                <div class="doctors-bubble bubble-style">
-                    <div class="doctor">
-                        <img src="{% static 'patient/images/patient-images/drpul.svg' %}" alt="image of doctor">
-                        <div class="doctor-info">
-                            <p><b>Dr. Pulaski</b></p>
-                            <p>Proctology</p>
-                        </div>
-                    </div>
-                    <p class="clinic">Pulaski Health Center</p>
-                    <div class="phone">
-                        <p>(455) 888-3884</p>
-                    </div>
                 </div>
                 {% for doctor in doctors %}
                 <a class="doctors-bubble bubble-style">

@@ -45,7 +45,7 @@ def patient_signup(request):
                 # Login user after signing up
                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 # Redirect to patient's dashboard
-                return redirect('patient:patient-dash')
+                return redirect('patient-dash')
 
         else:
             messages.info(request,'Please note invalid credentials.')
@@ -73,16 +73,14 @@ def doctor_signup(request):
                 user = User(username=email, email=email, first_name=first_name, last_name=last_name)
                 user.set_password(password1)
                 user.save()
-               
-                #doctor=Health_Practitioner.objects.create(Health_Practitioner=user)
-                #doctor.save()
+                doctor=Health_Practitioner(health_practitioner=user)
+                doctor.save()
                 
                 messages.info(request,'Please note that the user is created.')
                 # Login user after signing up
                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-                
                 # Redirect to doctor's dashboard
-                return redirect('doctor:doctor-dash')
+                return redirect('doctor-dash')
 
         else:
             messages.info(request,'Please note invalid credentials.')
@@ -99,21 +97,18 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('email')
         password = request.POST.get('password1')
-        print(username,password)
         # Authenticate user
         user = authenticate(request, username=username,password=password)
-        print(user)
         # Verify user is valid
         if user is not None:
-            login(request, user)
             patient = Patient.objects.filter(patient=user)
             
             if patient is not None:
                 login(request, user)
-                return redirect('patient:patient-dash')
+                return redirect('patient-dash')
             else:
                 login(request, user)
-                return redirect('doctor:doctor-dash')
+                return redirect('doctor-dash')
         
         else:
             context["error"] = "Please provide valid credentials."
@@ -132,4 +127,4 @@ def logout_view(request):
         messages.add_message(request, messages.INFO, 'You are currently logged out.')
     except:
         messages.add_message(request, messages.ERROR, 'You are unable to logout.')
-    return render(request,'users/login.html')
+    return redirect('homepage')
