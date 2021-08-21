@@ -1,6 +1,11 @@
+
+{% load static %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,7 +55,7 @@
                         Contact Us / Support</a>
                 </li>
                 <li>
-                    <a href="{% url 'homepage' %}">
+                    <a href="{% url 'users:logout' %}">
                         <img src="{% static 'patient/images/patient-images/logout.svg' %}" alt="logout icon" />
                         Logout</a>
                 </li>
@@ -233,3 +238,4 @@
 </body>
 
 </html>
+ {% endblock %} 

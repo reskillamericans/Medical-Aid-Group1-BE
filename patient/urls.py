@@ -7,7 +7,6 @@ from .views import (
     patient_doctor_view
 )
 
-
 urlpatterns = [
     path('support/', support_view, name = "support"),
     path('support-success/', support_success_view, name = "support-success"),

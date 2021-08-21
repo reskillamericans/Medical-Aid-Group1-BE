@@ -1,6 +1,10 @@
+{% load static %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,40 +83,70 @@
 
     </div>
 
-    <!-- FORM -->
-    <div class="form">
-      <div class="info">
-        <h1>Hello!</h1>
-        <h3>Let's Help You Create An Account</h3>
+  <!-- FORM -->
+          <div class="form">
+            <div class="info">
+            <form action = "{% url 'users:signup'%}" method = "POST">
+              {% csrf_token %}
+                <h1>Hello!</h1>
+                <h3>Let's Help You Create An Account</h3>
+              </div>
+            <label for="first_name"></label>
+            <input
+              type="firstname"
+              id="first_name"
+              name="first_name"
+              placeholder="First Name*"
+            /><br />
+            <label for="last_name"></label>
+            <input
+              type="lastname"
+              id="last_name"
+              name="last_name"
+              placeholder="Last Name*"
+            /><br />
+            <label for="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address*"
+            /><br />
+            <label for="password"></label>
+            <input
+              type="password"
+              id="password1"
+              name="password1"
+              placeholder="Password*"
+            /><br />
+            <label for="password"></label>
+            <input
+              type="password"
+              id="password2"
+              name="password2"
+              placeholder="Confirm Password*"
+            /><br />
+            <label class="checkbox">
+                <input type="checkbox" name="remember_me"> I agree to Century Health <a href="#">Terms of Service</a> and <br> <a href="#">Privacy Policy</a>
+            </label>
+            <br />
+          <button type="submit" class="signup-btn">Sign Up</button>
+            <br />
+        </form>
+          <h6>OR</h6>
+          <div class="social-div">
+              <button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/facebook(1).png' %} />Sign up with Facebook</button>
+              <button class="social-btn"> <img class="icon" src= {% static 'users/images/logo/search.png' %} />Sign up with Google</button>
+          </div>
+          <div>
+          {% for message in messages %}
+          <h4> {{message}} </h4>
+          {% endfor %}
+          </div>
+        <p>Already a member? <a href={% url 'users:login' %}>Log In!</a></p>
+        </div>
       </div>
-      <label for="firstname"></label>
-      <input type="firstname" id="firstname" name="firstname" placeholder="First Name*" /><br />
-      <label for="lastname"></label>
-      <input type="lastname" id="lastname" name="lastname" placeholder="Last Name*" /><br />
-      <label for="email"></label>
-      <input type="email" id="email" name="email" placeholder="Email Address*" /><br />
-      <label for="password"></label>
-      <input type="password" id="password" name="password" placeholder="Password*" /><br />
-      <label for="password"></label>
-      <input type="password" id="password" name="password" placeholder="Confirm Password*" /><br />
-      <label class="checkbox">
-        <input type="checkbox" name="remember"> I agree to Century Health <a href="#">Terms of Service</a> and <br> <a
-          href="#">Privacy Policy</a>
-      </label>
-      </form>
-      <br>
-      <button type="submit" class="signup-btn">Sign Up</button>
-      <h6>OR</h6>
-      <div class="social-div">
-        <a href="www.facebook.com"><button class="social-btn"> <img class="icon"
-              src="{% static 'users/images/logo/facebookicon.svg' %}">Sign up with Facebook</button></a>
-        <a href="www.google.com"></a><button class="social-btn"> <img class="icon"
-            src="{% static 'users/images/logo/searchicon.svg' %}">Sign up with Google</button>
-      </div>
-      <p>Already a member? <a class="login-link" href="{% url 'users:login' %}">Log In!</a></p>
-    </div>
-  </div>
-  <script src="{% static 'users/js/signup.js' %}"></script>
-</body>
-
+      <script src= {% static 'users/js/signup.js' %}></script>
+  </body>
 </html>
+ {% endblock %}  

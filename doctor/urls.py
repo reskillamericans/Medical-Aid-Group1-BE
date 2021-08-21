@@ -17,6 +17,7 @@ from .views import (
 )
 
 
+
 urlpatterns = [
     path('doctor-dash/', doctor_dash_view, name = "doctor-dash"),
     path('doctor-patient/', doctor_patient_view, name = "doctor-patient"),

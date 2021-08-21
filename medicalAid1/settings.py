@@ -28,7 +28,7 @@ SECRET_KEY = 'dtp9%-xx3=8v!(*le94$2g2#xu5^0q0$dvj6qe6t-gzozbcm4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'phone_field',
     'doctor',
-    'patient',
+    'patient'
 ]
 SITE_ID = 1
 
