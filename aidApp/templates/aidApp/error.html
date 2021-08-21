@@ -1,4 +1,5 @@
- {% load static %}
+{% load static %} 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
-    <link rel="stylesheet" href=" {% static 'aidApp/css/error.css' %}">
+    <link rel="stylesheet" href="about-us.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="about-us.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="{% static 'aidApp/css/error.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
@@ -66,7 +71,12 @@
         </h1>
     </div>
     <div class="page-div">
-        <img class="error-img" src="images/error/Group 96.svg" alt="404 error image">
+       <!-- <img class="error-img" src="images/error/Group 96.svg" alt="404 error image"> -->
+        <img
+        class="error-img"
+         src="{% static 'aidApp/images/error/Group 96.svg' %}"
+        alt="404 error image"
+      />
     </div>
     <div class="page-div">
         <h3 class="page-not-found">
