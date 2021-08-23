@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'aidApp/css/contact.css' %}" />
 
     <title>Contact Us</title>
-    <link rel="icon" href="{% static '/images/logo/logoicon.svg' %}" type="image/svg" />
+    <link rel="icon" href="{% static 'aidApp/images/logo/logoicon.svg' %}" type="image/svg" />
   </head>
 
   <body>
@@ -22,7 +22,7 @@
       <nav class="navbar">
         <div class="logo-div">
           <img
-            src="{% static '/images/logo/logoicon.svg' %}"
+            src="{% static 'aidApp/images/logo/logoicon.svg' %}"
             class="nav-logo"
             alt="logo image"
           />
@@ -30,34 +30,34 @@
         </div>
         <div class="nav-tabs">
           <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="/aidApp/about-us.html">About</a></li>
-            <li><a href="/aidApp/faq.html">FAQ</a></li>
-            <li><a href="/aidApp/doctor-dash.html">Find a Doctor</a></li>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'about-us' %}">About</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            <li><a href="{% url 'patient-doctor' %}">Find a Doctor</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
           </ul>
         </div>
         <div class="login">
           <ul>
-            <li><a class="login-nav" href="/aidApp/login.html">Log In</a></li>
-            <li><a href="/aidApp/signup.html">Sign Up</a></li>
+            <li><a class="login-nav" href="{% url 'users:login' %}">Log In</a></li>
+            <li><a href="{% url 'users:signup' %}">Sign Up</a></li>
           </ul>
         </div>
       </nav>
       <div class="topnav">
-        <a href="../index.html" class="active">
-          <img src="{% static '/images/logo/logoicon.svg' %}" />
+        <a href="{% url 'homepage' %}" class="active">
+          <img src="{% static 'aidApp/images/logo/logoicon.svg' %}" />
           <span class="nav-logo-text">Century Health</span>
         </a>
         <!-- Navigation links (hidden by default) -->
         <div id="myLinks">
-          <a href="../index.html">Home</a>
-          <a href="../about-us.html">About</a>
-          <a href="../faq.html">FAQ</a>
-          <a href="/aidApp/doctor/doctor-dash.html">Find a Doctor</a>
+          <a href="{% url 'homepage' %}">Home</a>
+          <a href="{% url 'about-us' %}">About</a>
+          <a href="{% url 'faq' %}">FAQ</a>
+          <a href="{% url 'patient-doctor' %}">Find a Doctor</a>
           <a href="{% url 'contact' %}">Contact Us</a>
-          <a href="/aidApp/login.html">Log In</a>
-          <a href="/aidApp/signup.html">Sign Up</a>
+          <a href="{% url 'users:login' %}">Log In</a>
+          <a href="{% url 'users:signup' %}">Sign Up</a>
         </div>
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -71,7 +71,7 @@
     <div class="contact-div">
       <figure class="map-div">
         <img
-          src="{% static '/images/logo/u_map-marker.svg' %}"
+          src="{% static 'aidApp/images/logo/u_map-marker.svg' %}"
           class="map-img"
           alt="map marker"
         />
@@ -80,7 +80,7 @@
 
       <figure class="phone-div">
         <img
-          src="{% static '/images/logo/fi_phone.svg' %}"
+          src="{% static 'aidApp/images/logo/fi_phone.svg' %}"
           class="phone-img"
           alt="telephone"
         />
@@ -88,7 +88,7 @@
       </figure>
 
       <figure class="email-div">
-        <img src="{% static '/images/logo/fi_mail.svg' %}" class="email-img" alt="email" />
+        <img src="{% static 'aidApp/images/logo/fi_mail.svg' %}" class="email-img" alt="email" />
         <figcaption>Email us at Info@centuryhealth.org</figcaption>
       </figure>
     </div>
@@ -162,7 +162,7 @@
   <footer>
     <div class="footer-info">
       <div class="navbar-footer">
-        <img src="{% static '/images/logo/logoicon.svg' %}" class="logo-img" alt="logo image" />
+        <img src="{% static 'aidApp/images/logo/logoicon.svg' %}" class="logo-img" alt="logo image" />
         <span class="content-span">Century Health</span>
         <p class="bold">
           We will always consider<br />
@@ -172,13 +172,13 @@
         <div class="social-icons">
           <p class="follow-us">Follow us</p>
           <a href="www.facebook.com"
-            ><img class="footer-icon" src="{% static '/images/logo/facebookicon.svg' %}"
+            ><img class="footer-icon" src="{% static 'aidApp/images/logo/facebookicon.svg' %}"
           /></a>
           <a href="www.twitter.com"
-            ><img class="footer-icon" src="{% static '/images/logo/twitter.svg' %}"
+            ><img class="footer-icon" src="{% static 'aidApp/images/logo/twitter.svg' %}"
           /></a>
           <a href="www.google.com"
-            ><img class="footer-icon" src="{% static '/images/logo/searchicon.svg' %}"
+            ><img class="footer-icon" src="{% static 'aidApp/images/logo/searchicon.svg' %}"
           /></a>
         </div>
       </div>
@@ -186,11 +186,11 @@
       <div class="link-list">
         <ul class="footer-links">
           <li class="quick-links">Quick Links</li>
-          <li class="link"><a href="../index.html">Home</a></li>
-          <li class="link"><a href="../about-us.html">About</a></li>
-          <li class="link"><a href="../faq.html">FAQ</a></li>
+          <li class="link"><a href="{% url 'homepage' %}">Home</a></li>
+          <li class="link"><a href="{% url 'about-us' %}">About</a></li>
+          <li class="link"><a href="{% url 'faq' %}">FAQ</a></li>
           <li class="link">
-            <a href="/aidApp/doctor/doctor-dash.html">Find a Doctor</a>
+            <a href="{% url 'patient-doctor' %}">Find a Doctor</a>
           </li>
           <li class="link"><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>

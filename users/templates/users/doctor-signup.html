@@ -24,11 +24,11 @@
       </div>
       <div class="nav-tabs">
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about-us.html">About</a></li>
-            <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="doctor-dash.html">Find a Doctor</a></li>
-            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'about-us' %}">About</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            <li><a href="{% url 'patient-doctor' %}">Find a Doctor</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
     </div>
     <div class="login">
@@ -39,15 +39,15 @@
     </div>
   </nav>
   <div class="topnav">
-    <a href="index.html" class="active"><img src= {% static 'users/images/logo/logoicon.svg' %}> <span class="nav-logo-text">Century Health</span></a>
+    <a href="{% url 'homepage' %}" class="active"><img src= {% static 'users/images/logo/logoicon.svg' %}> <span class="nav-logo-text">Century Health</span></a>
    
     <!-- Navigation links (hidden by default) -->
     <div id="myLinks">
-      <a href="../index.html">Home</a>
-          <a href="../about-us.html">About</a>
-          <a href="../faq.html">FAQ</a>
-          <a href="doctor-dash.html">Find a Doctor</a>
-          <a href="../contact.html">Contact Us</a>
+      <a href="{% url 'homepage' %}">Home</a>
+          <a href="{% url 'about-us' %}">About</a>
+          <a href="{% url 'faq' %}">FAQ</a>
+          <a href="{% url 'patient-doctor' %}">Find a Doctor</a>
+          <a href="{% url 'contact' %}">Contact Us</a>
           <a href={% url 'users:login' %}>Log In</a>
     </div>
     <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
@@ -73,7 +73,7 @@
             <img src= {% static 'users/images/logo/logoicon.svg' %} class="logo-img" alt="logo image"/>
             <span class="content-span">Century Health</span>
             <h2>Let's Get You Started</h2>
-            <img src= {% static 'users/images/login-img/login-img.png' %} class="content-img"alt="sign up image"/>
+            <img src= {% static 'users/images/login/login-img.png' %} class="content-img"alt="sign up image"/>
         </div>
     
 </div>

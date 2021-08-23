@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient - Century Health</title>
+    <link rel="shortcut icon" href="{% static 'patient/images/admin-dash/favicon.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'patient/css/patient-doctor.css' %}">
+    <script src="{% static 'patient/js/patient-dash.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="{% url 'homepage' %}"><img src="{% static 'patient/images/patient-images/logo.svg' %}" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="{% static 'patient/images/logo/fi_menu.svg' %}"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="{% url 'patient-dash' %}">
+                        <img src="{% static 'patient/images/patient-profile-img/dashboard-white.svg' %}" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="patient-profile.html">
+                        <img src="{% static 'patient/images/patient-images/profile-icon.svg' %}" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="{% url 'patient-doctor' %}"  class="active-link">
+                        <img src="{% static 'patient/images/patient-doctor-img/doctor-icon-yellow.svg' %}" alt="doctor icon">
+                        Talk to a Doctor</a>
+                </li>
+                <li>
+                    <a href="patient-clinic.html">
+                        <img src="{% static 'patient/images/patient-images/clinic-icon.svg' %}" alt="clinics icon">
+                        Pharmacies and Clinics</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'support' %}">
+                        <img src="{% static 'patient/images/patient-images/contact-icon.svg' %}" alt="contact icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="{% url 'users:logout' %}">
+                        <img src="{% static 'patient/images/patient-images/logout.svg' %}" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <a class="back" href="{% url 'patient-dash' %}">< Back</a>
+            <h1 class="main-heading">Talk to a Doctor</h1>
+            <div class="search">
+                <input id="search" type="text" name="search" placeholder="Name or Location">
+                <select id="speciality" name="speciality">
+                    <option value="">Choose a Speciality</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <button class="search-btn">Search</button>
+            </div>
+            <section class="border-style visits">
+                <div class="bubble-heading">
+                    <p><b>Name</b></p>
+                    <p><b>Location</b></p>
+                    <p><b>Phone</b></p>
+                </div>
+                {% for doctor in doctors %}
+                <a class="doctors-bubble bubble-style">
+                    <div class="doctor">
+                        <img src="{% static 'doctor/images/doctor-dash/user-icon.svg' %}" alt="image of doctor">
+                        <div class="doctor-info">
+                            <p><b>Dr. {{doctor.health_practitioner.last_name}}</b></p>
+                            <p>{{doctor.specialty}}</p>
+                        </div>
+                    </div>
+                    <!-- <div class="clinic">{{doctor.clinics}}</div> -->
+                    <p class="clinic">{{doctor.clinics}}</p>
+                    <div class="phone">{{doctor.telephone}}</div>
+                </a>
+                {% endfor %}
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
+{% endblock %}

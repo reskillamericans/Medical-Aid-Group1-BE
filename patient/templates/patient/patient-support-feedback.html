@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient - Century Health</title>
+    <link rel="shortcut icon" href="{% static 'patient/images/admin-dash/favicon.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'patient/css/patient-support-feedback.css' %}">
+    <script src="{% static 'patient/js/patient-profile.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Header-->
+        <header><a href="{% url 'homepage' %}"><img src="{% static 'patient/images/patient-images/logo.svg' %}" class="logo"></a>
+            <button class="hamburger" id="hamburger"><img src="{% static 'patient/images/logo/fi_menu.svg' %}"></button>
+        </header>
+        <!--Navigation-->
+        <nav>
+            <ul class="nav-ul" id="nav-ul">
+                <li>
+                    <a href="patient-dash.html">
+                        <img src="{% static 'patient/images/patient-profile-img/dashboard-white.svg' %}" alt="dashboard icon">
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a href="patient-profile.html">
+                        <img src="{% static 'patient/images/patient-images/profile-icon.svg' %}" alt="profile icon">
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="{% url 'patient-doctor' %}">
+                        <img src="{% static 'patient/images/patient-images/doctor-icon.svg' %}" alt="doctor icon">
+                        Talk to a Doctor</a>
+                </li>
+                <li>
+                    <a href="patient-clinic.html">
+                        <img src="{% static 'patient/images/patient-images/clinic-icon.svg' %}" alt="clinics icon">
+                        Pharmacies and Clinics</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'support' %}" class="active-link">
+                        <img src="{% static 'patient/images/patient-support-img/contact-icon-yellow.svg' %}" alt="contact icon">
+                        Contact Us / Support</a>
+                </li>
+                <li>
+                    <a href="{% url 'users:logout' %}">
+                        <img src="{% static 'patient/images/patient-images/logout.svg' %}" alt="logout icon" />
+                        Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <a class="back" href="patient-dash.html">< Back</a>
+            <section class="support">
+                <h1 class="main-heading">Contact Support</h1>
+                <p>Your message has been submitted and you will receive an email confirmation shortly.
+                    Feedback is reviewed within 48 hours.</p>
+                <div class="feedback">
+                    <img src="{% static 'patient/images/patient-support-feedback-img/support-feedback.svg' %}" alt="doctor holding phone">
+                    <div class="feedback-thanks">
+                        <h3>Thank you for your feedback!</h3>
+                        <p>Your feedback helps us improve the way we provide you with the medical resources you want the most.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

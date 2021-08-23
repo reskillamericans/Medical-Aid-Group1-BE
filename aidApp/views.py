@@ -1,3 +1,4 @@
+import django
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
@@ -9,7 +10,7 @@ from django.core.mail import send_mail, get_connection
 from django.conf import settings
 from django.db.models import Q
 from .models import Feedback, Patient, Health_Practitioner, FAQ, Appointment, Clinic
-from .forms import CreateContactForm#, AppUpdateForm, AppRetrieveForm ,AppCreateForm, DocProfileForm 
+from .forms import CreateContactForm#, AppUpdateForm, AppRetrieveForm  ,AppCreateForm, DocProfileForm
 
 
 # Create your views here.
@@ -79,18 +80,20 @@ def CreateContact(request):
          form = CreateContactForm(request.POST)
          if form.is_valid():
              
-             subject = form.cleaned_data['subject']
-             message = form.cleaned_data['comment']
-             sender = form.cleaned_data['email']
+             inquiry = form.cleaned_data['inquiry']
+             #subject = form.cleaned_data['subject']
+             #message = form.cleaned_data['comment']
+             #sender = form.cleaned_data['email']
              
              administrators = []
              for admin in User.objects.filter(is_superuser=True):
                 administrators.append(admin.email)
-            
+
+             email_sub = 'New'+ ' '+inquiry+' '+'inquiry received'               
              con = get_connection(settings.EMAIL_BACKEND)
-             send_mail(subject,
-                      message,
-                      sender,
+             send_mail(email_sub,
+                      None,
+                      None,
                       administrators,
                       connection=con            
              )
@@ -104,4 +107,5 @@ def CreateContact(request):
     context = {'form': CreateContactForm()}
     return render(request, 'aidApp/contact/contact.html', context) 
 
-
+def handler404(request, *args, **argv):
+    return render(request, 'aidApp/error.html')

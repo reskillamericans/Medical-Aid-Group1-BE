@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone as tz
+from django.utils import timezone as tz, tree
 from django.contrib.auth.models import User
 from django.db.models.fields import TextField
 from django.db.models.deletion import CASCADE, SET, SET_NULL
@@ -19,7 +19,7 @@ class FAQ(models.Model):
 
 class Contact(models.Model):
 
-    CHOICES = [(None, "Nature of Inquiry"),('feedback','Feedback'),('career','Career'),('support','Support'),]
+    CHOICES = [(None, "Nature of Inquiry"),('Feedback','Feedback'),('Career','Career'),('Support','Support'),]
 
     fname = models.CharField(max_length=50, null=True)
     lname = models.CharField(max_length=50, null=True)
@@ -73,14 +73,14 @@ class Patient(models.Model):
 
 class Health_Practitioner(models.Model):
 
-    health_practitioner = models.OneToOneField(User, on_delete=models.CASCADE)
+    health_practitioner = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    clinics = models.ForeignKey('Clinic', blank=True, null=True,on_delete=models.CASCADE)
     professional_title = models.CharField(default= "Dr. ", max_length=4)
     professional_suffix = models.CharField(default= " MD", max_length=4)
     #image = models.ImageField(null=True, blank=True)  
     telephone = models.CharField(max_length=20)
     specialty = models.TextField(max_length=200)
     consultation_times = models.TextField(default="Monday - 10:00am to 11:00am", max_length=600)
-    clinics = models.ForeignKey('Clinic', on_delete=models.CASCADE)
     insurance_accepted = models.CharField(default='Blue Cross', max_length=200)
     languages = models.CharField(default='English', max_length=60)
     accepting_new_patients = models.CharField(default='Yes', max_length=3)
@@ -119,7 +119,6 @@ class Pharmacy(models.Model):
     website = models.URLField(max_length=100)
     directions = models.TextField(max_length=254)
     
-
     def __str__(self):
         return self.name
 
@@ -165,8 +164,7 @@ class Appointment(models.Model):
     timeslots = models.IntegerField(choices=TIMESLOTS, default=0)
     appt_reason = TextField(default= 'Annual Physical Examination', max_length=200)
     app_status = models.CharField(blank=True, max_length=10)
-    
-    
+  
     def __str__(self):
         return "Patient {} Date {} Time {} for {}".format(self.patient, self.app_date, self.time, self.health_practitioner)
     

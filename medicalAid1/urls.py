@@ -16,22 +16,22 @@ Including another URLconf
 from django import urls
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.urls import path,include
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from aidApp import views as aid_app_views
 from users import views as users_views
-#from . import views
-
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
     path('', include('aidApp.urls')),
-    path('doctor/', include('doctor.urls'))
+    path('doctor/', include('doctor.urls')),
+    path('patient/', include('patient.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = "aidApp.views.handler404"

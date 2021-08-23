@@ -22,10 +22,3 @@ class CreateContactForm(forms.ModelForm):
         }
 
 
-class DocProfileForm(forms.ModelForm):
-
-    class Meta:
-        model = Health_Practitioner
-        exclude = ['appointments_approved', 'appointments_pending']
-          
-   
