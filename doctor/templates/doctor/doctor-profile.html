@@ -120,22 +120,22 @@
                     </div>
                     <div class="languages">
                         <h3>Languages</h3>
-                        <p>English and Spanish</p>
+                        <p>{{ doctor.languages }}</p>
                     </div> <div class="location">
                         <h3>Location</h3>
-                        <p>Cleveland General Hospital</p>
+                        <p>{{ doctor.clinics.name }}</p>
                     </div> <div class="new-patients">
                         <h3>Accepting New Patients</h3>
-                        <p>Yes</p>
+                        <p>{{ doctor.accepting_new_patients }}</p>
                     </div> <div class="insurance">
                         <h3>Insurance Accepted</h3>
-                        <p>Blue Cross, Cigna, and Shield</p>
+                        <p>{{ doctor.insurance_accepted }}</p>
                     </div>
                     <div class="big-rating">
-                        <h1>4.6</h1>
+                        <h1>{{ doctor.rating_reviews }}</h1>
                         <img src="{% static 'doctor/images/doctor-dash/stars.svg' %}" alt="star rating">
-                        <p><b>34 </b>Reviews</p>
-                        <p><b>30 </b>Patients Comments</p>
+                        <p><b>{{ doctor.reviews }}</b> Reviews</p>
+                        <p><b>{{ doctor.patient_comments }}</b> Patients Comments</p>
                     </div>
                 </div>                    
             </div>         
@@ -144,19 +144,18 @@
         <!-- Contact and Locations  -->
         <section class="contact">
             <div class="heading">
-                <h2>Contact and Locations</h2>              
+                <h2>Contact and Location</h2>              
             </div>
             <div class="locations bubble-style">
-                <h3>Monday,Wednesday,Friday</h3>
-                <p>Cleveland General Hospital</p>
-                <p>4517 Washington Ave.</p>
-                <p>Manchester,Kentucky 39495</p>
-                <p>(745)356-3456</p>
-                <h3>Tuesday, Thursday</h3>
+                <h3>Monday through Friday</h3>
+                <p>{{ doctor.clinics.name }}</p>
+                <p>{{ doctor.clinics.address }}</p>
+                <p>{{ doctor.clinics.telephone }}</p>
+                <!-- <h3>Tuesday, Thursday</h3>
                 <p>Corner Health Center</p>
                 <p>4517 Washington Ave.</p>
                 <p>Manchester,Kentucky 39495</p>
-                <p>(455)888-3884</p>
+                <p>(455)888-3884</p> -->
             </div>                 
         </section>
         <!-- Map -->
