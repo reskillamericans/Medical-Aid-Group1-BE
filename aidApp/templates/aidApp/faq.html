@@ -82,28 +82,27 @@
                 <button class="search-button search">Search</button>
             </div>
         </div>
-
+       
         <div class="accordion-div">
             <div class="accordion-head">
                 <h1 class="accordion-title">
                     Frequently Asked Questions
                 </h1>
-            </div>
+            </div> 
+            
             {% for faq in Faqs %}
-                <button class="accordion">{{faq.question}} <div class="arrows"><i class="arrow down"></i></div>
+                <button class="accordion">{{faq.question}}<div class="arrows"><i class="arrow down"></i></div>
                 </button>
                 <div class="answer">
                     <p class="answer-text">
-                        {{faq.answer}}
+                       <!--{{faq.answer}}-->
                     </p>
                 </div>
             {% endfor %}
             
         </div>
-
-
-
-        <!-- <div class="accordion-div">
+<!---
+        <div class="accordion-div">
             <div class="accordion-head">
                 <h1 class="accordion-title">
                     Frequently Asked Questions
@@ -144,9 +143,9 @@
                     Select the registration button on the menu bar and fill out the form.
                 </p>
             </div>
-        </div>
+        </div> -->
 
- -->
+ 
 
         <div class="accordion-foot">
             <div class="foot-help">

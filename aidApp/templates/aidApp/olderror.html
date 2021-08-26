@@ -1,4 +1,5 @@
 {% load static %} 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
-    <!--Original link rel code, commented out and added static files and linked-->
-   <!--<link rel="stylesheet" href="about-us.css">
+    <link rel="stylesheet" href="about-us.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="about-us.css">
     <link rel="stylesheet" href="faq.css">
-    <link rel="stylesheet" href="error.css">-->
-
-    <link rel="stylesheet" href="{% static 'aidApp/css/about-us.css' %}">
-    <link rel="stylesheet" href="{% static 'aidApp/css/login.css' %}">
-    <link rel="stylesheet" href="{% static 'aidApp/css/faq.css' %}">
     <link rel="stylesheet" href="{% static 'aidApp/css/error.css' %}">
+    <link rel="icon" href="{% static 'aidApp/images/faq-page-images/cross.png' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
@@ -27,20 +23,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/21d1f09dfc.js" crossorigin="anonymous"></script>
     <script src="login.js" defer></script>
-    <!--chris franklin added carousel.js, contact.js, faq.js, signup,js, this was not in the original error.html from frontend team-->
-    <script src="carousel.js" defer></script> <!--carousel.js not in js folder yet but is not the frontend repo, cf added the script to the file-->
-    <script src="{% static 'aidApp/js/contact.js' %}" defer></script>
-    <script src="{% static 'aidApp/js/faq.js' %}" defer></script>
-    <!--<script src="faq.js" defer></script>-->
-    <script src="signup.js" defer></script><!--signup.js not in js folder yet but is not the frontend repo, cf added the script to the file-->
 </head>
 <header>
     <!-- NAV BAR -->
     <nav class="navbar">
         <div class="logo-div">
             <!--<img src="images/logo/logoicon.svg" class="nav-logo" alt="logo image" />-->
-             <!--STATIC FOLDERS FOR LOGO SVG ICON-->
             <img src="{% static 'aidApp/images/logo/logoicon.svg' %}" class="nav-logo" alt="logo image" />
+            
             <span class="nav-logo-text">Century Health</span>
         </div>
         <div class="nav-tabs">
@@ -60,11 +50,8 @@
         </div>
     </nav>
     <div class="topnav">
-        <!--<a href="index.html" class="active"><img src="images/logo/logoicon.svg"> <span class="nav-logo-text">Century
-                Health</span></a>-->
-        <!--STATIC FOLDERS FOR LOGO SVG ICON-->
         <a href="index.html" class="active"><img src="{% static 'aidApp/images/logo/logoicon.svg' %}"> <span class="nav-logo-text">Century
-                    Health</span></a>
+                Health</span></a>
         <!-- Navigation links (hidden by default) -->
         <div id="myLinks">
             <a href="index.html">Home</a>
@@ -87,9 +74,12 @@
         </h1>
     </div>
     <div class="page-div">
-        <!--<img class="error-img" src="images/error/Group 96.svg" alt="404 error image">-->
-        <!--STATIC FOLDERS FOR Group 96 SVG-->
-        <img class="error-img" src="{% static 'aidApp/images/error/Group 96.svg' %}" alt="404 error image"/>
+       <!-- <img class="error-img" src="images/error/Group 96.svg" alt="404 error image"> -->
+        <img
+        class="error-img"
+         src="{% static 'aidApp/images/error/Group 96.svg' %}"
+        alt="404 error image"
+      />
     </div>
     <div class="page-div">
         <h3 class="page-not-found">
