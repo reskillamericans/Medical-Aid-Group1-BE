@@ -393,7 +393,9 @@ footer .quick-links a:hover {
 
 .accordion-div{
     display: grid;
-    width: 99.8%;
+    /*width: 99.8%;*/
+    /*text-align: center;*/
+    width: 100.0%;
     justify-content: center;
     align-content: center;
     margin-bottom: 5%;
@@ -413,6 +415,8 @@ footer .quick-links a:hover {
 }
 
 .accordion{
+  /*added text-align: center;*/
+    /*text-align: right;*/
     background-color: #072AC8;
     font-size: 1.2vw;
     color: #C3C7D2;

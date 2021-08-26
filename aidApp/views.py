@@ -23,6 +23,9 @@ def index(request):
 def about_us(request):
     return render(request, 'aidApp/about-us.html')
 
+def error(request):
+    return render(request, 'aidApp/error.html')
+
 def faq(request):
 
     faqs = FAQ.objects.all()
@@ -109,3 +112,4 @@ def CreateContact(request):
 
 def handler404(request, *args, **argv):
     return render(request, 'aidApp/error.html')
+
